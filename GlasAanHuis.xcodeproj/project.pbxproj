@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFEBE5C818F299A700C8DD0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5C718F299A700C8DD0B /* Foundation.framework */; };
+		FFEBE5CA18F299A700C8DD0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5C918F299A700C8DD0B /* CoreGraphics.framework */; };
+		FFEBE5CC18F299A700C8DD0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5CB18F299A700C8DD0B /* UIKit.framework */; };
+		FFEBE5D218F299A700C8DD0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFEBE5D018F299A700C8DD0B /* InfoPlist.strings */; };
+		FFEBE5D418F299A700C8DD0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEBE5D318F299A700C8DD0B /* main.m */; };
+		FFEBE5D818F299A700C8DD0B /* glAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEBE5D718F299A700C8DD0B /* glAppDelegate.m */; };
+		FFEBE5DB18F299A700C8DD0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEBE5D918F299A700C8DD0B /* Main.storyboard */; };
+		FFEBE5DE18F299A700C8DD0B /* glViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEBE5DD18F299A700C8DD0B /* glViewController.m */; };
+		FFEBE5E018F299A700C8DD0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEBE5DF18F299A700C8DD0B /* Images.xcassets */; };
+		FFEBE5E718F299A700C8DD0B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5E618F299A700C8DD0B /* XCTest.framework */; };
+		FFEBE5E818F299A700C8DD0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5C718F299A700C8DD0B /* Foundation.framework */; };
+		FFEBE5E918F299A700C8DD0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5CB18F299A700C8DD0B /* UIKit.framework */; };
+		FFEBE5F118F299A700C8DD0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFEBE5EF18F299A700C8DD0B /* InfoPlist.strings */; };
+		FFEBE5F318F299A700C8DD0B /* GlasAanHuisTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEBE5F218F299A700C8DD0B /* GlasAanHuisTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFEBE5EA18F299A700C8DD0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFEBE5BC18F299A700C8DD0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFEBE5C318F299A700C8DD0B;
+			remoteInfo = GlasAanHuis;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FFEBE5C418F299A700C8DD0B /* GlasAanHuis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlasAanHuis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFEBE5C718F299A700C8DD0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FFEBE5C918F299A700C8DD0B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FFEBE5CB18F299A700C8DD0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FFEBE5CF18F299A700C8DD0B /* GlasAanHuis-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GlasAanHuis-Info.plist"; sourceTree = "<group>"; };
+		FFEBE5D118F299A700C8DD0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FFEBE5D318F299A700C8DD0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FFEBE5D518F299A700C8DD0B /* GlasAanHuis-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GlasAanHuis-Prefix.pch"; sourceTree = "<group>"; };
+		FFEBE5D618F299A700C8DD0B /* glAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glAppDelegate.h; sourceTree = "<group>"; };
+		FFEBE5D718F299A700C8DD0B /* glAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = glAppDelegate.m; sourceTree = "<group>"; };
+		FFEBE5DA18F299A700C8DD0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FFEBE5DC18F299A700C8DD0B /* glViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glViewController.h; sourceTree = "<group>"; };
+		FFEBE5DD18F299A700C8DD0B /* glViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = glViewController.m; sourceTree = "<group>"; };
+		FFEBE5DF18F299A700C8DD0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FFEBE5E518F299A700C8DD0B /* GlasAanHuisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlasAanHuisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFEBE5E618F299A700C8DD0B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FFEBE5EE18F299A700C8DD0B /* GlasAanHuisTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GlasAanHuisTests-Info.plist"; sourceTree = "<group>"; };
+		FFEBE5F018F299A700C8DD0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FFEBE5F218F299A700C8DD0B /* GlasAanHuisTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlasAanHuisTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFEBE5C118F299A700C8DD0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFEBE5CA18F299A700C8DD0B /* CoreGraphics.framework in Frameworks */,
+				FFEBE5CC18F299A700C8DD0B /* UIKit.framework in Frameworks */,
+				FFEBE5C818F299A700C8DD0B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFEBE5E218F299A700C8DD0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFEBE5E718F299A700C8DD0B /* XCTest.framework in Frameworks */,
+				FFEBE5E918F299A700C8DD0B /* UIKit.framework in Frameworks */,
+				FFEBE5E818F299A700C8DD0B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFEBE5BB18F299A700C8DD0B = {
+			isa = PBXGroup;
+			children = (
+				FFEBE5CD18F299A700C8DD0B /* GlasAanHuis */,
+				FFEBE5EC18F299A700C8DD0B /* GlasAanHuisTests */,
+				FFEBE5C618F299A700C8DD0B /* Frameworks */,
+				FFEBE5C518F299A700C8DD0B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFEBE5C518F299A700C8DD0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBE5C418F299A700C8DD0B /* GlasAanHuis.app */,
+				FFEBE5E518F299A700C8DD0B /* GlasAanHuisTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFEBE5C618F299A700C8DD0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBE5C718F299A700C8DD0B /* Foundation.framework */,
+				FFEBE5C918F299A700C8DD0B /* CoreGraphics.framework */,
+				FFEBE5CB18F299A700C8DD0B /* UIKit.framework */,
+				FFEBE5E618F299A700C8DD0B /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFEBE5CD18F299A700C8DD0B /* GlasAanHuis */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBE5D618F299A700C8DD0B /* glAppDelegate.h */,
+				FFEBE5D718F299A700C8DD0B /* glAppDelegate.m */,
+				FFEBE5D918F299A700C8DD0B /* Main.storyboard */,
+				FFEBE5DC18F299A700C8DD0B /* glViewController.h */,
+				FFEBE5DD18F299A700C8DD0B /* glViewController.m */,
+				FFEBE5DF18F299A700C8DD0B /* Images.xcassets */,
+				FFEBE5CE18F299A700C8DD0B /* Supporting Files */,
+			);
+			path = GlasAanHuis;
+			sourceTree = "<group>";
+		};
+		FFEBE5CE18F299A700C8DD0B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBE5CF18F299A700C8DD0B /* GlasAanHuis-Info.plist */,
+				FFEBE5D018F299A700C8DD0B /* InfoPlist.strings */,
+				FFEBE5D318F299A700C8DD0B /* main.m */,
+				FFEBE5D518F299A700C8DD0B /* GlasAanHuis-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFEBE5EC18F299A700C8DD0B /* GlasAanHuisTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBE5F218F299A700C8DD0B /* GlasAanHuisTests.m */,
+				FFEBE5ED18F299A700C8DD0B /* Supporting Files */,
+			);
+			path = GlasAanHuisTests;
+			sourceTree = "<group>";
+		};
+		FFEBE5ED18F299A700C8DD0B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBE5EE18F299A700C8DD0B /* GlasAanHuisTests-Info.plist */,
+				FFEBE5EF18F299A700C8DD0B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFEBE5C318F299A700C8DD0B /* GlasAanHuis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFEBE5F618F299A700C8DD0B /* Build configuration list for PBXNativeTarget "GlasAanHuis" */;
+			buildPhases = (
+				FFEBE5C018F299A700C8DD0B /* Sources */,
+				FFEBE5C118F299A700C8DD0B /* Frameworks */,
+				FFEBE5C218F299A700C8DD0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GlasAanHuis;
+			productName = GlasAanHuis;
+			productReference = FFEBE5C418F299A700C8DD0B /* GlasAanHuis.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFEBE5E418F299A700C8DD0B /* GlasAanHuisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFEBE5F918F299A700C8DD0B /* Build configuration list for PBXNativeTarget "GlasAanHuisTests" */;
+			buildPhases = (
+				FFEBE5E118F299A700C8DD0B /* Sources */,
+				FFEBE5E218F299A700C8DD0B /* Frameworks */,
+				FFEBE5E318F299A700C8DD0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFEBE5EB18F299A700C8DD0B /* PBXTargetDependency */,
+			);
+			name = GlasAanHuisTests;
+			productName = GlasAanHuisTests;
+			productReference = FFEBE5E518F299A700C8DD0B /* GlasAanHuisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFEBE5BC18F299A700C8DD0B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = gl;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = GlasAanHuis;
+				TargetAttributes = {
+					FFEBE5E418F299A700C8DD0B = {
+						TestTargetID = FFEBE5C318F299A700C8DD0B;
+					};
+				};
+			};
+			buildConfigurationList = FFEBE5BF18F299A700C8DD0B /* Build configuration list for PBXProject "GlasAanHuis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFEBE5BB18F299A700C8DD0B;
+			productRefGroup = FFEBE5C518F299A700C8DD0B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFEBE5C318F299A700C8DD0B /* GlasAanHuis */,
+				FFEBE5E418F299A700C8DD0B /* GlasAanHuisTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFEBE5C218F299A700C8DD0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFEBE5E018F299A700C8DD0B /* Images.xcassets in Resources */,
+				FFEBE5D218F299A700C8DD0B /* InfoPlist.strings in Resources */,
+				FFEBE5DB18F299A700C8DD0B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFEBE5E318F299A700C8DD0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFEBE5F118F299A700C8DD0B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFEBE5C018F299A700C8DD0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFEBE5DE18F299A700C8DD0B /* glViewController.m in Sources */,
+				FFEBE5D418F299A700C8DD0B /* main.m in Sources */,
+				FFEBE5D818F299A700C8DD0B /* glAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFEBE5E118F299A700C8DD0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFEBE5F318F299A700C8DD0B /* GlasAanHuisTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFEBE5EB18F299A700C8DD0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFEBE5C318F299A700C8DD0B /* GlasAanHuis */;
+			targetProxy = FFEBE5EA18F299A700C8DD0B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FFEBE5D018F299A700C8DD0B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFEBE5D118F299A700C8DD0B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FFEBE5D918F299A700C8DD0B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFEBE5DA18F299A700C8DD0B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FFEBE5EF18F299A700C8DD0B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFEBE5F018F299A700C8DD0B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFEBE5F418F299A700C8DD0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FFEBE5F518F299A700C8DD0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFEBE5F718F299A700C8DD0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GlasAanHuis/GlasAanHuis-Prefix.pch";
+				INFOPLIST_FILE = "GlasAanHuis/GlasAanHuis-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FFEBE5F818F299A700C8DD0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GlasAanHuis/GlasAanHuis-Prefix.pch";
+				INFOPLIST_FILE = "GlasAanHuis/GlasAanHuis-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FFEBE5FA18F299A700C8DD0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GlasAanHuis.app/GlasAanHuis";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GlasAanHuis/GlasAanHuis-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GlasAanHuisTests/GlasAanHuisTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FFEBE5FB18F299A700C8DD0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GlasAanHuis.app/GlasAanHuis";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GlasAanHuis/GlasAanHuis-Prefix.pch";
+				INFOPLIST_FILE = "GlasAanHuisTests/GlasAanHuisTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFEBE5BF18F299A700C8DD0B /* Build configuration list for PBXProject "GlasAanHuis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFEBE5F418F299A700C8DD0B /* Debug */,
+				FFEBE5F518F299A700C8DD0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFEBE5F618F299A700C8DD0B /* Build configuration list for PBXNativeTarget "GlasAanHuis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFEBE5F718F299A700C8DD0B /* Debug */,
+				FFEBE5F818F299A700C8DD0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FFEBE5F918F299A700C8DD0B /* Build configuration list for PBXNativeTarget "GlasAanHuisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFEBE5FA18F299A700C8DD0B /* Debug */,
+				FFEBE5FB18F299A700C8DD0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFEBE5BC18F299A700C8DD0B /* Project object */;
+}
