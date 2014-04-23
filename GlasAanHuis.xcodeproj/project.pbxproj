@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FFCD67731906EF0C00D05AA3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCD67721906EF0C00D05AA3 /* SWRevealViewController.m */; };
 		FFEBE5C818F299A700C8DD0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5C718F299A700C8DD0B /* Foundation.framework */; };
 		FFEBE5CA18F299A700C8DD0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5C918F299A700C8DD0B /* CoreGraphics.framework */; };
 		FFEBE5CC18F299A700C8DD0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5CB18F299A700C8DD0B /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FFCD67721906EF0C00D05AA3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../../../../../Volumes/d3/SWRevealViewController.m; sourceTree = "<group>"; };
+		FFCD67741906EF3300D05AA3 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../../../../../Volumes/d3/SWRevealViewController.h; sourceTree = "<group>"; };
 		FFEBE5C418F299A700C8DD0B /* GlasAanHuis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlasAanHuis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEBE5C718F299A700C8DD0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FFEBE5C918F299A700C8DD0B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFCD67711906EED900D05AA3 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD67741906EF3300D05AA3 /* SWRevealViewController.h */,
+				FFCD67721906EF0C00D05AA3 /* SWRevealViewController.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
 		FFEBE5BB18F299A700C8DD0B = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +124,7 @@
 		FFEBE5CD18F299A700C8DD0B /* GlasAanHuis */ = {
 			isa = PBXGroup;
 			children = (
+				FFCD67711906EED900D05AA3 /* Library */,
 				FFEBE5D618F299A700C8DD0B /* glAppDelegate.h */,
 				FFEBE5D718F299A700C8DD0B /* glAppDelegate.m */,
 				FFEBE5D918F299A700C8DD0B /* Main.storyboard */,
@@ -253,6 +266,7 @@
 				FFEBE5DE18F299A700C8DD0B /* glViewController.m in Sources */,
 				FFEBE5D418F299A700C8DD0B /* main.m in Sources */,
 				FFEBE5D818F299A700C8DD0B /* glAppDelegate.m in Sources */,
+				FFCD67731906EF0C00D05AA3 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +471,7 @@
 				FFEBE5F818F299A700C8DD0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FFEBE5F918F299A700C8DD0B /* Build configuration list for PBXNativeTarget "GlasAanHuisTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +480,7 @@
 				FFEBE5FB18F299A700C8DD0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
