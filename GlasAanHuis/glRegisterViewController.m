@@ -9,10 +9,13 @@
 #import "glRegisterViewController.h"
 
 @interface glRegisterViewController ()
-
 @end
 
 @implementation glRegisterViewController
+-(void)setDistrictID:(NSString *)districtID
+{
+    _districtID = districtID;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,7 +37,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
 /*
 #pragma mark - Navigation
 
@@ -45,5 +51,123 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+// Handle possible errors that can occur during login
+- (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
+    NSString *alertMessage, *alertTitle;
+    
+    // If the user should perform an action outside of you app to recover,
+    // the SDK will provide a message for the user, you just need to surface it.
+    // This conveniently handles cases like Facebook password change or unverified Facebook accounts.
+    if ([FBErrorUtility shouldNotifyUserForError:error]) {
+        alertTitle = @"Facebook error";
+        alertMessage = [FBErrorUtility userMessageForError:error];
+        
+        // This code will handle session closures that happen outside of the app
+        // You can take a look at our error handling guide to know more about it
+        // https://developers.facebook.com/docs/ios/errors
+    } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession) {
+        alertTitle = @"Session Error";
+        alertMessage = @"Your current session is no longer valid. Please log in again.";
+        
+        // If the user has cancelled a login, we will do nothing.
+        // You can also choose to show the user a message if cancelling login will result in
+        // the user not being able to complete a task they had initiated in your app
+        // (like accessing FB-stored information or posting to Facebook)
+    } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
+        NSLog(@"user cancelled login");
+        
+        // For simplicity, this sample handles other errors with a generic message
+        // You can checkout our error handling guide for more detailed information
+        // https://developers.facebook.com/docs/ios/errors
+    } else {
+        alertTitle  = @"Something went wrong";
+        alertMessage = @"Please try again later.";
+        NSLog(@"Unexpected error:%@", error);
+    }
+    
+    if (alertMessage) {
+        [[[UIAlertView alloc] initWithTitle:alertTitle
+                                    message:alertMessage
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+    }
+}
+
+- (IBAction)loginBTN:(id)sender {
+    NSArray * result = [self registerUser];
+    NSLog(@"%@", [ result valueForKey:@"user_id"]);
+    NSString * userID = [ result valueForKey:@"user_id"];
+    //[[_districts objectAtIndex:indexPath.row] valueForKey:@"name"];
+    
+    if (userID !=nil && ![_emailTV.text isEqualToString:@""] && ![_nameTV.text isEqualToString:@""]) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setValue:userID forKey:@"userID"];
+        [defaults setValue:_districtID forKeyPath:@"districtID"];
+        [defaults synchronize];
+        [self performSegueWithIdentifier:@"start" sender:self];
+    }
+}
+-(NSArray*)registerUser
+{
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",_nameTV.text,@"name",@"lat",@"latlong",@"dis",@"district_id", nil];
+    NSError *postError;
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
+    
+    NSURL *url = [NSURL URLWithString:@"http://glas.mycel.nl/register"];
+    NSMutableURLRequest *req =[NSMutableURLRequest requestWithURL:url];
+    
+    req.HTTPMethod=@"POST";
+    [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [req setHTTPBody:postdata];
+    
+    NSData *data;
+    NSURLResponse *response = nil;
+    data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:nil];
+    if (data == nil) {
+        return [[NSArray alloc]init];
+    }
+    return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+}
+
+- (IBAction)rommel:(id)sender {
+//    [FBRequestConnection startForMeWithCompletionHandler:
+//     ^(FBRequestConnection *connection, id result, NSError *error)
+//     {
+//         NSLog(@"facebook result: %@", result);
+//     }];
+//    NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
+//    
+//    NSLog(@"facebook result: %@", fbAccessToken);
+    
+    
+    
+    // If the session state is any of the two "open" states when the button is clicked
+//    if (FBSession.activeSession.state == FBSessionStateOpen
+//        || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
+//        
+//        // Close the session and remove the access token from the cache
+//        // The session state handler (in the app delegate) will be called automatically
+//        [FBSession.activeSession closeAndClearTokenInformation];
+//        
+//        // If the session state is not any of the two "open" states when the button is clicked
+//    } else {
+//        // Open a session showing the user the login UI
+//        // You must ALWAYS ask for public_profile permissions when opening a session
+//        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
+//                                           allowLoginUI:YES
+//                                      completionHandler:
+//         ^(FBSession *session, FBSessionState state, NSError *error) {
+//             
+//             // Retrieve the app delegate
+//             AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+//             // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
+//             [appDelegate sessionStateChanged:session state:state error:error];
+//         }];
+//    }
+}
+
 
 @end

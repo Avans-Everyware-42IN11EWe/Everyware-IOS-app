@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface glDistrictSelectViewController : UIViewController
+@interface glDistrictSelectViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITextField *searchTF;
+@property (strong, nonatomic) IBOutlet UITableView *districtTABLE;
+- (IBAction)doneBTN:(id)sender;
+
+
+
 
 @end

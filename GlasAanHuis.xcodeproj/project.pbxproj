@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49C31E8A1919000C005A8F28 /* glDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E891919000C005A8F28 /* glDistrictViewController.m */; };
+		49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E8C19190037005A8F28 /* glRegisterViewController.m */; };
+		49C31E9019190052005A8F28 /* glDistrictSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E8F19190052005A8F28 /* glDistrictSelectViewController.m */; };
+		49C31E93191915D5005A8F28 /* glStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E92191915D5005A8F28 /* glStartViewController.m */; };
+		49C31E9A19194AED005A8F28 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C31E9919194AED005A8F28 /* FacebookSDK.framework */; };
 		FFCCE4561915605A000FB961 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCCE4551915605A000FB961 /* SWRevealViewController.m */; };
 		FFEBE5C818F299A700C8DD0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5C718F299A700C8DD0B /* Foundation.framework */; };
 		FFEBE5CA18F299A700C8DD0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5C918F299A700C8DD0B /* CoreGraphics.framework */; };
@@ -35,6 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49C31E881919000C005A8F28 /* glDistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glDistrictViewController.h; sourceTree = "<group>"; };
+		49C31E891919000C005A8F28 /* glDistrictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glDistrictViewController.m; sourceTree = "<group>"; };
+		49C31E8B19190037005A8F28 /* glRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glRegisterViewController.h; sourceTree = "<group>"; };
+		49C31E8C19190037005A8F28 /* glRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glRegisterViewController.m; sourceTree = "<group>"; };
+		49C31E8E19190052005A8F28 /* glDistrictSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glDistrictSelectViewController.h; sourceTree = "<group>"; };
+		49C31E8F19190052005A8F28 /* glDistrictSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glDistrictSelectViewController.m; sourceTree = "<group>"; };
+		49C31E91191915D5005A8F28 /* glStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glStartViewController.h; sourceTree = "<group>"; };
+		49C31E92191915D5005A8F28 /* glStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glStartViewController.m; sourceTree = "<group>"; };
+		49C31E9919194AED005A8F28 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		FFCCE4541915605A000FB961 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		FFCCE4551915605A000FB961 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		FFEBE5C418F299A700C8DD0B /* GlasAanHuis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlasAanHuis.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFEBE5CA18F299A700C8DD0B /* CoreGraphics.framework in Frameworks */,
+				49C31E9A19194AED005A8F28 /* FacebookSDK.framework in Frameworks */,
 				FFEBE5CC18F299A700C8DD0B /* UIKit.framework in Frameworks */,
 				FFEBE5C818F299A700C8DD0B /* Foundation.framework in Frameworks */,
 			);
@@ -113,6 +128,7 @@
 		FFEBE5C618F299A700C8DD0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49C31E9919194AED005A8F28 /* FacebookSDK.framework */,
 				FFEBE5C718F299A700C8DD0B /* Foundation.framework */,
 				FFEBE5C918F299A700C8DD0B /* CoreGraphics.framework */,
 				FFEBE5CB18F299A700C8DD0B /* UIKit.framework */,
@@ -132,6 +148,14 @@
 				FFEBE5DD18F299A700C8DD0B /* glViewController.m */,
 				FFEBE5DF18F299A700C8DD0B /* Images.xcassets */,
 				FFEBE5CE18F299A700C8DD0B /* Supporting Files */,
+				49C31E881919000C005A8F28 /* glDistrictViewController.h */,
+				49C31E891919000C005A8F28 /* glDistrictViewController.m */,
+				49C31E8B19190037005A8F28 /* glRegisterViewController.h */,
+				49C31E8C19190037005A8F28 /* glRegisterViewController.m */,
+				49C31E8E19190052005A8F28 /* glDistrictSelectViewController.h */,
+				49C31E8F19190052005A8F28 /* glDistrictSelectViewController.m */,
+				49C31E91191915D5005A8F28 /* glStartViewController.h */,
+				49C31E92191915D5005A8F28 /* glStartViewController.m */,
 			);
 			path = GlasAanHuis;
 			sourceTree = "<group>";
@@ -263,10 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */,
 				FFEBE5DE18F299A700C8DD0B /* glViewController.m in Sources */,
+				49C31E93191915D5005A8F28 /* glStartViewController.m in Sources */,
 				FFEBE5D418F299A700C8DD0B /* main.m in Sources */,
 				FFCCE4561915605A000FB961 /* SWRevealViewController.m in Sources */,
 				FFEBE5D818F299A700C8DD0B /* glAppDelegate.m in Sources */,
+				49C31E8A1919000C005A8F28 /* glDistrictViewController.m in Sources */,
+				49C31E9019190052005A8F28 /* glDistrictSelectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +419,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GlasAanHuis/GlasAanHuis-Prefix.pch";
 				INFOPLIST_FILE = "GlasAanHuis/GlasAanHuis-Info.plist";
@@ -404,6 +436,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GlasAanHuis/GlasAanHuis-Prefix.pch";
 				INFOPLIST_FILE = "GlasAanHuis/GlasAanHuis-Info.plist";

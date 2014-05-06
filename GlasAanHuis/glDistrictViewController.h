@@ -10,4 +10,9 @@
 
 @interface glDistrictViewController : UIViewController
 
+@property (strong, nonatomic) NSJSONSerialization *selectedDistrict;
+- (void)setSelectedDistrict:(NSJSONSerialization *)selectedDistrict;
+
+- (IBAction)goToRegister:(id)sender;
+
 @end
