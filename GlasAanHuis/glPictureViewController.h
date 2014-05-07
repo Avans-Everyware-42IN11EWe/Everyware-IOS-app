@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface glPictureViewController : UIViewController
-
+@interface glPictureViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @end
+

@@ -4,12 +4,13 @@
 //
 //  Created by leroy on 06/05/14.
 //  Copyright (c) 2014 GlasAanHuis. All rights reserved.
-//
+///Users/leon/Everyware-IOS-app/GlasAanHuis/WijkInfo.xib
 
 #import "glDistrictViewController.h"
 #import "glRegisterViewController.h"
 #import "glWijkInfoView.h"
 #import "glBlurView.h"
+#import "SWRevealViewController.h"
 #define kDKTableViewDefaultContentInset 0.0f
 
 @interface glDistrictViewController ()
@@ -218,7 +219,15 @@
     lblDeelname.text = @"55%";
     [scroller addSubview:lblDeelname];
     
-
+    // Change button color
+    _sideBarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
+    
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    _sideBarButton.target = self.revealViewController;
+    _sideBarButton.action = @selector(revealToggle:);
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
 }
 

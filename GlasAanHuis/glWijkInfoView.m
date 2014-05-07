@@ -9,6 +9,7 @@
 #import "glWijkInfoView.h"
 
 @interface glWijkInfoView ()
+- (IBAction)goToDistrictPage:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *placeholder;
 
 @property (weak, nonatomic) IBOutlet UIView *wijkKiezen;
@@ -35,4 +36,10 @@
     [self.eindbaas goToAndereWijk:sender];
 }
 
+- (IBAction)goToDistrictPage:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"fb://profile/1450066045229608"];
+    if ([[UIApplication sharedApplication]canOpenURL:url]) {
+        [[UIApplication sharedApplication]openURL:url];
+    }
+}
 @end

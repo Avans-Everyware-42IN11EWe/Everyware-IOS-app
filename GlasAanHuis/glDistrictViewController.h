@@ -42,6 +42,7 @@
     IBOutlet UIButton *btnForum;
 }
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 @property (strong, nonatomic) NSJSONSerialization *selectedDistrict;
 - (void)setSelectedDistrict:(NSJSONSerialization *)selectedDistrict;
 - (IBAction)showWelcome:(id)sender;
