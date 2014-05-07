@@ -137,7 +137,6 @@
 }
 
 
-
 -(NSArray*)registerUser
 {
     NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",_nameTV.text,@"name",@"lat",@"latlong",@"1",@"district_id", nil];

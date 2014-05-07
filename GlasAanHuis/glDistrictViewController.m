@@ -21,6 +21,10 @@
 {
     _selectedDistrict = selectedDistrict;
 }
+
+- (IBAction)showWelcome:(id)sender {
+    [MTPopupWindow showWindowWithHTMLFile:@"info.html" insideView:self.view];
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -236,8 +240,6 @@
         [segue.destinationViewController setDistrictID:@"testid"];
     }
 }
-
-
 - (IBAction)goToRegister:(id)sender {
     //if(_selectedDistrict != nil){
         [self performSegueWithIdentifier:@"register" sender:self];
