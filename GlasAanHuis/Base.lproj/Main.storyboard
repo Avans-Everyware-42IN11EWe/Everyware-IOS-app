@@ -177,7 +177,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VtF-ix-U26"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fzv-rF-o2V">
-                        <rect key="frame" x="0.0" y="0.0" width="290" height="540"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Uw foto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pT3-Ve-8Bn">

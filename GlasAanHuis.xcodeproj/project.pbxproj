@@ -10,13 +10,13 @@
 		3508ED6B1919C86C009E1512 /* glBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3508ED6A1919C86C009E1512 /* glBlurView.m */; };
 		3508ED6E1919DE07009E1512 /* glPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3508ED6D1919DE07009E1512 /* glPictureViewController.m */; };
 		3508ED701919E1FF009E1512 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3508ED6F1919E1FF009E1512 /* QuartzCore.framework */; };
-		3508ED771919E2F9009E1512 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = 3508ED761919E2F9009E1512 /* info.html */; };
-		35D042B5191A1517008D3679 /* MTPopupWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042B4191A1517008D3679 /* MTPopupWindow.m */; };
-		35D042B8191A1529008D3679 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042B7191A1529008D3679 /* SidebarViewController.m */; };
 		35D042BB191A1F64008D3679 /* glMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042BA191A1F64008D3679 /* glMyProfileViewController.m */; };
 		35D042BE191A1F73008D3679 /* glVideoUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042BD191A1F73008D3679 /* glVideoUploadViewController.m */; };
 		35D042C1191A21E9008D3679 /* glFaqViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042C0191A21E9008D3679 /* glFaqViewController.m */; };
 		35D042C4191A21F3008D3679 /* glForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042C3191A21F3008D3679 /* glForumViewController.m */; };
+		35D042C9191A4288008D3679 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042C8191A4288008D3679 /* SidebarViewController.m */; };
+		35D042CC191A42D3008D3679 /* MTPopupWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042CB191A42D3008D3679 /* MTPopupWindow.m */; };
+		35D042CE191A42E8008D3679 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = 35D042CD191A42E8008D3679 /* info.html */; };
 		49C31E8A1919000C005A8F28 /* glDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E891919000C005A8F28 /* glDistrictViewController.m */; };
 		49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E8C19190037005A8F28 /* glRegisterViewController.m */; };
 		49C31E9019190052005A8F28 /* glDistrictSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E8F19190052005A8F28 /* glDistrictSelectViewController.m */; };
@@ -62,11 +62,6 @@
 		3508ED6C1919DE07009E1512 /* glPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glPictureViewController.h; sourceTree = "<group>"; };
 		3508ED6D1919DE07009E1512 /* glPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glPictureViewController.m; sourceTree = "<group>"; };
 		3508ED6F1919E1FF009E1512 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		3508ED761919E2F9009E1512 /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = info.html; path = ../../Downloads/Outlook/info.html; sourceTree = "<group>"; };
-		35D042B3191A1517008D3679 /* MTPopupWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTPopupWindow.h; path = ../../Desktop/GlasAanHuis/MTPopupWindow.h; sourceTree = "<group>"; };
-		35D042B4191A1517008D3679 /* MTPopupWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTPopupWindow.m; path = ../../Desktop/GlasAanHuis/MTPopupWindow.m; sourceTree = "<group>"; };
-		35D042B6191A1529008D3679 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SidebarViewController.h; path = ../../Desktop/GlasAanHuis/SidebarViewController.h; sourceTree = "<group>"; };
-		35D042B7191A1529008D3679 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarViewController.m; path = ../../Desktop/GlasAanHuis/SidebarViewController.m; sourceTree = "<group>"; };
 		35D042B9191A1F64008D3679 /* glMyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glMyProfileViewController.h; sourceTree = "<group>"; };
 		35D042BA191A1F64008D3679 /* glMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glMyProfileViewController.m; sourceTree = "<group>"; };
 		35D042BC191A1F73008D3679 /* glVideoUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glVideoUploadViewController.h; sourceTree = "<group>"; };
@@ -75,6 +70,11 @@
 		35D042C0191A21E9008D3679 /* glFaqViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glFaqViewController.m; sourceTree = "<group>"; };
 		35D042C2191A21F3008D3679 /* glForumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glForumViewController.h; sourceTree = "<group>"; };
 		35D042C3191A21F3008D3679 /* glForumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glForumViewController.m; sourceTree = "<group>"; };
+		35D042C7191A4288008D3679 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
+		35D042C8191A4288008D3679 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
+		35D042CA191A42D3008D3679 /* MTPopupWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPopupWindow.h; sourceTree = "<group>"; };
+		35D042CB191A42D3008D3679 /* MTPopupWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPopupWindow.m; sourceTree = "<group>"; };
+		35D042CD191A42E8008D3679 /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = info.html; sourceTree = "<group>"; };
 		49C31E881919000C005A8F28 /* glDistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glDistrictViewController.h; sourceTree = "<group>"; };
 		49C31E891919000C005A8F28 /* glDistrictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glDistrictViewController.m; sourceTree = "<group>"; };
 		49C31E8B19190037005A8F28 /* glRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glRegisterViewController.h; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		3508ED751919E2EE009E1512 /* HTML */ = {
 			isa = PBXGroup;
 			children = (
-				3508ED761919E2F9009E1512 /* info.html */,
+				35D042CD191A42E8008D3679 /* info.html */,
 			);
 			name = HTML;
 			sourceTree = "<group>";
@@ -150,8 +150,8 @@
 		35D0427E191A0BBE008D3679 /* SideBar */ = {
 			isa = PBXGroup;
 			children = (
-				35D042B6191A1529008D3679 /* SidebarViewController.h */,
-				35D042B7191A1529008D3679 /* SidebarViewController.m */,
+				35D042C7191A4288008D3679 /* SidebarViewController.h */,
+				35D042C8191A4288008D3679 /* SidebarViewController.m */,
 			);
 			name = SideBar;
 			sourceTree = "<group>";
@@ -159,8 +159,8 @@
 		35D042B2191A14FE008D3679 /* MTPopupWindow */ = {
 			isa = PBXGroup;
 			children = (
-				35D042B3191A1517008D3679 /* MTPopupWindow.h */,
-				35D042B4191A1517008D3679 /* MTPopupWindow.m */,
+				35D042CA191A42D3008D3679 /* MTPopupWindow.h */,
+				35D042CB191A42D3008D3679 /* MTPopupWindow.m */,
 			);
 			name = MTPopupWindow;
 			sourceTree = "<group>";
@@ -373,7 +373,7 @@
 			files = (
 				FFEBE5E018F299A700C8DD0B /* Images.xcassets in Resources */,
 				49C31E9E19198B87005A8F28 /* Comp2.mp4 in Resources */,
-				3508ED771919E2F9009E1512 /* info.html in Resources */,
+				35D042CE191A42E8008D3679 /* info.html in Resources */,
 				FFD9C46B1928BA6A00007267 /* WijkInfo.xib in Resources */,
 				FFEBE5D218F299A700C8DD0B /* InfoPlist.strings in Resources */,
 				FFEBE5DB18F299A700C8DD0B /* Main.storyboard in Resources */,
@@ -400,9 +400,10 @@
 				FFD9C46E1928BCF800007267 /* glWijkInfoView.m in Sources */,
 				49C31EA219198BDA005A8F28 /* glIntroViewController.m in Sources */,
 				35D042C4191A21F3008D3679 /* glForumViewController.m in Sources */,
-				35D042B8191A1529008D3679 /* SidebarViewController.m in Sources */,
 				49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */,
+				35D042C9191A4288008D3679 /* SidebarViewController.m in Sources */,
 				49C31E93191915D5005A8F28 /* glStartViewController.m in Sources */,
+				35D042CC191A42D3008D3679 /* MTPopupWindow.m in Sources */,
 				35D042BE191A1F73008D3679 /* glVideoUploadViewController.m in Sources */,
 				FFEBE5D418F299A700C8DD0B /* main.m in Sources */,
 				3508ED6E1919DE07009E1512 /* glPictureViewController.m in Sources */,
@@ -410,7 +411,6 @@
 				FFEBE5D818F299A700C8DD0B /* glAppDelegate.m in Sources */,
 				49C31E8A1919000C005A8F28 /* glDistrictViewController.m in Sources */,
 				35D042C1191A21E9008D3679 /* glFaqViewController.m in Sources */,
-				35D042B5191A1517008D3679 /* MTPopupWindow.m in Sources */,
 				35D042BB191A1F64008D3679 /* glMyProfileViewController.m in Sources */,
 				49C31E9019190052005A8F28 /* glDistrictSelectViewController.m in Sources */,
 				3508ED6B1919C86C009E1512 /* glBlurView.m in Sources */,
