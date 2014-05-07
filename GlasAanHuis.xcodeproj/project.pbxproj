@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3508ED6B1919C86C009E1512 /* glBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3508ED6A1919C86C009E1512 /* glBlurView.m */; };
 		49C31E8A1919000C005A8F28 /* glDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E891919000C005A8F28 /* glDistrictViewController.m */; };
 		49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E8C19190037005A8F28 /* glRegisterViewController.m */; };
 		49C31E9019190052005A8F28 /* glDistrictSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E8F19190052005A8F28 /* glDistrictSelectViewController.m */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3508ED691919C86C009E1512 /* glBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glBlurView.h; sourceTree = "<group>"; };
+		3508ED6A1919C86C009E1512 /* glBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glBlurView.m; sourceTree = "<group>"; };
 		49C31E881919000C005A8F28 /* glDistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glDistrictViewController.h; sourceTree = "<group>"; };
 		49C31E891919000C005A8F28 /* glDistrictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glDistrictViewController.m; sourceTree = "<group>"; };
 		49C31E8B19190037005A8F28 /* glRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glRegisterViewController.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				49C31EA119198BDA005A8F28 /* glIntroViewController.m */,
 				FFD9C46C1928BCF800007267 /* glWijkInfoView.h */,
 				FFD9C46D1928BCF800007267 /* glWijkInfoView.m */,
+				3508ED691919C86C009E1512 /* glBlurView.h */,
+				3508ED6A1919C86C009E1512 /* glBlurView.m */,
 			);
 			path = GlasAanHuis;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				FFEBE5D818F299A700C8DD0B /* glAppDelegate.m in Sources */,
 				49C31E8A1919000C005A8F28 /* glDistrictViewController.m in Sources */,
 				49C31E9019190052005A8F28 /* glDistrictSelectViewController.m in Sources */,
+				3508ED6B1919C86C009E1512 /* glBlurView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

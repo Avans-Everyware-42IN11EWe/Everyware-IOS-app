@@ -9,6 +9,8 @@
 #import "glDistrictViewController.h"
 #import "glRegisterViewController.h"
 #import "glWijkInfoView.h"
+#import "glBlurView.h"
+#define kDKTableViewDefaultContentInset 0.0f
 
 @interface glDistrictViewController ()
 
@@ -53,6 +55,20 @@
     scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [scroller setScrollEnabled:YES];
     [scroller setContentSize:CGSizeMake(320,1800)];
+    //UIView *masterView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    //[scroller addSubview:scroller];
+    
+    glBlurView *backgroundView = [[glBlurView alloc] initWithFrame: self.view.bounds];
+    backgroundView.originalImage = [UIImage imageNamed:@"1979672_1451730748396471_1888089831_n.jpg"];
+    backgroundView.scrollView = scroller;
+    backgroundView.isGlassEffectOn = YES;
+    
+    
+    [self.view addSubview:backgroundView];
+    scroller.contentInset = UIEdgeInsetsMake(kDKTableViewDefaultContentInset, 0, 0, 0);
+    //self.tableView.contentInset = UIEdgeInsetsMake(kDKTableViewDefaultContentInset, 0, 0, 0);
+    
+    
     [self.view addSubview:scroller];
     
     //[scroller setScrollEnabled:YES];
@@ -66,8 +82,8 @@
     plainView.eindbaas = self;
     
     // Some hardcoded layout.
-    CGSize padding = (CGSize){ 22.0, 22.0 };
-    plainView.frame = (CGRect){padding.width, padding.height, plainView.frame.size};
+    //CGSize padding = (CGSize){ 22.0, 22.0 };
+   // plainView.frame = (CGRect){padding.width, padding.height, plainView.frame.size};
     
     // Add to the view hierarchy (thus retain).
     [scroller addSubview:plainView];
@@ -101,9 +117,11 @@
     movie = [[MPMoviePlayerController alloc] initWithContentURL:url];
     [movie.view setFrame:CGRectMake(0, 0, 260, 160)];
     
-       //[movie play];
+    //[movie play];
+    [movie prepareToPlay];
+    //[movie pause];
+    movie.shouldAutoplay = false;
     [ContMovie addSubview:movie.view];
-    
     [scroller addSubview:ContMovie];
     
     
