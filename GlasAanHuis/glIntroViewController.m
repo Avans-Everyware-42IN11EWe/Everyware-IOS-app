@@ -30,7 +30,7 @@
 	// Do any additional setup after loading the view, typically ]from a nib.
 }
 - (BOOL)shouldAutorotate{
-    if([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft ||[[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight)
+    if([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft)// ||[[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight
     {
         return YES;
     }
@@ -41,6 +41,11 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        objc_msgSend([UIDevice currentDevice], @selector(setOrientation:),    UIInterfaceOrientationLandscapeLeft );
+    }
+    
     NSString *filepath = [[NSBundle mainBundle] pathForResource:@"Comp2" ofType:@"mp4"];
     NSURL *fileURL = [NSURL fileURLWithPath:filepath];
     self.mc = [[MPMoviePlayerController alloc] initWithContentURL:fileURL];
