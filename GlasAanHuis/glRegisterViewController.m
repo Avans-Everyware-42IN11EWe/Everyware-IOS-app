@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.facbookLoginBTN.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,8 +51,30 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
+    NSLog(@"facebook result: %@", @"You're logged in as");
+//    [FBRequestConnection startForMeWithCompletionHandler:
+//    ^(FBRequestConnection *connection, id result, NSError *error)
+//    {
+//    NSLog(@"facebook result: %@", result);
+//    }];
+    NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
+    NSLog(@"facebook result: %@", fbAccessToken);
+    
+//    NSArray * result = [self registerUserFacbook:fbAccessToken];
+//    NSLog(@"%@", [ result valueForKey:@"user_id"]);
+//    NSString * userID = [ result valueForKey:@"user_id"];
+//    //[[_districts objectAtIndex:indexPath.row] valueForKey:@"name"];
+//    
+//    if (userID !=nil) {
+//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//        [defaults setValue:userID forKey:@"userID"];
+//        [defaults setValue:_districtID forKeyPath:@"districtID"];
+//        [defaults synchronize];
+//        [self performSegueWithIdentifier:@"start" sender:self];
+//    }
 
-
+}
 // Handle possible errors that can occur during login
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
     NSString *alertMessage, *alertTitle;
@@ -112,7 +134,7 @@
 }
 -(NSArray*)registerUser
 {
-    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",_nameTV.text,@"name",@"lat",@"latlong",@"dis",@"district_id", nil];
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",_nameTV.text,@"name",@"lat",@"latlong",@"1",@"district_id", nil];
     NSError *postError;
     NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
     
@@ -131,43 +153,26 @@
     }
     return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 }
-
-- (IBAction)rommel:(id)sender {
-//    [FBRequestConnection startForMeWithCompletionHandler:
-//     ^(FBRequestConnection *connection, id result, NSError *error)
-//     {
-//         NSLog(@"facebook result: %@", result);
-//     }];
-//    NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
-//    
-//    NSLog(@"facebook result: %@", fbAccessToken);
+-(NSArray *)registerUserFacbook:(NSString*)token
+{
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:token,@"access_token",@"1",@"district_id", nil];
+    NSError *postError;
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
     
+    NSURL *url = [NSURL URLWithString:@"http://glas.mycel.nl/facebook"];
+    NSMutableURLRequest *req =[NSMutableURLRequest requestWithURL:url];
     
+    req.HTTPMethod=@"POST";
+    [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [req setHTTPBody:postdata];
     
-    // If the session state is any of the two "open" states when the button is clicked
-//    if (FBSession.activeSession.state == FBSessionStateOpen
-//        || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
-//        
-//        // Close the session and remove the access token from the cache
-//        // The session state handler (in the app delegate) will be called automatically
-//        [FBSession.activeSession closeAndClearTokenInformation];
-//        
-//        // If the session state is not any of the two "open" states when the button is clicked
-//    } else {
-//        // Open a session showing the user the login UI
-//        // You must ALWAYS ask for public_profile permissions when opening a session
-//        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
-//                                           allowLoginUI:YES
-//                                      completionHandler:
-//         ^(FBSession *session, FBSessionState state, NSError *error) {
-//             
-//             // Retrieve the app delegate
-//             AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-//             // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
-//             [appDelegate sessionStateChanged:session state:state error:error];
-//         }];
-//    }
+    NSData *data;
+    NSURLResponse *response = nil;
+    data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:nil];
+    if (data == nil) {
+        return [[NSArray alloc]init];
+    }
+    return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 }
-
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "glIntroViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface glIntroViewController ()
 
@@ -26,7 +27,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	// Do any additional setup after loading the view, typically ]from a nib.
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"Comp2" ofType:@"mp4"];
+    NSURL *fileURL = [NSURL fileURLWithPath:filepath];
+    self.mc = [[MPMoviePlayerController alloc] initWithContentURL:fileURL];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(introMovieFinished:)
+                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+                                               object:self.mc];
+    
+    // Hide the video controls from the user
+    [self.mc setControlStyle:MPMovieControlStyleNone];
+
+    [self.mc prepareToPlay];
+    [self.mc.view setFrame: self.view.bounds];
+    [self.view addSubview:self.mc.view];
+    
+    
+    
+    [self.mc play];
+}
+
+- (void)introMovieFinished:(NSNotification *)notification
+{
+    NSLog(@"Video ended!");
+    [self performSegueWithIdentifier:@"gostart" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,7 +65,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 /*
 #pragma mark - Navigation
 

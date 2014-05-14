@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface glIntroViewController : UIViewController
+
+@property (nonatomic, strong) MPMoviePlayerController *mc;
 
 @end

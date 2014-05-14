@@ -20,8 +20,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *doneBTN;
 - (IBAction)loginBTN:(id)sender;
 -(NSArray *)registerUser;
-
-- (IBAction)rommel:(id)sender;
-
+@property (strong, nonatomic) IBOutlet FBLoginView *facbookLoginBTN;
+-(NSArray *)registerUserFacbook:(NSString*)token;
 
 @end

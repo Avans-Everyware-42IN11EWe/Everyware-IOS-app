@@ -30,7 +30,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+//    NSDictionary *jsonDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"2.123",@"distance",@"2",@"id",@"Den Bosch Centrum",@"name",@"0.4",@"percentage",@"unknown",@"status", nil];
+//    _selectedDistrict = [NSJSONSerialization dataWithJSONObject:jsonDictionary options:NSJSONWritingPrettyPrinted error:nil];
+//    NSLog( @"selectedDistrict: %@", _selectedDistrict);
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {
