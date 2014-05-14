@@ -12,5 +12,7 @@
 @interface glIntroViewController : UIViewController
 
 @property (nonatomic, strong) MPMoviePlayerController *mc;
+@property (weak, nonatomic) IBOutlet UIView *videoView;
+- (IBAction)goToStart:(id)sender;
 
 @end

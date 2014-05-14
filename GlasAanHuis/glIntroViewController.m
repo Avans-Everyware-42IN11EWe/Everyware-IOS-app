@@ -29,7 +29,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically ]from a nib.
 }
-
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // iPhone only
+    //if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
+    //    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+    
+    // iPad only
+    // iPhone only
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -44,12 +53,17 @@
     
     // Hide the video controls from the user
     [self.mc setControlStyle:MPMovieControlStyleNone];
+    
+    for(UIView* subV in self.mc.view.subviews) {
+        subV.backgroundColor = [UIColor clearColor];
+    }
+    self.mc.view.backgroundColor = [UIColor clearColor];
 
     [self.mc prepareToPlay];
-    [self.mc.view setFrame: self.view.bounds];
-    [self.view addSubview:self.mc.view];
+    [self.mc.view setFrame: self.videoView.bounds];
+    [self.videoView addSubview:self.mc.view];
     
-    
+
     
     [self.mc play];
 }
@@ -57,7 +71,11 @@
 - (void)introMovieFinished:(NSNotification *)notification
 {
     NSLog(@"Video ended!");
-    [self performSegueWithIdentifier:@"gostart" sender:self];
+    [self performSegueWithIdentifier:@"gotostart" sender:self];
+}
+- (IBAction)goToStart:(id)sender {
+    [self.mc stop];
+    [self performSegueWithIdentifier:@"gotostart" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,5 +93,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end
