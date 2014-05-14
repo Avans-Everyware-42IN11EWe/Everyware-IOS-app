@@ -29,17 +29,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically ]from a nib.
 }
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // iPhone only
-    //if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
-    //    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
-    
-    // iPad only
-    // iPhone only
-    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+- (BOOL)shouldAutorotate{
+    if([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft ||[[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight)
+    {
+        return YES;
+    }
+    else{
+        return NO;
+    }
 }
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];

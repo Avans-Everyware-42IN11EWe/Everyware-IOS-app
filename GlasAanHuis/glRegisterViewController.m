@@ -30,6 +30,7 @@
 {
     [super viewDidLoad];
     self.facbookLoginBTN.delegate = self;
+    self.facbookLoginBTN.readPermissions = @[@"public_profile", @"email"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,30 +52,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
-    NSLog(@"facebook result: %@", @"You're logged in as");
-//    [FBRequestConnection startForMeWithCompletionHandler:
-//    ^(FBRequestConnection *connection, id result, NSError *error)
-//    {
-//    NSLog(@"facebook result: %@", result);
-//    }];
-    NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
-    NSLog(@"facebook result: %@", fbAccessToken);
-    
-//    NSArray * result = [self registerUserFacbook:fbAccessToken];
-//    NSLog(@"%@", [ result valueForKey:@"user_id"]);
-//    NSString * userID = [ result valueForKey:@"user_id"];
-//    //[[_districts objectAtIndex:indexPath.row] valueForKey:@"name"];
-//    
-//    if (userID !=nil) {
-//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//        [defaults setValue:userID forKey:@"userID"];
-//        [defaults setValue:_districtID forKeyPath:@"districtID"];
-//        [defaults synchronize];
-//        [self performSegueWithIdentifier:@"start" sender:self];
-//    }
-
-}
 // Handle possible errors that can occur during login
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
     NSString *alertMessage, *alertTitle;
@@ -117,7 +94,6 @@
                           otherButtonTitles:nil] show];
     }
 }
-
 - (IBAction)loginBTN:(id)sender {
     NSArray * result = [self registerUser];
     NSLog(@"%@", [ result valueForKey:@"user_id"]);
@@ -132,6 +108,36 @@
         [self performSegueWithIdentifier:@"start" sender:self];
     }
 }
+
+- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
+    NSLog(@"facebook result: %@", @"You're logged in as");
+    [FBRequestConnection startForMeWithCompletionHandler:
+    ^(FBRequestConnection *connection, id result, NSError *error)
+    {
+    NSLog(@"facebook result: %@", result);
+    }];
+    NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
+    NSLog(@"facebook result: %@", fbAccessToken);
+    //
+    NSArray * result = [self registerUserFacbook:fbAccessToken];
+  
+    
+    NSString * userID = [ result valueForKey:@"user_id"];
+    NSLog(@"USERID!!!!%@", userID );
+    //[[_districts objectAtIndex:indexPath.row] valueForKey:@"name"];
+    
+    if (userID !=nil) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setValue:fbAccessToken forKey:@"userID"];
+        [defaults setValue:_districtID forKeyPath:@"districtID"];
+        [defaults synchronize];
+        [self performSegueWithIdentifier:@"start" sender:self];
+    }
+
+}
+
+
+
 -(NSArray*)registerUser
 {
     NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",_nameTV.text,@"name",@"lat",@"latlong",@"1",@"district_id", nil];
