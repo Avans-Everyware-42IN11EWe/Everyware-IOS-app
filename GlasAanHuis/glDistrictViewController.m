@@ -54,10 +54,10 @@
     //[scroller setContentSize:CGSizeMake(320,1800)];
     
     
-    //wijk = [[UIView alloc]initWithFrame:self.view.frame];
+    wijk = [[UIView alloc]initWithFrame:self.view.frame];
     
-    //[wijk setFrame:CGRectMake(0, 0, 320, 575)];
-    //[scroller addSubview:wijk];
+    [wijk setFrame:CGRectMake(0, 0, 320, 575)];
+    [scroller addSubview:wijk];
     
     
     //Hoofdplaatje
@@ -179,7 +179,7 @@
     [scroller addSubview:lblDeelname];
     
 
-    
+
 }
 
 - (void)didReceiveMemoryWarning
