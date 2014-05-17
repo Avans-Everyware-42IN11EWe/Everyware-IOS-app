@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"
             endingLineNumber = "128"
-            landmarkName = "-loginBTN:"
+            landmarkName = "-loginViewShowingLoggedInUser:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "129"
             endingLineNumber = "129"
-            landmarkName = "-loginBTN:"
+            landmarkName = "-loginViewShowingLoggedInUser:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
             endingLineNumber = "127"
-            landmarkName = "-loginBTN:"
+            landmarkName = "-loginViewShowingLoggedInUser:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GlasAanHuis/glDistrictViewController.h"
-            timestampString = "421104181.922339"
+            timestampString = "422059433.325402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "@interface glDistrictViewController"
             landmarkType = "2">
          </BreakpointContent>
@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
             endingLineNumber = "124"
-            landmarkName = "-loginBTN:"
+            landmarkName = "-loginViewShowingLoggedInUser:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

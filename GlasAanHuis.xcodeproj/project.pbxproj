@@ -17,6 +17,7 @@
 		49C31EA219198BDA005A8F28 /* glIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31EA119198BDA005A8F28 /* glIntroViewController.m */; };
 		49C31EA319198BDA005A8F28 /* glIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31EA119198BDA005A8F28 /* glIntroViewController.m */; };
 		49CBE6D4191A2C3200545777 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CBE6D3191A2C3200545777 /* MediaPlayer.framework */; };
+		49CBE6D519280B6500545777 /* glAppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = FFEBE5D618F299A700C8DD0B /* glAppDelegate.h */; };
 		FFCCE4561915605A000FB961 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCCE4551915605A000FB961 /* SWRevealViewController.m */; };
 		FFEBE5C818F299A700C8DD0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5C718F299A700C8DD0B /* Foundation.framework */; };
 		FFEBE5CA18F299A700C8DD0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5C918F299A700C8DD0B /* CoreGraphics.framework */; };
@@ -303,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CBE6D519280B6500545777 /* glAppDelegate.h in Sources */,
 				49C31EA219198BDA005A8F28 /* glIntroViewController.m in Sources */,
 				49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */,
 				FFEBE5DE18F299A700C8DD0B /* glViewController.m in Sources */,

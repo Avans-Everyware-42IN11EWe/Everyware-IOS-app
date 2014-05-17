@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="n1Q-XT-kBP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="n1Q-XT-kBP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -129,7 +129,7 @@
                         <viewControllerLayoutGuide type="bottom" id="k7F-p5-J15"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="R1y-e8-EEf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1500"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="test 5211" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQl-xj-aCo">
@@ -146,7 +146,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2Yy-tJ-8Ej">
-                                <rect key="frame" x="20" y="156" width="280" height="334"/>
+                                <rect key="frame" x="20" y="156" width="280" height="1266"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -189,11 +189,11 @@
                         <viewControllerLayoutGuide type="bottom" id="gI4-LF-b7P"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nFx-J6-VbJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1500"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U0g-kj-Rwa">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1500"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1979672_1451730748396471_1888089831_n" translatesAutoresizingMaskIntoConstraints="NO" id="GOi-f3-Q2N">
@@ -205,7 +205,7 @@
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uE0-5T-LTN">
-                                <rect key="frame" x="0.0" y="-3" width="320" height="575"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="575"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Martijn's glasvezelbuurt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="vYy-iP-6dR">
@@ -285,6 +285,10 @@
                                     </button>
                                 </subviews>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5kQ-Me-h6f">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1669"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" title="Fiberfunding" id="HUa-4A-Gmf">
@@ -306,13 +310,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="1500"/>
                     <connections>
+                        <outlet property="scroller" destination="5kQ-Me-h6f" id="qEd-fE-GGr"/>
+                        <outlet property="wijk" destination="uE0-5T-LTN" id="fvk-Yy-O3k"/>
                         <segue destination="IFi-Ub-ksy" kind="push" identifier="register" id="ACY-CQ-49C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajv-Tj-JyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3311" y="-27"/>
+            <point key="canvasLocation" x="3328" y="-38"/>
         </scene>
         <!--Gl Register View Controller-->
         <scene sceneID="910-nJ-XbL">
@@ -323,7 +331,7 @@
                         <viewControllerLayoutGuide type="bottom" id="XK3-rT-nYl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RuJ-cf-fwA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1500"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Registratie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMd-9a-BM2">
@@ -419,10 +427,10 @@
                         <viewControllerLayoutGuide type="bottom" id="gfY-fj-Bpd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5CF-IO-euP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1500"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rof-UM-LWT">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rof-UM-LWT">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -560,12 +568,18 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rof-UM-LWT" firstAttribute="top" secondItem="5CF-IO-euP" secondAttribute="top" id="QeD-FW-C5J"/>
+                            <constraint firstItem="gfY-fj-Bpd" firstAttribute="top" secondItem="rof-UM-LWT" secondAttribute="bottom" constant="932" id="eQU-4M-R3b"/>
+                            <constraint firstAttribute="trailing" secondItem="rof-UM-LWT" secondAttribute="trailing" id="uuu-g7-j3R"/>
+                            <constraint firstItem="rof-UM-LWT" firstAttribute="leading" secondItem="5CF-IO-euP" secondAttribute="leading" id="zIi-zo-3by"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OlK-Kf-muS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pb0-GY-O8B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3303" y="-755"/>
+            <point key="canvasLocation" x="2953" y="-1092"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mRj-i5-Z5L">
@@ -596,7 +610,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="UVM-LS-YKg" kind="relationship" relationship="rootViewController" id="B4y-Fc-WA1"/>
+                        <segue destination="UVM-LS-YKg" kind="relationship" relationship="rootViewController" id="xas-Y0-dXz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGz-gH-uqN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -614,7 +628,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="IAM-qr-1Ug"/>
+        <segue reference="xas-Y0-dXz"/>
         <segue reference="2gD-8E-VQs"/>
     </inferredMetricsTieBreakers>
 </document>
