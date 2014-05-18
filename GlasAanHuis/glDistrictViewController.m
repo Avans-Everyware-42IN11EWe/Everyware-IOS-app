@@ -28,6 +28,7 @@
     return self;
 }
 
+
 //- (void)viewDidLoad
 //{
 //    [super viewDidLoad];
@@ -61,7 +62,7 @@
     NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"WijkInfo" owner:nil options:nil];
     
     // Find the view among nib contents (not too hard assuming there is only one view in it).
-    glWijkInfoView *plainView = [nibContents lastObject];
+    glWijkInfoView *plainView = [nibContents firstObject];
     plainView.eindbaas = self;
     
     // Some hardcoded layout.
