@@ -194,7 +194,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Fiberfunding" id="HUa-4A-Gmf">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="refresh" id="BNT-mr-AkH">
+                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" style="plain" id="BNT-mr-AkH">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="tYO-yj-MUu">
