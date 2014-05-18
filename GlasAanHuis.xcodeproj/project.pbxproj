@@ -19,6 +19,8 @@
 		49CBE6D4191A2C3200545777 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CBE6D3191A2C3200545777 /* MediaPlayer.framework */; };
 		49CBE6D519280B6500545777 /* glAppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = FFEBE5D618F299A700C8DD0B /* glAppDelegate.h */; };
 		FFCCE4561915605A000FB961 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCCE4551915605A000FB961 /* SWRevealViewController.m */; };
+		FFD9C46B1928BA6A00007267 /* WijkInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD9C46A1928BA6A00007267 /* WijkInfo.xib */; };
+		FFD9C46E1928BCF800007267 /* glWijkInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD9C46D1928BCF800007267 /* glWijkInfoView.m */; };
 		FFEBE5C818F299A700C8DD0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5C718F299A700C8DD0B /* Foundation.framework */; };
 		FFEBE5CA18F299A700C8DD0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5C918F299A700C8DD0B /* CoreGraphics.framework */; };
 		FFEBE5CC18F299A700C8DD0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5CB18F299A700C8DD0B /* UIKit.framework */; };
@@ -61,6 +63,9 @@
 		49CBE6D3191A2C3200545777 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		FFCCE4541915605A000FB961 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		FFCCE4551915605A000FB961 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		FFD9C46A1928BA6A00007267 /* WijkInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WijkInfo.xib; sourceTree = "<group>"; };
+		FFD9C46C1928BCF800007267 /* glWijkInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glWijkInfoView.h; sourceTree = "<group>"; };
+		FFD9C46D1928BCF800007267 /* glWijkInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glWijkInfoView.m; sourceTree = "<group>"; };
 		FFEBE5C418F299A700C8DD0B /* GlasAanHuis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlasAanHuis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEBE5C718F299A700C8DD0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FFEBE5C918F299A700C8DD0B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +122,14 @@
 			name = Library;
 			sourceTree = "<group>";
 		};
+		FFD9C4691928BA4B00007267 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFD9C46A1928BA6A00007267 /* WijkInfo.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		FFEBE5BB18F299A700C8DD0B = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +165,7 @@
 		FFEBE5CD18F299A700C8DD0B /* GlasAanHuis */ = {
 			isa = PBXGroup;
 			children = (
+				FFD9C4691928BA4B00007267 /* Views */,
 				FFCD67711906EED900D05AA3 /* Library */,
 				FFEBE5D618F299A700C8DD0B /* glAppDelegate.h */,
 				FFEBE5D718F299A700C8DD0B /* glAppDelegate.m */,
@@ -170,6 +184,8 @@
 				49C31E92191915D5005A8F28 /* glStartViewController.m */,
 				49C31EA019198BDA005A8F28 /* glIntroViewController.h */,
 				49C31EA119198BDA005A8F28 /* glIntroViewController.m */,
+				FFD9C46C1928BCF800007267 /* glWijkInfoView.h */,
+				FFD9C46D1928BCF800007267 /* glWijkInfoView.m */,
 			);
 			path = GlasAanHuis;
 			sourceTree = "<group>";
@@ -283,6 +299,7 @@
 			files = (
 				FFEBE5E018F299A700C8DD0B /* Images.xcassets in Resources */,
 				49C31E9E19198B87005A8F28 /* Comp2.mp4 in Resources */,
+				FFD9C46B1928BA6A00007267 /* WijkInfo.xib in Resources */,
 				FFEBE5D218F299A700C8DD0B /* InfoPlist.strings in Resources */,
 				FFEBE5DB18F299A700C8DD0B /* Main.storyboard in Resources */,
 			);
@@ -305,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49CBE6D519280B6500545777 /* glAppDelegate.h in Sources */,
+				FFD9C46E1928BCF800007267 /* glWijkInfoView.m in Sources */,
 				49C31EA219198BDA005A8F28 /* glIntroViewController.m in Sources */,
 				49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */,
 				FFEBE5DE18F299A700C8DD0B /* glViewController.m in Sources */,

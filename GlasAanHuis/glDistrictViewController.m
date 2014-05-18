@@ -8,6 +8,8 @@
 
 #import "glDistrictViewController.h"
 #import "glRegisterViewController.h"
+#import "glWijkInfoView.h"
+
 @interface glDistrictViewController ()
 
 @end
@@ -41,6 +43,8 @@
     NSLog(@"view did appear");
 }
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -53,11 +57,24 @@
     //[scroller setScrollEnabled:YES];
     //[scroller setContentSize:CGSizeMake(320,1800)];
     
+    // Instantiate the nib content without any reference to it.
+    NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"WijkInfo" owner:nil options:nil];
     
-    wijk = [[UIView alloc]initWithFrame:self.view.frame];
+    // Find the view among nib contents (not too hard assuming there is only one view in it).
+    glWijkInfoView *plainView = [nibContents lastObject];
+    plainView.eindbaas = self;
     
-    [wijk setFrame:CGRectMake(0, 0, 320, 575)];
-    [scroller addSubview:wijk];
+    // Some hardcoded layout.
+    CGSize padding = (CGSize){ 22.0, 22.0 };
+    plainView.frame = (CGRect){padding.width, padding.height, plainView.frame.size};
+    
+    // Add to the view hierarchy (thus retain).
+    [scroller addSubview:plainView];
+    
+//    wijk = [[UIView alloc]initWithFrame:self.view.frame];
+    
+//    [wijk setFrame:CGRectMake(0, 0, 320, 575)];
+//    [scroller addSubview:wijk];
     
     
     //Hoofdplaatje
@@ -205,6 +222,12 @@
 - (IBAction)goToRegister:(id)sender {
     //if(_selectedDistrict != nil){
         [self performSegueWithIdentifier:@"register" sender:self];
+    //}
+}
+
+- (IBAction)goToAndereWijk:(id)sender {
+    //if(_selectedDistrict != nil){
+    [self performSegueWithIdentifier:@"anders" sender:self];
     //}
 }
 @end

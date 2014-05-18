@@ -46,5 +46,7 @@
 
 - (IBAction)goToRegister:(id)sender;
 
+- (IBAction)goToAndereWijk:(id)sender;
+
 
 @end
