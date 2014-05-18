@@ -4,11 +4,14 @@
 //
 //  Created by leroy on 06/05/14.
 //  Copyright (c) 2014 GlasAanHuis. All rights reserved.
-//
+///Users/leon/Everyware-IOS-app/GlasAanHuis/WijkInfo.xib
 
 #import "glDistrictViewController.h"
 #import "glRegisterViewController.h"
 #import "glWijkInfoView.h"
+#import "glBlurView.h"
+#import "SWRevealViewController.h"
+#define kDKTableViewDefaultContentInset 0.0f
 
 @interface glDistrictViewController ()
 
@@ -18,6 +21,10 @@
 -(void)setSelectedDistrict:(NSJSONSerialization *)selectedDistrict
 {
     _selectedDistrict = selectedDistrict;
+}
+
+- (IBAction)showWelcome:(id)sender {
+    [MTPopupWindow showWindowWithHTMLFile:@"info.html" insideView:self.view];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,6 +60,20 @@
     scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [scroller setScrollEnabled:YES];
     [scroller setContentSize:CGSizeMake(320,1800)];
+    //UIView *masterView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    //[scroller addSubview:scroller];
+    
+    glBlurView *backgroundView = [[glBlurView alloc] initWithFrame: self.view.bounds];
+    backgroundView.originalImage = [UIImage imageNamed:@"1979672_1451730748396471_1888089831_n.jpg"];
+    backgroundView.scrollView = scroller;
+    backgroundView.isGlassEffectOn = YES;
+    
+    
+    [self.view addSubview:backgroundView];
+    scroller.contentInset = UIEdgeInsetsMake(kDKTableViewDefaultContentInset, 0, 0, 0);
+    //self.tableView.contentInset = UIEdgeInsetsMake(kDKTableViewDefaultContentInset, 0, 0, 0);
+    
+    
     [self.view addSubview:scroller];
     
     //[scroller setScrollEnabled:YES];
@@ -66,8 +87,8 @@
     plainView.eindbaas = self;
     
     // Some hardcoded layout.
-    CGSize padding = (CGSize){ 22.0, 22.0 };
-    plainView.frame = (CGRect){padding.width, padding.height, plainView.frame.size};
+    //CGSize padding = (CGSize){ 22.0, 22.0 };
+   // plainView.frame = (CGRect){padding.width, padding.height, plainView.frame.size};
     
     // Add to the view hierarchy (thus retain).
     [scroller addSubview:plainView];
@@ -101,9 +122,11 @@
     movie = [[MPMoviePlayerController alloc] initWithContentURL:url];
     [movie.view setFrame:CGRectMake(0, 0, 260, 160)];
     
-       //[movie play];
+    //[movie play];
+    [movie prepareToPlay];
+    //[movie pause];
+    movie.shouldAutoplay = false;
     [ContMovie addSubview:movie.view];
-    
     [scroller addSubview:ContMovie];
     
     
@@ -196,7 +219,15 @@
     lblDeelname.text = @"55%";
     [scroller addSubview:lblDeelname];
     
-
+    // Change button color
+    _sideBarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
+    
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    _sideBarButton.target = self.revealViewController;
+    _sideBarButton.action = @selector(revealToggle:);
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
 }
 
@@ -218,8 +249,6 @@
         [segue.destinationViewController setDistrictID:@"testid"];
     }
 }
-
-
 - (IBAction)goToRegister:(id)sender {
     //if(_selectedDistrict != nil){
         [self performSegueWithIdentifier:@"register" sender:self];

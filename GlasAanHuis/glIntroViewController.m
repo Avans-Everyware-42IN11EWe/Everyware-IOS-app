@@ -74,6 +74,7 @@
 - (void)introMovieFinished:(NSNotification *)notification
 {
     NSLog(@"Video ended!");
+    [self.mc stop];
     [self performSegueWithIdentifier:@"gotostart" sender:self];
 }
 - (IBAction)goToStart:(id)sender {

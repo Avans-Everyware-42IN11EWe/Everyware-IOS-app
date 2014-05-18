@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <MapKit/MapKit.h>
+#import "MTPopupWindow.h"
 
 @interface glDistrictViewController : UIViewController <UIScrollViewDelegate>{
     IBOutlet UIScrollView *scroller;
@@ -41,8 +42,10 @@
     IBOutlet UIButton *btnForum;
 }
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 @property (strong, nonatomic) NSJSONSerialization *selectedDistrict;
 - (void)setSelectedDistrict:(NSJSONSerialization *)selectedDistrict;
+- (IBAction)showWelcome:(id)sender;
 
 - (IBAction)goToRegister:(id)sender;
 
