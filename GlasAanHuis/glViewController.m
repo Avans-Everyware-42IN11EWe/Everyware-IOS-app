@@ -21,10 +21,18 @@
     
 //    UIColor * color = [UIColor colorWithRed:255/255.0f green:225/255.0f blue:131/255.0f alpha:1.0f];
 //    [self.navigationController.navigationBar setBarTintColor:color];
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    //[self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
 }
-
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"userID"]!=nil) {
+        [self performSegueWithIdentifier:@"login" sender:self];
+    }else{
+        [self performSegueWithIdentifier:@"notlogin" sender:self];
+    }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
