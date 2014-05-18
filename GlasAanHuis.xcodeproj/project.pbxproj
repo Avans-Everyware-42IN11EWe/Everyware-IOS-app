@@ -28,7 +28,6 @@
 		FFEBE5D418F299A700C8DD0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEBE5D318F299A700C8DD0B /* main.m */; };
 		FFEBE5D818F299A700C8DD0B /* glAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEBE5D718F299A700C8DD0B /* glAppDelegate.m */; };
 		FFEBE5DB18F299A700C8DD0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEBE5D918F299A700C8DD0B /* Main.storyboard */; };
-		FFEBE5DE18F299A700C8DD0B /* glViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEBE5DD18F299A700C8DD0B /* glViewController.m */; };
 		FFEBE5E018F299A700C8DD0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEBE5DF18F299A700C8DD0B /* Images.xcassets */; };
 		FFEBE5E718F299A700C8DD0B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5E618F299A700C8DD0B /* XCTest.framework */; };
 		FFEBE5E818F299A700C8DD0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEBE5C718F299A700C8DD0B /* Foundation.framework */; };
@@ -77,8 +76,6 @@
 		FFEBE5D618F299A700C8DD0B /* glAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glAppDelegate.h; sourceTree = "<group>"; };
 		FFEBE5D718F299A700C8DD0B /* glAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = glAppDelegate.m; sourceTree = "<group>"; };
 		FFEBE5DA18F299A700C8DD0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FFEBE5DC18F299A700C8DD0B /* glViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glViewController.h; sourceTree = "<group>"; };
-		FFEBE5DD18F299A700C8DD0B /* glViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = glViewController.m; sourceTree = "<group>"; };
 		FFEBE5DF18F299A700C8DD0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FFEBE5E518F299A700C8DD0B /* GlasAanHuisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlasAanHuisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEBE5E618F299A700C8DD0B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -170,8 +167,6 @@
 				FFEBE5D618F299A700C8DD0B /* glAppDelegate.h */,
 				FFEBE5D718F299A700C8DD0B /* glAppDelegate.m */,
 				FFEBE5D918F299A700C8DD0B /* Main.storyboard */,
-				FFEBE5DC18F299A700C8DD0B /* glViewController.h */,
-				FFEBE5DD18F299A700C8DD0B /* glViewController.m */,
 				FFEBE5DF18F299A700C8DD0B /* Images.xcassets */,
 				FFEBE5CE18F299A700C8DD0B /* Supporting Files */,
 				49C31E881919000C005A8F28 /* glDistrictViewController.h */,
@@ -325,7 +320,6 @@
 				FFD9C46E1928BCF800007267 /* glWijkInfoView.m in Sources */,
 				49C31EA219198BDA005A8F28 /* glIntroViewController.m in Sources */,
 				49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */,
-				FFEBE5DE18F299A700C8DD0B /* glViewController.m in Sources */,
 				49C31E93191915D5005A8F28 /* glStartViewController.m in Sources */,
 				FFEBE5D418F299A700C8DD0B /* main.m in Sources */,
 				FFCCE4561915605A000FB961 /* SWRevealViewController.m in Sources */,
