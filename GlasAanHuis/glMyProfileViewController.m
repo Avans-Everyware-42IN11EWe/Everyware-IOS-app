@@ -7,7 +7,7 @@
 //
 
 #import "glMyProfileViewController.h"
-
+#import "SWRevealViewController.h"
 @interface glMyProfileViewController ()
 
 @end
@@ -27,6 +27,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _sideBarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
+    
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    _sideBarButton.target = self.revealViewController;
+    _sideBarButton.action = @selector(revealToggle:);
+    
 }
 
 - (void)didReceiveMemoryWarning

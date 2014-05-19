@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface glForumViewController : UIViewController
+@interface glForumViewController : UITableViewController
 
 @end
+
+

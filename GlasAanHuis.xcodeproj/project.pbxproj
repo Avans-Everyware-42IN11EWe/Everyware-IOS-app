@@ -192,6 +192,13 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
+		43DACDEA192A1DE30039525D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		FFCD67711906EED900D05AA3 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +256,7 @@
 		FFEBE5CD18F299A700C8DD0B /* GlasAanHuis */ = {
 			isa = PBXGroup;
 			children = (
+				43DACDEA192A1DE30039525D /* Models */,
 				35D042C6191A2209008D3679 /* ViewController */,
 				35D042B2191A14FE008D3679 /* MTPopupWindow */,
 				35D0427E191A0BBE008D3679 /* SideBar */,
