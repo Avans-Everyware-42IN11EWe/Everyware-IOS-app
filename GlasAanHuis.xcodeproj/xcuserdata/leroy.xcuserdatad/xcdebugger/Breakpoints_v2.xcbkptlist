@@ -54,7 +54,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GlasAanHuis/glDistrictViewController.h"
@@ -63,8 +63,38 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "@interface glDistrictViewController"
-            landmarkType = "2">
+            landmarkName = "districts"
+            landmarkType = "19">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[glDistrictViewController districts]"
+                  moduleName = "GlasAanHuis"
+                  urlString = "file:///Users/leroy/Desktop/ProjectGlas/GlasAanHuis/glDistrictViewController.h"
+                  timestampString = "422400084.900396"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[glDistrictViewController setDistricts:]"
+                  moduleName = "GlasAanHuis"
+                  urlString = "file:///Users/leroy/Desktop/ProjectGlas/GlasAanHuis/glDistrictViewController.h"
+                  timestampString = "422400084.90074"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -112,6 +142,22 @@
             startingLineNumber = "53"
             endingLineNumber = "53"
             landmarkName = "-viewDidAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GlasAanHuis/glDistrictViewController.m"
+            timestampString = "422400721.358592"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
+            landmarkName = "-setDistrictView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

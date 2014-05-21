@@ -334,7 +334,7 @@ glWijkInfoView *plainView;
     NSJSONSerialization *district =[self getDistrict:index];
     
     plainView.wijkName.text = [district valueForKey:@"name"];
-    plainView.wijkPercent.text = [NSString stringWithFormat:@"%@%@",[[district valueForKey:@"percentage"]stringValue],@"%"];
+    plainView.wijkPercent.text = [NSString stringWithFormat:@"%g%@",[[district valueForKey:@"percentage"] doubleValue]*100,@"%"];
     plainView.wijkDeelnemers.text = [[district valueForKey:@"participants"]stringValue];
     
 }
