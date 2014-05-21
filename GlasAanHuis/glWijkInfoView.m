@@ -37,9 +37,14 @@
 }
 
 - (IBAction)goToDistrictPage:(id)sender {
-    NSURL *url = [NSURL URLWithString:@"fb://profile/1450066045229608"];
-    if ([[UIApplication sharedApplication]canOpenURL:url]) {
-        [[UIApplication sharedApplication]openURL:url];
+    NSURL *fanPageURL = [NSURL URLWithString:@"fb://profile/1450066045229608"];
+    
+    if (![[UIApplication sharedApplication] canOpenURL:fanPageURL])
+    {
+        fanPageURL =   [ NSURL URLWithString:@"https://www.facebook.com/glasvezelpaleiskwartier"];
+    }else
+    {
+        [[UIApplication sharedApplication] openURL:fanPageURL];
     }
 }
 @end

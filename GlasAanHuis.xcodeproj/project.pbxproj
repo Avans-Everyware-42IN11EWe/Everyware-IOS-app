@@ -17,6 +17,8 @@
 		35D042C9191A4288008D3679 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042C8191A4288008D3679 /* SidebarViewController.m */; };
 		35D042CC191A42D3008D3679 /* MTPopupWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042CB191A42D3008D3679 /* MTPopupWindow.m */; };
 		35D042CE191A42E8008D3679 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = 35D042CD191A42E8008D3679 /* info.html */; };
+		43D07FE2192CA45800F22139 /* glVideoRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FE1192CA45800F22139 /* glVideoRecordViewController.m */; };
+		43D07FE5192CB05C00F22139 /* glVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FE4192CB05C00F22139 /* glVideoPlayViewController.m */; };
 		49C31E8A1919000C005A8F28 /* glDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E891919000C005A8F28 /* glDistrictViewController.m */; };
 		49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E8C19190037005A8F28 /* glRegisterViewController.m */; };
 		49C31E9019190052005A8F28 /* glDistrictSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E8F19190052005A8F28 /* glDistrictSelectViewController.m */; };
@@ -75,6 +77,10 @@
 		35D042CA191A42D3008D3679 /* MTPopupWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPopupWindow.h; sourceTree = "<group>"; };
 		35D042CB191A42D3008D3679 /* MTPopupWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPopupWindow.m; sourceTree = "<group>"; };
 		35D042CD191A42E8008D3679 /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = info.html; sourceTree = "<group>"; };
+		43D07FE0192CA45800F22139 /* glVideoRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glVideoRecordViewController.h; sourceTree = "<group>"; };
+		43D07FE1192CA45800F22139 /* glVideoRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glVideoRecordViewController.m; sourceTree = "<group>"; };
+		43D07FE3192CB05C00F22139 /* glVideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glVideoPlayViewController.h; sourceTree = "<group>"; };
+		43D07FE4192CB05C00F22139 /* glVideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glVideoPlayViewController.m; sourceTree = "<group>"; };
 		49C31E881919000C005A8F28 /* glDistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glDistrictViewController.h; sourceTree = "<group>"; };
 		49C31E891919000C005A8F28 /* glDistrictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glDistrictViewController.m; sourceTree = "<group>"; };
 		49C31E8B19190037005A8F28 /* glRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glRegisterViewController.h; sourceTree = "<group>"; };
@@ -188,6 +194,10 @@
 				35D042C0191A21E9008D3679 /* glFaqViewController.m */,
 				35D042C2191A21F3008D3679 /* glForumViewController.h */,
 				35D042C3191A21F3008D3679 /* glForumViewController.m */,
+				43D07FE0192CA45800F22139 /* glVideoRecordViewController.h */,
+				43D07FE1192CA45800F22139 /* glVideoRecordViewController.m */,
+				43D07FE3192CB05C00F22139 /* glVideoPlayViewController.h */,
+				43D07FE4192CB05C00F22139 /* glVideoPlayViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -411,7 +421,9 @@
 				49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */,
 				35D042C9191A4288008D3679 /* SidebarViewController.m in Sources */,
 				49C31E93191915D5005A8F28 /* glStartViewController.m in Sources */,
+				43D07FE2192CA45800F22139 /* glVideoRecordViewController.m in Sources */,
 				35D042CC191A42D3008D3679 /* MTPopupWindow.m in Sources */,
+				43D07FE5192CB05C00F22139 /* glVideoPlayViewController.m in Sources */,
 				35D042BE191A1F73008D3679 /* glVideoUploadViewController.m in Sources */,
 				FFEBE5D418F299A700C8DD0B /* main.m in Sources */,
 				3508ED6E1919DE07009E1512 /* glPictureViewController.m in Sources */,
