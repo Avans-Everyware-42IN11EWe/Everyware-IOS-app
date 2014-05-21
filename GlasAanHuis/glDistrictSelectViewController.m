@@ -66,10 +66,11 @@
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.districts = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
             
-            [self.districtTABLE reloadData];
+            //[self.districtTABLE reloadData];
         }];
         
-    }];}
+    }];
+}
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];

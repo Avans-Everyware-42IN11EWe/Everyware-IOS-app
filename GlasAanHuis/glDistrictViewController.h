@@ -11,6 +11,7 @@
 #import <MapKit/MapKit.h>
 #import "MTPopupWindow.h"
 
+
 @interface glDistrictViewController : UIViewController <UIScrollViewDelegate>{
     IBOutlet UIScrollView *scroller;
     IBOutlet UIView *wijk;
@@ -40,16 +41,15 @@
     
     IBOutlet UIButton *btnFaq;
     IBOutlet UIButton *btnForum;
+    
+    NSInteger currentDistrict;
 }
-
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 @property (strong, nonatomic) NSJSONSerialization *selectedDistrict;
 - (void)setSelectedDistrict:(NSJSONSerialization *)selectedDistrict;
+@property (strong, nonatomic)NSMutableArray *districts;
 - (IBAction)showWelcome:(id)sender;
-
 - (IBAction)goToRegister:(id)sender;
-
 - (IBAction)goToAndereWijk:(id)sender;
-
-
 @end
+

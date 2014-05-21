@@ -8,9 +8,9 @@
 
 #import "glDistrictViewController.h"
 #import "glRegisterViewController.h"
-#import "glWijkInfoView.h"
 #import "glBlurView.h"
 #import "SWRevealViewController.h"
+#import "glWijkInfoView.h"
 #define kDKTableViewDefaultContentInset 0.0f
 
 @interface glDistrictViewController ()
@@ -18,6 +18,8 @@
 @end
 
 @implementation glDistrictViewController
+
+glWijkInfoView *plainView;
 -(void)setSelectedDistrict:(NSJSONSerialization *)selectedDistrict
 {
     _selectedDistrict = selectedDistrict;
@@ -48,7 +50,6 @@
 //}
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSLog(@"view did appear");
 }
 
 
@@ -63,6 +64,14 @@
     [animation setTimingFunction:
      [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     [scroller.layer addAnimation:animation forKey:kCATransition];
+    
+    
+    currentDistrict++;
+    if(currentDistrict >= [self.districts count]){
+        currentDistrict = 0;
+    }
+    
+    [self setDistrictView:[self.districts[currentDistrict] valueForKey:@"id"]];
 }
 
 - (void)oneFingerSwipeRight:(UITapGestureRecognizer *)recognizer {
@@ -75,6 +84,14 @@
     [animation setTimingFunction:
      [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     [scroller.layer addAnimation:animation forKey:kCATransition];
+    
+    if(currentDistrict -1 < 0){
+        currentDistrict = [self.districts count]-1;
+    }else{
+        currentDistrict--;
+    }
+    
+    [self setDistrictView:[self.districts[currentDistrict] valueForKey:@"id"]];
 }
 
 - (void)viewDidLoad
@@ -127,7 +144,7 @@
     NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"WijkInfo" owner:nil options:nil];
     
     // Find the view among nib contents (not too hard assuming there is only one view in it).
-    glWijkInfoView *plainView = [nibContents firstObject];
+    plainView = [nibContents firstObject];
     plainView.eindbaas = self;
     
     // Some hardcoded layout.
@@ -272,6 +289,13 @@
     
     // Set the gesture
     //[self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    [self getDistricts];
+    
+    NSLog(@"%@",self.districts);
+   
+    currentDistrict = 0;
+    [self setDistrictView:[self.districts[0] valueForKey:@"id"]];
 
 }
 
@@ -304,4 +328,88 @@
     [self performSegueWithIdentifier:@"anders" sender:self];
     //}
 }
+-(void)setDistrictView:(NSInteger)index
+{
+    
+    NSJSONSerialization *district =[self getDistrict:index];
+    
+    plainView.wijkName.text = [district valueForKey:@"name"];
+    plainView.wijkPercent.text = [NSString stringWithFormat:@"%@%@",[[district valueForKey:@"percentage"]stringValue],@"%"];
+    plainView.wijkDeelnemers.text = [[district valueForKey:@"participants"]stringValue];
+    
+}
+-(void)getDistricts
+{
+    //NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",_nameTV.text,@"name",@"lat",@"latlong",@"1",@"district_id", nil];
+    //NSError *postError;
+    //NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
+    
+    NSURL *url = [NSURL URLWithString:@"http://glas.mycel.nl/districts?lat=51.983333&long=5.916667"];
+    NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
+    req.HTTPMethod = @"GET";
+    //[req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    //[req setHTTPBody:postdata];
+    
+//    NSOperationQueue* queue = [[NSOperationQueue alloc] init];
+//    queue.name = @"eennaam";
+//    
+//    [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//        if(connectionError != nil) {
+//            // doe iets met url
+//        }
+//        
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            self.districts = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
+//        }];
+//        
+//    }];
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+    self.districts = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
+    if (error == nil)
+    {
+        
+    }
+}
+-(NSJSONSerialization*)getDistrict:(NSInteger)wijkId
+{
+    //NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",_nameTV.text,@"name",@"lat",@"latlong",@"1",@"district_id", nil];
+    //NSError *postError;
+    //NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/district?id=%@",wijkId];
+    NSString *urlstring = [NSString stringWithFormat:path];
+    
+    NSURL *url = [NSURL URLWithString:urlstring];
+    NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
+    req.HTTPMethod = @"GET";
+    //[req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    //[req setHTTPBody:postdata];
+    
+    //    NSOperationQueue* queue = [[NSOperationQueue alloc] init];
+    //    queue.name = @"eennaam";
+    //
+    //    [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    //        if(connectionError != nil) {
+    //            // doe iets met url
+    //        }
+    //
+    //        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+    //            self.districts = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
+    //        }];
+    //
+    //    }];
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+    NSJSONSerialization *district = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
+    
+    if (error == nil)
+    {
+        
+    }
+    NSLog(@"%@",district);
+    return district;
+}
+
 @end

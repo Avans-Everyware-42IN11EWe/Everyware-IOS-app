@@ -10,5 +10,8 @@
 #import "glDistrictViewController.h"
 
 @interface glWijkInfoView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *wijkName;
+@property (weak, nonatomic) IBOutlet UILabel *wijkPercent;
+@property (weak, nonatomic) IBOutlet UILabel *wijkDeelnemers;
 @property glDistrictViewController *eindbaas;
 @end
