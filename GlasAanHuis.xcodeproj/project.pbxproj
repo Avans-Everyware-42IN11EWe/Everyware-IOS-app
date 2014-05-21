@@ -19,6 +19,8 @@
 		35D042CE191A42E8008D3679 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = 35D042CD191A42E8008D3679 /* info.html */; };
 		43D07FE2192CA45800F22139 /* glVideoRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FE1192CA45800F22139 /* glVideoRecordViewController.m */; };
 		43D07FE5192CB05C00F22139 /* glVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FE4192CB05C00F22139 /* glVideoPlayViewController.m */; };
+		43D07FEB192CDD1B00F22139 /* glBuddyChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FEA192CDD1B00F22139 /* glBuddyChatTableViewController.m */; };
+		43D07FEE192CDE6F00F22139 /* glBuddyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FED192CDE6F00F22139 /* glBuddyDetailViewController.m */; };
 		49C31E8A1919000C005A8F28 /* glDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E891919000C005A8F28 /* glDistrictViewController.m */; };
 		49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E8C19190037005A8F28 /* glRegisterViewController.m */; };
 		49C31E9019190052005A8F28 /* glDistrictSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E8F19190052005A8F28 /* glDistrictSelectViewController.m */; };
@@ -81,6 +83,10 @@
 		43D07FE1192CA45800F22139 /* glVideoRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glVideoRecordViewController.m; sourceTree = "<group>"; };
 		43D07FE3192CB05C00F22139 /* glVideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glVideoPlayViewController.h; sourceTree = "<group>"; };
 		43D07FE4192CB05C00F22139 /* glVideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glVideoPlayViewController.m; sourceTree = "<group>"; };
+		43D07FE9192CDD1B00F22139 /* glBuddyChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glBuddyChatTableViewController.h; sourceTree = "<group>"; };
+		43D07FEA192CDD1B00F22139 /* glBuddyChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glBuddyChatTableViewController.m; sourceTree = "<group>"; };
+		43D07FEC192CDE6F00F22139 /* glBuddyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glBuddyDetailViewController.h; sourceTree = "<group>"; };
+		43D07FED192CDE6F00F22139 /* glBuddyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glBuddyDetailViewController.m; sourceTree = "<group>"; };
 		49C31E881919000C005A8F28 /* glDistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glDistrictViewController.h; sourceTree = "<group>"; };
 		49C31E891919000C005A8F28 /* glDistrictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glDistrictViewController.m; sourceTree = "<group>"; };
 		49C31E8B19190037005A8F28 /* glRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glRegisterViewController.h; sourceTree = "<group>"; };
@@ -198,6 +204,10 @@
 				43D07FE1192CA45800F22139 /* glVideoRecordViewController.m */,
 				43D07FE3192CB05C00F22139 /* glVideoPlayViewController.h */,
 				43D07FE4192CB05C00F22139 /* glVideoPlayViewController.m */,
+				43D07FE9192CDD1B00F22139 /* glBuddyChatTableViewController.h */,
+				43D07FEA192CDD1B00F22139 /* glBuddyChatTableViewController.m */,
+				43D07FEC192CDE6F00F22139 /* glBuddyDetailViewController.h */,
+				43D07FED192CDE6F00F22139 /* glBuddyDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -417,6 +427,7 @@
 				49CBE6D519280B6500545777 /* glAppDelegate.h in Sources */,
 				FFD9C46E1928BCF800007267 /* glWijkInfoView.m in Sources */,
 				49C31EA219198BDA005A8F28 /* glIntroViewController.m in Sources */,
+				43D07FEE192CDE6F00F22139 /* glBuddyDetailViewController.m in Sources */,
 				35D042C4191A21F3008D3679 /* glForumViewController.m in Sources */,
 				49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */,
 				35D042C9191A4288008D3679 /* SidebarViewController.m in Sources */,
@@ -426,6 +437,7 @@
 				43D07FE5192CB05C00F22139 /* glVideoPlayViewController.m in Sources */,
 				35D042BE191A1F73008D3679 /* glVideoUploadViewController.m in Sources */,
 				FFEBE5D418F299A700C8DD0B /* main.m in Sources */,
+				43D07FEB192CDD1B00F22139 /* glBuddyChatTableViewController.m in Sources */,
 				3508ED6E1919DE07009E1512 /* glPictureViewController.m in Sources */,
 				FFCCE4561915605A000FB961 /* SWRevealViewController.m in Sources */,
 				FFEBE5D818F299A700C8DD0B /* glAppDelegate.m in Sources */,
