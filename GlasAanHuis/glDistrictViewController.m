@@ -201,6 +201,7 @@ glWijkInfoView *plainView;
     progGoedeDoel = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 120, 220, 20)];
     progGoedeDoel.progressViewStyle = UIProgressViewStyleBar;
     progGoedeDoel.progress = 0.3;
+    progGoedeDoel.progressTintColor = [UIColor greenColor];
     lblGoedeDoel = [[UILabel alloc]initWithFrame:CGRectMake(10, 20, 150, 30)];
     lblGoedeDoel.text = @"Goede doelen";
     [ContGoedeDoel setFrame:CGRectMake(30, 1080, 260, 160)];
@@ -232,18 +233,23 @@ glWijkInfoView *plainView;
     progStap1 = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 80, 220, 20)];
     progStap1.progressViewStyle = UIProgressViewStyleBar;
     progStap1.progress = 0.8;
+    progStap1.progressTintColor = [UIColor greenColor];
     progStap2 = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 120, 220, 20)];
     progStap2.progressViewStyle = UIProgressViewStyleBar;
     progStap2.progress = 0.5;
+    progStap2.progressTintColor = [UIColor greenColor];
     progStap3 = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 160, 220, 20)];
     progStap3.progressViewStyle = UIProgressViewStyleBar;
     progStap3.progress = 0.2;
+    progStap3.progressTintColor = [UIColor greenColor];
     progStap4 = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 200, 220, 20)];
     progStap4.progressViewStyle = UIProgressViewStyleBar;
     progStap4.progress = 0.1;
+    progStap4.progressTintColor = [UIColor greenColor];
     progStap5 = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 240, 220, 20)];
     progStap5.progressViewStyle = UIProgressViewStyleBar;
     progStap5.progress = 0.05;
+    progStap5.progressTintColor = [UIColor greenColor];
     [ContStappen setFrame:CGRectMake(30, 1250, 260, 260)];
     [ContStappen setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
     [ContStappen addSubview:lblStappen];
@@ -319,7 +325,8 @@ glWijkInfoView *plainView;
 }
 - (IBAction)goToRegister:(id)sender {
     //if(_selectedDistrict != nil){
-        [self performSegueWithIdentifier:@"register" sender:self];
+        //[self performSegueWithIdentifier:@"register" sender:self];
+    [self performSegueWithIdentifier:@"buddyDetail" sender:self];
     //}
 }
 

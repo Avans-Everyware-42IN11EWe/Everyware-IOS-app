@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MediaPlayer/MediaPlayer.h>
 @interface glBuddyDetailViewController : UIViewController
+@property (nonatomic, strong) MPMoviePlayerController *mc;
+@property (strong, nonatomic) IBOutlet UIView *movie;
 
 @end

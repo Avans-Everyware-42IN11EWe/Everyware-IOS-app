@@ -29,6 +29,28 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    /*_movie = [[UIView alloc]initWithFrame:self.view.frame];
+    [_movie setFrame:CGRectMake(30, 670, 260, 160)];
+    [_movie setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
+    
+     */
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Comp2" ofType:@"mp4"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    _mc = [[MPMoviePlayerController alloc] initWithContentURL:url];
+    [_mc.view setFrame:CGRectMake(0, 0, 260, 160)];
+    
+    
+    //[_movie play];
+    [_mc prepareToPlay];
+    //[movie pause];
+    _mc.shouldAutoplay = false;
+    [_movie addSubview:_mc.view];}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

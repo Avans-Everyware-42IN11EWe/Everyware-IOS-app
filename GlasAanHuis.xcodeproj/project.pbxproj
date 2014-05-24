@@ -10,6 +10,9 @@
 		3508ED6B1919C86C009E1512 /* glBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3508ED6A1919C86C009E1512 /* glBlurView.m */; };
 		3508ED6E1919DE07009E1512 /* glPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3508ED6D1919DE07009E1512 /* glPictureViewController.m */; };
 		3508ED701919E1FF009E1512 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3508ED6F1919E1FF009E1512 /* QuartzCore.framework */; };
+		359B2F491930A7D000A65D66 /* glBuddyChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B2F481930A7D000A65D66 /* glBuddyChatViewController.m */; };
+		359B2F4C1930BCA300A65D66 /* billgates.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 359B2F4A1930BCA300A65D66 /* billgates.jpg */; };
+		359B2F4D1930BCA300A65D66 /* obama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 359B2F4B1930BCA300A65D66 /* obama.jpg */; };
 		35D042BB191A1F64008D3679 /* glMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042BA191A1F64008D3679 /* glMyProfileViewController.m */; };
 		35D042BE191A1F73008D3679 /* glVideoUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042BD191A1F73008D3679 /* glVideoUploadViewController.m */; };
 		35D042C1191A21E9008D3679 /* glFaqViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042C0191A21E9008D3679 /* glFaqViewController.m */; };
@@ -19,7 +22,6 @@
 		35D042CE191A42E8008D3679 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = 35D042CD191A42E8008D3679 /* info.html */; };
 		43D07FE2192CA45800F22139 /* glVideoRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FE1192CA45800F22139 /* glVideoRecordViewController.m */; };
 		43D07FE5192CB05C00F22139 /* glVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FE4192CB05C00F22139 /* glVideoPlayViewController.m */; };
-		43D07FEB192CDD1B00F22139 /* glBuddyChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FEA192CDD1B00F22139 /* glBuddyChatTableViewController.m */; };
 		43D07FEE192CDE6F00F22139 /* glBuddyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FED192CDE6F00F22139 /* glBuddyDetailViewController.m */; };
 		49C31E8A1919000C005A8F28 /* glDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E891919000C005A8F28 /* glDistrictViewController.m */; };
 		49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E8C19190037005A8F28 /* glRegisterViewController.m */; };
@@ -66,6 +68,10 @@
 		3508ED6C1919DE07009E1512 /* glPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glPictureViewController.h; sourceTree = "<group>"; };
 		3508ED6D1919DE07009E1512 /* glPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glPictureViewController.m; sourceTree = "<group>"; };
 		3508ED6F1919E1FF009E1512 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		359B2F471930A7D000A65D66 /* glBuddyChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glBuddyChatViewController.h; sourceTree = "<group>"; };
+		359B2F481930A7D000A65D66 /* glBuddyChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glBuddyChatViewController.m; sourceTree = "<group>"; };
+		359B2F4A1930BCA300A65D66 /* billgates.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = billgates.jpg; sourceTree = "<group>"; };
+		359B2F4B1930BCA300A65D66 /* obama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = obama.jpg; sourceTree = "<group>"; };
 		35D042B9191A1F64008D3679 /* glMyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glMyProfileViewController.h; sourceTree = "<group>"; };
 		35D042BA191A1F64008D3679 /* glMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glMyProfileViewController.m; sourceTree = "<group>"; };
 		35D042BC191A1F73008D3679 /* glVideoUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glVideoUploadViewController.h; sourceTree = "<group>"; };
@@ -83,8 +89,6 @@
 		43D07FE1192CA45800F22139 /* glVideoRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glVideoRecordViewController.m; sourceTree = "<group>"; };
 		43D07FE3192CB05C00F22139 /* glVideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glVideoPlayViewController.h; sourceTree = "<group>"; };
 		43D07FE4192CB05C00F22139 /* glVideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glVideoPlayViewController.m; sourceTree = "<group>"; };
-		43D07FE9192CDD1B00F22139 /* glBuddyChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glBuddyChatTableViewController.h; sourceTree = "<group>"; };
-		43D07FEA192CDD1B00F22139 /* glBuddyChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glBuddyChatTableViewController.m; sourceTree = "<group>"; };
 		43D07FEC192CDE6F00F22139 /* glBuddyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glBuddyDetailViewController.h; sourceTree = "<group>"; };
 		43D07FED192CDE6F00F22139 /* glBuddyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glBuddyDetailViewController.m; sourceTree = "<group>"; };
 		49C31E881919000C005A8F28 /* glDistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glDistrictViewController.h; sourceTree = "<group>"; };
@@ -204,10 +208,10 @@
 				43D07FE1192CA45800F22139 /* glVideoRecordViewController.m */,
 				43D07FE3192CB05C00F22139 /* glVideoPlayViewController.h */,
 				43D07FE4192CB05C00F22139 /* glVideoPlayViewController.m */,
-				43D07FE9192CDD1B00F22139 /* glBuddyChatTableViewController.h */,
-				43D07FEA192CDD1B00F22139 /* glBuddyChatTableViewController.m */,
 				43D07FEC192CDE6F00F22139 /* glBuddyDetailViewController.h */,
 				43D07FED192CDE6F00F22139 /* glBuddyDetailViewController.m */,
+				359B2F471930A7D000A65D66 /* glBuddyChatViewController.h */,
+				359B2F481930A7D000A65D66 /* glBuddyChatViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -285,6 +289,8 @@
 				FFCD67711906EED900D05AA3 /* Library */,
 				FFEBE5D918F299A700C8DD0B /* Main.storyboard */,
 				FFEBE5DF18F299A700C8DD0B /* Images.xcassets */,
+				359B2F4A1930BCA300A65D66 /* billgates.jpg */,
+				359B2F4B1930BCA300A65D66 /* obama.jpg */,
 				FFEBE5CE18F299A700C8DD0B /* Supporting Files */,
 			);
 			path = GlasAanHuis;
@@ -399,7 +405,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				359B2F4D1930BCA300A65D66 /* obama.jpg in Resources */,
 				FFEBE5E018F299A700C8DD0B /* Images.xcassets in Resources */,
+				359B2F4C1930BCA300A65D66 /* billgates.jpg in Resources */,
 				49C31E9E19198B87005A8F28 /* Comp2.mp4 in Resources */,
 				35D042CE191A42E8008D3679 /* info.html in Resources */,
 				FFD9C46B1928BA6A00007267 /* WijkInfo.xib in Resources */,
@@ -428,6 +436,7 @@
 				FFD9C46E1928BCF800007267 /* glWijkInfoView.m in Sources */,
 				49C31EA219198BDA005A8F28 /* glIntroViewController.m in Sources */,
 				43D07FEE192CDE6F00F22139 /* glBuddyDetailViewController.m in Sources */,
+				359B2F491930A7D000A65D66 /* glBuddyChatViewController.m in Sources */,
 				35D042C4191A21F3008D3679 /* glForumViewController.m in Sources */,
 				49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */,
 				35D042C9191A4288008D3679 /* SidebarViewController.m in Sources */,
@@ -437,7 +446,6 @@
 				43D07FE5192CB05C00F22139 /* glVideoPlayViewController.m in Sources */,
 				35D042BE191A1F73008D3679 /* glVideoUploadViewController.m in Sources */,
 				FFEBE5D418F299A700C8DD0B /* main.m in Sources */,
-				43D07FEB192CDD1B00F22139 /* glBuddyChatTableViewController.m in Sources */,
 				3508ED6E1919DE07009E1512 /* glPictureViewController.m in Sources */,
 				FFCCE4561915605A000FB961 /* SWRevealViewController.m in Sources */,
 				FFEBE5D818F299A700C8DD0B /* glAppDelegate.m in Sources */,
