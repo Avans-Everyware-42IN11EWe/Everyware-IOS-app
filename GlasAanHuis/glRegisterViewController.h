@@ -14,7 +14,7 @@
 @property (strong, nonatomic) NSString *districtID;
 - (void)setDistrictID:(NSString *)districtID;
 
-@property (strong, nonatomic) IBOutlet UITextField *nameTV;
+//@property (strong, nonatomic) IBOutlet UITextField *nameTV;
 @property (strong, nonatomic) IBOutlet UITextField *emailTV;
 @property (strong, nonatomic) IBOutlet UISwitch *buddySW;
 @property (strong, nonatomic) IBOutlet UIButton *doneBTN;

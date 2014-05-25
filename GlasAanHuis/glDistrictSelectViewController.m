@@ -7,6 +7,7 @@
 //
 
 #import "glDistrictSelectViewController.h"
+#import "glDistrictViewController.h"
 
 @interface glDistrictSelectViewController ()
 @property NSMutableArray *districts;
@@ -66,7 +67,7 @@
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.districts = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
             
-            //[self.districtTABLE reloadData];
+            [self.districtTABLE reloadData];
         }];
         
     }];
@@ -107,7 +108,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"backstart"]) {
-        [segue.destinationViewController setSelectedDistrict:_selectedDistrict];
+        [segue.destinationViewController setSelectedDistrictNOTCURREND:_selectedDistrict];
     }
     
 }

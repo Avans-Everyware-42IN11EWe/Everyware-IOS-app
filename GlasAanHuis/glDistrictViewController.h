@@ -60,8 +60,8 @@
     NSInteger currentDistrict;
 }
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
-@property (strong, nonatomic) NSJSONSerialization *selectedDistrict;
-- (void)setSelectedDistrict:(NSJSONSerialization *)selectedDistrict;
+@property (strong, nonatomic) NSJSONSerialization *selectedDistrictNOTCURREND;
+- (void)setSelectedDistrictNOTCURREND:(NSJSONSerialization *)selectedDistrict;
 @property (strong, nonatomic)NSMutableArray *districts;
 - (IBAction)showWelcome:(id)sender;
 - (IBAction)goToRegister:(id)sender;

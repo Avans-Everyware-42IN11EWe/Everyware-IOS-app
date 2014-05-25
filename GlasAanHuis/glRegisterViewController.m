@@ -100,7 +100,7 @@
     NSString * userID = [ result valueForKey:@"user_id"];
     //[[_districts objectAtIndex:indexPath.row] valueForKey:@"name"];
     
-    if (userID !=nil && ![_emailTV.text isEqualToString:@""] && ![_nameTV.text isEqualToString:@""]) {
+    if (userID !=nil && ![_emailTV.text isEqualToString:@""]) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setValue:userID forKey:@"userID"];
         [defaults setValue:_districtID forKeyPath:@"districtID"];
@@ -138,7 +138,7 @@
 
 -(NSArray*)registerUser
 {
-    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",_nameTV.text,@"name",@"lat",@"latlong",@"1",@"district_id", nil];
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",@"HOEFT NIET",@"name",@"lat",@"latlong",_districtID,@"district_id", nil];
     NSError *postError;
     NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
     
@@ -159,7 +159,7 @@
 }
 -(NSArray *)registerUserFacbook:(NSString*)token
 {
-    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:token,@"access_token",@"1",@"district_id", nil];
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:token,@"access_token",_districtID,@"district_id", nil];
     NSError *postError;
     NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
     

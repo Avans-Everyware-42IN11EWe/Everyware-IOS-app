@@ -20,9 +20,9 @@
 @implementation glDistrictViewController
 
 glWijkInfoView *plainView;
--(void)setSelectedDistrict:(NSJSONSerialization *)selectedDistrict
+-(void)setSelectedDistrictNOTCURREND:(NSJSONSerialization *)selectedDistrict
 {
-    _selectedDistrict = selectedDistrict;
+    _selectedDistrictNOTCURREND = selectedDistrict;
 }
 
 - (IBAction)showWelcome:(id)sender {
@@ -373,10 +373,18 @@ glWijkInfoView *plainView;
     
     [self getDistricts];
     
-    NSLog(@"%@",self.districts);
-   
-    currentDistrict = 0;
-    [self setDistrictView:[self.districts[0] valueForKey:@"id"]];
+    //NSLog(@"%@",self.districts);
+    currentDistrict =0;
+    if(_selectedDistrictNOTCURREND != nil){
+        for (int i=0; i <[self.districts count]; i++) {
+            if ([[self.districts[i] valueForKey:@"id"] intValue] == [[_selectedDistrictNOTCURREND valueForKey:@"id"] intValue]) {
+                currentDistrict =i;
+                break;
+            }
+        }
+    }
+    
+    [self setDistrictView:[self.districts[currentDistrict] valueForKey:@"id"]];
 
 }
 
@@ -392,16 +400,15 @@ glWijkInfoView *plainView;
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-
     if ([segue.identifier isEqualToString:@"register"]) {
-        //NSString * userID = [ _selectedDistrict valueForKey:@"id"];
-        [segue.destinationViewController setDistrictID:@"testid"];
+        NSString * userID = [[self.districts[currentDistrict] valueForKey:@"id"] stringValue];
+        [segue.destinationViewController setDistrictID:userID];
     }
 }
 - (IBAction)goToRegister:(id)sender {
     //if(_selectedDistrict != nil){
-        //[self performSegueWithIdentifier:@"register" sender:self];
-    [self performSegueWithIdentifier:@"buddyDetail" sender:self];
+        [self performSegueWithIdentifier:@"register" sender:self];
+    //[self performSegueWithIdentifier:@"buddyDetail" sender:self];
     //}
 }
 
@@ -490,7 +497,7 @@ glWijkInfoView *plainView;
     {
         
     }
-    NSLog(@"%@",district);
+    //NSLog(@"%@",district);
     return district;
 }
 
