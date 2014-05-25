@@ -174,14 +174,17 @@ glWijkInfoView *plainView;
     
     
     //video
+    lblMovie = [[UILabel alloc]initWithFrame:CGRectMake(5, 580, 100, 50)];
+    lblMovie.text = @"Buurt video";
+    lblMovie.textColor= [UIColor whiteColor];
     ContMovie = [[UIView alloc]initWithFrame:self.view.frame];
-    [ContMovie setFrame:CGRectMake(30, 670, 260, 160)];
+    [ContMovie setFrame:CGRectMake(5, 620, 310, 160)];
     [ContMovie setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
   
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Comp2" ofType:@"mp4"];
     NSURL *url = [NSURL fileURLWithPath:path];
     movie = [[MPMoviePlayerController alloc] initWithContentURL:url];
-    [movie.view setFrame:CGRectMake(0, 0, 260, 160)];
+    [movie.view setFrame:CGRectMake(0, 0, 310, 160)];
     
     //[movie play];
     [movie prepareToPlay];
@@ -189,70 +192,142 @@ glWijkInfoView *plainView;
     movie.shouldAutoplay = false;
     [ContMovie addSubview:movie.view];
     [scroller addSubview:ContMovie];
+    [scroller addSubview:lblMovie];
     
     
     //Kaartje voor de wijk
+    lblBuurt = [[UILabel alloc]initWithFrame:CGRectMake(5, 780, 100, 50)];
+    lblBuurt.text = @"Buurt kaart";
+    lblBuurt.textColor= [UIColor whiteColor];
     map = [[MKMapView alloc]initWithFrame:self.view.frame];
-    [map setFrame:CGRectMake(30, 850, 260, 220)];
+    [map setFrame:CGRectMake(5, 820, 310, 180)];
     [scroller addSubview:map];
+    [scroller addSubview:lblBuurt];
     
     //Goede doelen
+    lblGoedeDoel = [[UILabel alloc]initWithFrame:CGRectMake(5, 1010, 150, 30)];
+    lblGoedeDoel.text = @"Goede doel";
+    lblGoedeDoel.textColor = [UIColor whiteColor];
     ContGoedeDoel = [[UIView alloc]initWithFrame:self.view.frame];
-    progGoedeDoel = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 120, 220, 20)];
+    progGoedeDoel = [[UIProgressView alloc] initWithFrame:CGRectMake(5, 80, 300, 20)];
     progGoedeDoel.progressViewStyle = UIProgressViewStyleBar;
     progGoedeDoel.progress = 0.3;
     progGoedeDoel.progressTintColor = [UIColor greenColor];
-    lblGoedeDoel = [[UILabel alloc]initWithFrame:CGRectMake(10, 20, 150, 30)];
-    lblGoedeDoel.text = @"Goede doelen";
-    [ContGoedeDoel setFrame:CGRectMake(30, 1080, 260, 160)];
+    progGoedeDoel.backgroundColor = [UIColor whiteColor];
+    lblDoel = [[UILabel alloc]initWithFrame:CGRectMake(5, 10, 300, 50)];
+    lblDoel.text = @"Gratis glasvezel voor de Avans";
+    lblDoel.textColor = [UIColor whiteColor];
+    lblProcentDoel = [[UILabel alloc]initWithFrame:CGRectMake(5, 50, 150, 30)];
+    lblProcentDoel.text = @"30%";
+    lblProcentDoel.textColor = [UIColor whiteColor];
+    
+    [ContGoedeDoel setFrame:CGRectMake(5, 1040, 310, 100)];
+    [ContGoedeDoel.layer setBorderWidth:1.0];
+    ContGoedeDoel.layer.BorderColor = [UIColor grayColor].CGColor;
     [ContGoedeDoel setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
     [ContGoedeDoel addSubview:progGoedeDoel];
-    [ContGoedeDoel addSubview:lblGoedeDoel];
+    [ContGoedeDoel addSubview:lblDoel];
+    [ContGoedeDoel addSubview:lblProcentDoel];
+    [scroller addSubview:lblGoedeDoel];
     [scroller addSubview:ContGoedeDoel];
+    
+    //Faq
+    lblFaq = [[UILabel alloc]initWithFrame:CGRectMake(5, 1150, 300, 30)];
+    lblFaq.text = @"Veel gestelde vragen";
+    lblFaq.textColor = [UIColor whiteColor];
+    
+    txtFaq = [[UITextView alloc]initWithFrame:CGRectMake(5, 10, 310, 80)];
+    txtFaq.text = @"Hier vindt u de meest gestelde vragen omtrent de app en glasvezel.";
+    txtFaq.textColor = [UIColor whiteColor];
+    txtFaq.font = [UIFont systemFontOfSize:17];
+    txtFaq.editable = NO;
+    [txtFaq setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0]];
+    ContFaq = [[UIView alloc]initWithFrame:self.view.frame];
+    [ContFaq setFrame:CGRectMake(5, 1180, 310, 80)];
+    [ContFaq.layer setBorderWidth:1.0];
+    ContFaq.layer.BorderColor = [UIColor grayColor].CGColor;
+    [ContFaq setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
+    [ContFaq addSubview:txtFaq];
+    [scroller addSubview:lblFaq];
+    [scroller addSubview:ContFaq];
+    
+    //vraag
+    lblVraag = [[UILabel alloc]initWithFrame:CGRectMake(5, 1270, 300, 30)];
+    lblVraag.text = @"Stel uw vraag";
+    lblVraag.textColor = [UIColor whiteColor];
+    
+    txtVraag = [[UITextView alloc]initWithFrame:CGRectMake(5, 10, 310, 80)];
+    txtVraag.text = @"Hier kunt u vragen stellen over de app en glasvezel.";
+    txtVraag.textColor = [UIColor whiteColor];
+    txtVraag.font = [UIFont systemFontOfSize:17];
+    txtVraag.editable = NO;
+    [txtVraag setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0]];
+    ContVraag = [[UIView alloc]initWithFrame:self.view.frame];
+    [ContVraag setFrame:CGRectMake(5, 1300, 310, 80)];
+    [ContVraag.layer setBorderWidth:1.0];
+    ContVraag.layer.BorderColor = [UIColor grayColor].CGColor;
+    [ContVraag setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
+    [ContVraag addSubview:txtVraag];
+    [scroller addSubview:lblVraag];
+    [scroller addSubview:ContVraag];
+    
     
     //Stappen
     ContStappen = [[UIView alloc]initWithFrame:self.view.frame];
-    lblStappen = [[UILabel alloc]initWithFrame:CGRectMake(10, 20, 150, 30)];
+    lblStappen = [[UILabel alloc]initWithFrame:CGRectMake(5, 1390, 150, 30)];
     lblStappen.text = @"Stappen";
-    lblStap1 = [[UILabel alloc]initWithFrame:CGRectMake(10, 50, 150, 30)];
-    [lblStap1 setFont:[UIFont systemFontOfSize:8]];
-    lblStap1.text = @"Stap 1";
-    lblStap2 = [[UILabel alloc]initWithFrame:CGRectMake(10, 90, 150, 30)];
-    [lblStap2 setFont:[UIFont systemFontOfSize:8]];
-    lblStap2.text = @"Stap 2";
-    lblStap3 = [[UILabel alloc]initWithFrame:CGRectMake(10, 130, 150, 30)];
-    [lblStap3 setFont:[UIFont systemFontOfSize:8]];
-    lblStap3.text = @"Stap 3";
-    lblStap4 = [[UILabel alloc]initWithFrame:CGRectMake(10, 170, 150, 30)];
-    [lblStap4 setFont:[UIFont systemFontOfSize:8]];
-    lblStap4.text = @"Stap 4";
-    lblStap5 = [[UILabel alloc]initWithFrame:CGRectMake(10, 210, 150, 30)];
-    [lblStap5 setFont:[UIFont systemFontOfSize:8]];
-    lblStap5.text = @"Stap 5";
+    lblStappen.textColor = [UIColor whiteColor];
+    lblStap1 = [[UILabel alloc]initWithFrame:CGRectMake(5, 10, 300, 30)];
+    [lblStap1 setFont:[UIFont systemFontOfSize:17]];
+    lblStap1.text = @"1. Bewoners verzamelen 22%";
+    lblStap1.textColor = [UIColor whiteColor];
+    lblStap2 = [[UILabel alloc]initWithFrame:CGRectMake(5, 50, 300, 30)];
+    [lblStap2 setFont:[UIFont systemFontOfSize:17]];
+    lblStap2.text = @"2. Inschrijven 9%";
+    lblStap2.textColor = [UIColor whiteColor];
+    lblStap3 = [[UILabel alloc]initWithFrame:CGRectMake(5, 90, 300, 30)];
+    [lblStap3 setFont:[UIFont systemFontOfSize:17]];
+    lblStap3.text = @"3. Provider selecteren 2%";
+    lblStap3.textColor = [UIColor whiteColor];
+    lblStap4 = [[UILabel alloc]initWithFrame:CGRectMake(5, 130, 300, 30)];
+    [lblStap4 setFont:[UIFont systemFontOfSize:17]];
+    lblStap4.text = @"4. Glasvezel aanleggen 0%";
+    lblStap4.textColor = [UIColor whiteColor];
+    lblStap5 = [[UILabel alloc]initWithFrame:CGRectMake(5, 170, 300, 30)];
+    [lblStap5 setFont:[UIFont systemFontOfSize:17]];
+    lblStap5.text = @"5. Overstappen naar glasvezel 0%";
+    lblStap5.textColor = [UIColor whiteColor];
     
-    progStap1 = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 80, 220, 20)];
+    progStap1 = [[UIProgressView alloc] initWithFrame:CGRectMake(5, 40, 300, 20)];
     progStap1.progressViewStyle = UIProgressViewStyleBar;
-    progStap1.progress = 0.8;
+    progStap1.progress = 0.22;
     progStap1.progressTintColor = [UIColor greenColor];
-    progStap2 = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 120, 220, 20)];
+    progStap1.backgroundColor = [UIColor whiteColor];
+    progStap2 = [[UIProgressView alloc] initWithFrame:CGRectMake(5, 80, 300, 20)];
     progStap2.progressViewStyle = UIProgressViewStyleBar;
-    progStap2.progress = 0.5;
+    progStap2.progress = 0.09;
     progStap2.progressTintColor = [UIColor greenColor];
-    progStap3 = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 160, 220, 20)];
+    progStap2.backgroundColor = [UIColor whiteColor];
+    progStap3 = [[UIProgressView alloc] initWithFrame:CGRectMake(5, 120, 300, 20)];
     progStap3.progressViewStyle = UIProgressViewStyleBar;
-    progStap3.progress = 0.2;
+    progStap3.progress = 0.02;
     progStap3.progressTintColor = [UIColor greenColor];
-    progStap4 = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 200, 220, 20)];
+    progStap3.backgroundColor = [UIColor whiteColor];
+    progStap4 = [[UIProgressView alloc] initWithFrame:CGRectMake(5, 160, 300, 20)];
     progStap4.progressViewStyle = UIProgressViewStyleBar;
-    progStap4.progress = 0.1;
+    progStap4.progress = 0.0;
     progStap4.progressTintColor = [UIColor greenColor];
-    progStap5 = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 240, 220, 20)];
+    progStap4.backgroundColor = [UIColor whiteColor];
+    progStap5 = [[UIProgressView alloc] initWithFrame:CGRectMake(5, 200, 300, 20)];
     progStap5.progressViewStyle = UIProgressViewStyleBar;
-    progStap5.progress = 0.05;
+    progStap5.progress = 0.0;
     progStap5.progressTintColor = [UIColor greenColor];
-    [ContStappen setFrame:CGRectMake(30, 1250, 260, 260)];
+    progStap5.backgroundColor = [UIColor whiteColor];
+    [ContStappen setFrame:CGRectMake(5, 1420, 310, 260)];
     [ContStappen setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
-    [ContStappen addSubview:lblStappen];
+    [ContStappen.layer setBorderWidth:1.0];
+    ContStappen.layer.BorderColor = [UIColor grayColor].CGColor;
+    [scroller addSubview:lblStappen];
     [ContStappen addSubview:lblStap1];
     [ContStappen addSubview:lblStap2];
     [ContStappen addSubview:lblStap3];
@@ -265,26 +340,26 @@ glWijkInfoView *plainView;
     [ContStappen addSubview:progStap5];
     [scroller addSubview:ContStappen];
     
-    //Buttons
-    btnFaq = [[UIButton alloc] initWithFrame:CGRectMake(110, 1530, 120, 40)];
-    [btnFaq setTitle:@"FAQ" forState:UIControlStateNormal];
-    [btnFaq setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btnFaq setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-    [btnFaq setBackgroundColor:[UIColor blackColor]];
-    btnForum = [[UIButton alloc] initWithFrame:CGRectMake(110, 1580, 120, 40)];
-    [btnForum setTitle:@"Forum" forState:UIControlStateNormal];
-    [btnForum setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btnForum setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-    [btnForum setBackgroundColor:[UIColor blackColor]];
     
-    [scroller addSubview:btnFaq];
-    [scroller addSubview:btnForum];
     
     //percentage
-    lblDeelname = [[UILabel alloc]initWithFrame:CGRectMake(10, 1660, 150, 50)];
-    [lblDeelname setFont:[UIFont systemFontOfSize:45]];
-    lblDeelname.text = @"55%";
+    lblPerDeelname = [[UILabel alloc]initWithFrame:CGRectMake(220, 1700, 150, 50)];
+    [lblPerDeelname setFont:[UIFont systemFontOfSize:45]];
+    lblPerDeelname.textColor = [UIColor whiteColor];
+    lblPerDeelname.text = @"55%";
+    [scroller addSubview:lblPerDeelname];
+    
+    lblDeelname = [[UILabel alloc]initWithFrame:CGRectMake(85, 1708, 200, 50)];
+    [lblDeelname setFont:[UIFont systemFontOfSize:25]];
+    lblDeelname.textColor = [UIColor whiteColor];
+    lblDeelname.text = @"deelnemers";
     [scroller addSubview:lblDeelname];
+    
+    lblAantalDeelname = [[UILabel alloc]initWithFrame:CGRectMake(5, 1700, 150, 50)];
+    [lblAantalDeelname setFont:[UIFont systemFontOfSize:45]];
+    lblAantalDeelname.textColor = [UIColor whiteColor];
+    lblAantalDeelname.text = @"106";
+    [scroller addSubview:lblAantalDeelname];
     
     // Change button color
     _sideBarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
