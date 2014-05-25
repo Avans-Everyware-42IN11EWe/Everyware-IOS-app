@@ -323,7 +323,7 @@ glWijkInfoView *plainView;
     progStap5.progress = 0.0;
     progStap5.progressTintColor = [UIColor greenColor];
     progStap5.backgroundColor = [UIColor whiteColor];
-    [ContStappen setFrame:CGRectMake(5, 1420, 310, 260)];
+    [ContStappen setFrame:CGRectMake(5, 1420, 310, 240)];
     [ContStappen setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
     [ContStappen.layer setBorderWidth:1.0];
     ContStappen.layer.BorderColor = [UIColor grayColor].CGColor;
@@ -343,19 +343,19 @@ glWijkInfoView *plainView;
     
     
     //percentage
-    lblPerDeelname = [[UILabel alloc]initWithFrame:CGRectMake(220, 1700, 150, 50)];
+    lblPerDeelname = [[UILabel alloc]initWithFrame:CGRectMake(220, 1680, 150, 50)];
     [lblPerDeelname setFont:[UIFont systemFontOfSize:45]];
     lblPerDeelname.textColor = [UIColor whiteColor];
     lblPerDeelname.text = @"55%";
     [scroller addSubview:lblPerDeelname];
     
-    lblDeelname = [[UILabel alloc]initWithFrame:CGRectMake(85, 1708, 200, 50)];
+    lblDeelname = [[UILabel alloc]initWithFrame:CGRectMake(85, 1688, 200, 50)];
     [lblDeelname setFont:[UIFont systemFontOfSize:25]];
     lblDeelname.textColor = [UIColor whiteColor];
     lblDeelname.text = @"deelnemers";
     [scroller addSubview:lblDeelname];
     
-    lblAantalDeelname = [[UILabel alloc]initWithFrame:CGRectMake(5, 1700, 150, 50)];
+    lblAantalDeelname = [[UILabel alloc]initWithFrame:CGRectMake(5, 1680, 150, 50)];
     [lblAantalDeelname setFont:[UIFont systemFontOfSize:45]];
     lblAantalDeelname.textColor = [UIColor whiteColor];
     lblAantalDeelname.text = @"106";
