@@ -26,7 +26,7 @@ NSArray *menuItems;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    menuItems = @[@"ForumItem 1", @"ForumItem 2", @"ForumItem 3"];
+    menuItems = @[@"ForumItem 1"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,7 +49,7 @@ NSArray *menuItems;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *CellIdentifier = [menuItems objectAtIndex:indexPath.row];
+    NSString *CellIdentifier = @"ForumItem1";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     return cell;

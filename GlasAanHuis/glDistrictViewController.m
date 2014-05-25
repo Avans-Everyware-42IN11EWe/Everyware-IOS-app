@@ -11,6 +11,7 @@
 #import "glBlurView.h"
 #import "SWRevealViewController.h"
 #import "glWijkInfoView.h"
+#import "glDistrictParticipants.h"
 #define kDKTableViewDefaultContentInset 0.0f
 
 @interface glDistrictViewController ()
@@ -20,6 +21,7 @@
 @implementation glDistrictViewController
 
 glWijkInfoView *plainView;
+glDistrictParticipants *participantsView;
 -(void)setSelectedDistrictNOTCURREND:(NSJSONSerialization *)selectedDistrict
 {
     _selectedDistrictNOTCURREND = selectedDistrict;
@@ -120,9 +122,9 @@ glWijkInfoView *plainView;
 
     scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [scroller setScrollEnabled:YES];
-    [scroller setContentSize:CGSizeMake(320,1800)];
+    //1800
+    [scroller setContentSize:CGSizeMake(320,3000)];
     //UIView *masterView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    //[scroller addSubview:scroller];
     
     glBlurView *backgroundView = [[glBlurView alloc] initWithFrame: self.view.bounds];
     backgroundView.originalImage = [UIImage imageNamed:@"1979672_1451730748396471_1888089831_n.jpg"];
@@ -146,6 +148,13 @@ glWijkInfoView *plainView;
     // Find the view among nib contents (not too hard assuming there is only one view in it).
     plainView = [nibContents firstObject];
     plainView.eindbaas = self;
+    
+    
+    //NSArray *partContents = [[NSBundle mainBundle] loadNibNamed:@"DistrictParticipants" owner:nil options:nil];
+    //participantsView = [partContents firstObject];
+    //participantsView.
+    //participantsView.eindbaas = self;
+    participantsView = [[glDistrictParticipants alloc]initWithFrame:CGRectMake(0, 1800, self.view.frame.size.width,self.view.frame.size.height)];
     
     // Some hardcoded layout.
     //CGSize padding = (CGSize){ 22.0, 22.0 };
@@ -171,7 +180,6 @@ glWijkInfoView *plainView;
 //    self.view.backgroundColor = [UIColor colorWithPatternImage:backGround];
 //    
 //    //[scroller addSubview:imageView];
-    
     
     //video
     lblMovie = [[UILabel alloc]initWithFrame:CGRectMake(5, 580, 100, 50)];
@@ -249,6 +257,9 @@ glWijkInfoView *plainView;
     [ContFaq setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
     [ContFaq addSubview:txtFaq];
     [scroller addSubview:lblFaq];
+    UITapGestureRecognizer *faqtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToFaq)];
+    ContFaq.userInteractionEnabled = YES;
+    [ContFaq addGestureRecognizer:faqtap];
     [scroller addSubview:ContFaq];
     
     //vraag
@@ -269,6 +280,11 @@ glWijkInfoView *plainView;
     [ContVraag setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
     [ContVraag addSubview:txtVraag];
     [scroller addSubview:lblVraag];
+    
+    UITapGestureRecognizer *forumtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToForum)];
+    ContVraag.userInteractionEnabled = YES;
+    [ContVraag addGestureRecognizer:forumtap];
+    
     [scroller addSubview:ContVraag];
     
     
@@ -340,8 +356,6 @@ glWijkInfoView *plainView;
     [ContStappen addSubview:progStap5];
     [scroller addSubview:ContStappen];
     
-    
-    
     //percentage
     lblPerDeelname = [[UILabel alloc]initWithFrame:CGRectMake(220, 1680, 150, 50)];
     [lblPerDeelname setFont:[UIFont systemFontOfSize:45]];
@@ -359,6 +373,22 @@ glWijkInfoView *plainView;
     [lblAantalDeelname setFont:[UIFont systemFontOfSize:45]];
     lblAantalDeelname.textColor = [UIColor whiteColor];
     lblAantalDeelname.text = @"106";
+    
+    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(5, 1725, 310, 2)];
+    [line setBackgroundColor:[UIColor grayColor]];
+    [scroller addSubview:line];
+    UIImageView *img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"billgates.jpg"]];
+    CGRect rect = img.frame;
+    rect.origin.x = 5;
+    rect.origin.y = 1750;
+    rect.size.height=50;
+    rect.size.width=50;
+    img.frame = rect;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToBuddyDetail)];
+    img.userInteractionEnabled = YES;
+    [img addGestureRecognizer:tap];
+    
+    [scroller addSubview:img];
     [scroller addSubview:lblAantalDeelname];
     
     // Change button color
@@ -367,9 +397,6 @@ glWijkInfoView *plainView;
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sideBarButton.target = self.revealViewController;
     _sideBarButton.action = @selector(revealToggle:);
-    
-    // Set the gesture
-    //[self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     [self getDistricts];
     
@@ -394,6 +421,20 @@ glWijkInfoView *plainView;
     // Dispose of any resources that can be recreated.
 }
 
+-(void)goToBuddyDetail
+{
+    [self performSegueWithIdentifier:@"buddyDetail" sender:self];
+}
+
+-(void)goToFaq
+{
+    [self performSegueWithIdentifier:@"faq" sender:self];
+}
+
+-(void)goToForum
+{
+    [self performSegueWithIdentifier:@"forum" sender:self];
+}
 
 #pragma mark - Navigation
 

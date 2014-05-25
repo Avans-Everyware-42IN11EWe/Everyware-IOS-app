@@ -57,15 +57,34 @@ NSArray *menuItems;
     return cell;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
-*/
 
+-(NSArray*)sendMessage
+{
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:@"1",@"sender_id",@"2",@"receiver_id",_txtMessageToSend.text,@"message",nil];
+    NSError *postError;
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
+    
+    NSURL *url = [NSURL URLWithString:@"http://glas.mycel.nl/chat"];
+    NSMutableURLRequest *req =[NSMutableURLRequest requestWithURL:url];
+    
+    req.HTTPMethod=@"POST";
+    [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [req setHTTPBody:postdata];
+    
+    NSData *data;
+    NSURLResponse *response = nil;
+    data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:nil];
+    if (data == nil) {
+        return [[NSArray alloc]init];
+    }
+    return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+}
+
+- (IBAction)sendMessage:(id)sender {
+    [self sendMessage];
+}
 @end

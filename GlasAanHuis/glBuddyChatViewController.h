@@ -9,4 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface glBuddyChatViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITextField *txtMessageToSend;
+- (IBAction)sendMessage:(id)sender;
+
 @end
