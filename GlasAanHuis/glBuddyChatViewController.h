@@ -11,5 +11,8 @@
 @interface glBuddyChatViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *txtMessageToSend;
 - (IBAction)sendMessage:(id)sender;
+@property (strong, nonatomic) IBOutlet UITableView *messageTable;
 
 @end
+NSArray *roomLines;
+NSTimer *timer;

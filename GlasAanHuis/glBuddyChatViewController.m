@@ -25,8 +25,7 @@ NSArray *menuItems;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    menuItems = @[@"YourMessage",@"OtherMessage"];
+    [self getNewLines];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,20 +39,33 @@ NSArray *menuItems;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [roomLines count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [menuItems count];
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 7;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *CellIdentifier = [menuItems objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = (UITableViewCell *)[tableView
+                                                dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    cell.imageView.frame = CGRectOffset(cell.frame, 10, 10);
+    NSDictionary *itemAtIndex = (NSDictionary *)[roomLines objectAtIndex:indexPath.section];
+    cell.textLabel.text = [itemAtIndex objectForKey:@"message"];
+    cell.imageView.image = [UIImage imageNamed:@"billgates.jpg"];
     return cell;
 }
 
@@ -62,9 +74,57 @@ NSArray *menuItems;
     return NO;
 }
 
+-(void)getNewLines
+{
+    dispatch_queue_t newLinesQ = dispatch_queue_create("newLinesQ", NULL);
+    dispatch_async(newLinesQ, ^{
+        roomLines = [self executeGetLines:@"nope"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_messageTable reloadData];
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:
+                                        [self methodSignatureForSelector: @selector(onTick)]];
+            [invocation setTarget:self];
+            [invocation setSelector:@selector(onTick	)];
+            timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                 invocation:invocation repeats:NO];        });
+    });
+}
+
+-(void)onTick
+{
+    [self getNewLines];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    [_messageTable reloadData];
+}
+//TODO:id meegeven
+-(NSArray*)executeGetLines:(NSString*)receiverid
+{
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:@"2",@"resident_id", nil];
+    NSError *postError;
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
+    
+    NSURL *url = [NSURL URLWithString:@"http://glas.mycel.nl/chat?resident_id=2"];
+    NSMutableURLRequest *req =[NSMutableURLRequest requestWithURL:url];
+    /*
+    [req setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [req setHTTPBody:postdata];
+    */
+    NSData *data;
+    NSError *error;
+    NSURLResponse *response = nil;
+    data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+    if (data == nil) {
+        return [[NSArray alloc]init];
+    }
+    return [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+}
+//TODO:berichten niet naar jezelf sturen..
 -(NSArray*)sendMessage
 {
-    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:@"1",@"sender_id",@"2",@"receiver_id",_txtMessageToSend.text,@"message",nil];
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:@"2",@"sender_id",@"2",@"receiver_id",_txtMessageToSend.text,@"message",nil];
     NSError *postError;
     NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
     

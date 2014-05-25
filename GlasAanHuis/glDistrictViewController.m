@@ -99,10 +99,7 @@ glDistrictParticipants *participantsView;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    
-    
+
     // Add swipeGestures
     UISwipeGestureRecognizer *oneFingerSwipeLeft = [[UISwipeGestureRecognizer alloc]
                                                      initWithTarget:self
@@ -115,10 +112,6 @@ glDistrictParticipants *participantsView;
                                                       action:@selector(oneFingerSwipeRight:)];
     [oneFingerSwipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [[self view] addGestureRecognizer:oneFingerSwipeRight];
-    
-    
-    
-    
 
     scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [scroller setScrollEnabled:YES];
@@ -412,7 +405,6 @@ glDistrictParticipants *participantsView;
     }
     
     [self setDistrictView:[self.districts[currentDistrict] valueForKey:@"id"]];
-
 }
 
 - (void)didReceiveMemoryWarning

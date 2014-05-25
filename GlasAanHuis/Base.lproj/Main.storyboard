@@ -520,6 +520,7 @@
                     <navigationItem key="navigationItem" id="4BW-vb-5J2"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="messageTable" destination="CDL-fA-RC0" id="HsK-ss-nag"/>
                         <outlet property="txtMessageToSend" destination="yav-ab-IHT" id="KcE-0j-ELf"/>
                     </connections>
                 </viewController>
