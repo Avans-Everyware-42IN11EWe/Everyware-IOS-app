@@ -11,10 +11,8 @@
 @interface glWijkInfoView ()
 - (IBAction)goToDistrictPage:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *placeholder;
-
 @property (weak, nonatomic) IBOutlet UIView *wijkKiezen;
 @property (weak, nonatomic) IBOutlet UIView *meedoen;
-
 @end
 
 @implementation glWijkInfoView
@@ -37,12 +35,18 @@
 }
 
 - (IBAction)goToDistrictPage:(id)sender {
-    NSURL *fanPageURL = [NSURL URLWithString:@"fb://profile/1450066045229608"];
+    NSString *str = [NSString stringWithFormat:@"fb://profile/%@", _fbId];
+    NSURL *fburl = [NSURL URLWithString:str];
     
-    if (![[UIApplication sharedApplication] openURL:fanPageURL])
+    //NSURL *fburl = [NSURL URLWithString:@"fb://profile/1450066045229608"];
+    
+    
+    if (![[UIApplication sharedApplication] openURL:fburl])
     {
-        fanPageURL =   [ NSURL URLWithString:@"https://www.facebook.com/glasvezelpaleiskwartier"];
+        fburl =   [ NSURL URLWithString:_fbName];
     }
-    [[UIApplication sharedApplication] openURL:fanPageURL];
+    [[UIApplication sharedApplication] openURL:fburl];
+    NSLog(@"BLAASDKSJDSJKDakjDJKDKJ%@%@",_fbName,_fbId);
 }
+
 @end

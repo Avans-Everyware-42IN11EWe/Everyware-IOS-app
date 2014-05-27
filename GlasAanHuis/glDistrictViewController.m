@@ -8,7 +8,7 @@
 
 #import "glDistrictViewController.h"
 #import "glRegisterViewController.h"
-#import "glBlurView.h"
+
 #import "SWRevealViewController.h"
 #import "glWijkInfoView.h"
 #import "glDistrictParticipants.h"
@@ -119,13 +119,15 @@ glDistrictParticipants *participantsView;
     [scroller setContentSize:CGSizeMake(320,3000)];
     //UIView *masterView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
-    glBlurView *backgroundView = [[glBlurView alloc] initWithFrame: self.view.bounds];
-    backgroundView.originalImage = [UIImage imageNamed:@"1979672_1451730748396471_1888089831_n.jpg"];
+    backgroundView = [[glBlurView alloc] initWithFrame: self.view.bounds];
+    //backgroundView.originalImage = [UIImage imageNamed:@"1979672_1451730748396471_1888089831_n.jpg"];
     backgroundView.scrollView = scroller;
     backgroundView.isGlassEffectOn = YES;
     
     
     [self.view addSubview:backgroundView];
+    
+    
     scroller.contentInset = UIEdgeInsetsMake(kDKTableViewDefaultContentInset, 0, 0, 0);
     //self.tableView.contentInset = UIEdgeInsetsMake(kDKTableViewDefaultContentInset, 0, 0, 0);
     
@@ -137,24 +139,23 @@ glDistrictParticipants *participantsView;
     
     // Instantiate the nib content without any reference to it.
     NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"WijkInfo" owner:nil options:nil];
-    
     // Find the view among nib contents (not too hard assuming there is only one view in it).
     plainView = [nibContents firstObject];
     plainView.eindbaas = self;
-    
+    [scroller addSubview:plainView];
     
     //NSArray *partContents = [[NSBundle mainBundle] loadNibNamed:@"DistrictParticipants" owner:nil options:nil];
     //participantsView = [partContents firstObject];
     //participantsView.
     //participantsView.eindbaas = self;
-    participantsView = [[glDistrictParticipants alloc]initWithFrame:CGRectMake(0, 1800, self.view.frame.size.width,self.view.frame.size.height)];
+    
     
     // Some hardcoded layout.
     //CGSize padding = (CGSize){ 22.0, 22.0 };
    // plainView.frame = (CGRect){padding.width, padding.height, plainView.frame.size};
     
     // Add to the view hierarchy (thus retain).
-    [scroller addSubview:plainView];
+
     
 //    wijk = [[UIView alloc]initWithFrame:self.view.frame];
     
@@ -182,16 +183,16 @@ glDistrictParticipants *participantsView;
     [ContMovie setFrame:CGRectMake(5, 620, 310, 160)];
     [ContMovie setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
   
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Comp2" ofType:@"mp4"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    movie = [[MPMoviePlayerController alloc] initWithContentURL:url];
-    [movie.view setFrame:CGRectMake(0, 0, 310, 160)];
-    
-    //[movie play];
-    [movie prepareToPlay];
-    //[movie pause];
-    movie.shouldAutoplay = false;
-    [ContMovie addSubview:movie.view];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"Comp2" ofType:@"mp4"];
+//    NSURL *url = [NSURL fileURLWithPath:path];
+//    movie = [[MPMoviePlayerController alloc] initWithContentURL:url];
+//    [movie.view setFrame:CGRectMake(0, 0, 310, 160)];
+//    
+//    //[movie play];
+//    [movie prepareToPlay];
+//    //[movie pause];
+//    movie.shouldAutoplay = false;
+//    [ContMovie addSubview:movie.view];
     [scroller addSubview:ContMovie];
     [scroller addSubview:lblMovie];
     
@@ -366,6 +367,8 @@ glDistrictParticipants *participantsView;
     [lblAantalDeelname setFont:[UIFont systemFontOfSize:45]];
     lblAantalDeelname.textColor = [UIColor whiteColor];
     lblAantalDeelname.text = @"106";
+    [scroller addSubview:lblAantalDeelname];
+    
     
     UIView *line = [[UIView alloc]initWithFrame:CGRectMake(5, 1725, 310, 2)];
     [line setBackgroundColor:[UIColor grayColor]];
@@ -382,7 +385,14 @@ glDistrictParticipants *participantsView;
     [img addGestureRecognizer:tap];
     
     [scroller addSubview:img];
-    [scroller addSubview:lblAantalDeelname];
+    
+    NSArray *nibContentsUsers = [[NSBundle mainBundle] loadNibNamed:@"DistrictParticipants" owner:nil options:nil];
+    participantsView = [nibContentsUsers firstObject];
+    participantsView.eindbaas = self;
+    participantsView.frame = CGRectMake(0, 1800, self.view.frame.size.width,self.view.frame.size.height);
+    participantsView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
+    participantsView.opaque = NO;
+    [scroller addSubview:participantsView];
     
     // Change button color
     _sideBarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
@@ -454,10 +464,41 @@ glDistrictParticipants *participantsView;
 {
     
     NSJSONSerialization *district =[self getDistrict:index];
+    NSLog(@"%@",district);
     
     plainView.wijkName.text = [district valueForKey:@"name"];
     plainView.wijkPercent.text = [NSString stringWithFormat:@"%g%@",[[district valueForKey:@"percentage"] doubleValue]*100,@"%"];
     plainView.wijkDeelnemers.text = [[district valueForKey:@"participants"]stringValue];
+    
+    plainView.fbName = [district valueForKey:@"facebookpageurl"];
+    plainView.fbId = [district valueForKey:@"facebookpageid"];
+    
+    //ACHTERGROND
+    NSURL *urlplaatje = [NSURL URLWithString:[district valueForKey:@"plaatje"]];
+    NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
+
+    backgroundView.originalImage = [UIImage imageWithData:dataplaatje];
+    
+    //VIDEO
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"sample_mpeg4" ofType:@"mp4"];
+    NSURL *urlmovie = [NSURL fileURLWithPath:path];
+    
+    //NSURL *urlmovie = [NSURL URLWithString:@"http://glas.mycel.nl/uploads/videos/VID_20140422_131531.mp4"];
+    
+    //NSURL *urlmovie = [NSURL URLWithString:[district valueForKey:@"video"]];
+    
+    movie = [[MPMoviePlayerController alloc] initWithContentURL:urlmovie];
+    //[movie setMovieSourceType:MPMovieSourceTypeFile];
+    [movie.view setFrame:CGRectMake(0, 0, 310, 160)];
+    [movie prepareToPlay];
+    movie.shouldAutoplay = false;
+    
+    [ContMovie addSubview:movie.view];
+    
+    
+    
+    
     
 }
 -(void)getDistricts

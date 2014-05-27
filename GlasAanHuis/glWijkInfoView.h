@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *wijkName;
 @property (weak, nonatomic) IBOutlet UILabel *wijkPercent;
 @property (weak, nonatomic) IBOutlet UILabel *wijkDeelnemers;
+@property (weak, nonatomic) IBOutlet NSString *fbId;
+@property (strong, nonatomic) IBOutlet NSString *fbName;
 @property glDistrictViewController *eindbaas;
 @end

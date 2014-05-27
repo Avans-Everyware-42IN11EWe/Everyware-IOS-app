@@ -10,9 +10,11 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <MapKit/MapKit.h>
 #import "MTPopupWindow.h"
+#import "glBlurView.h"
 
 
 @interface glDistrictViewController : UIViewController <UIScrollViewDelegate>{
+    IBOutlet glBlurView *backgroundView ;
     IBOutlet UIScrollView *scroller;
     IBOutlet UIView *wijk;
     IBOutlet UIImageView *imageView;
