@@ -29,20 +29,27 @@
             </connections>
         </view>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myCell" id="G2p-ui-aL4" customClass="glDistrictParticipantsCell">
-            <rect key="frame" x="0.0" y="0.0" width="60" height="45"/>
+            <rect key="frame" x="0.0" y="0.0" width="60" height="59"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="60" height="45"/>
+                <rect key="frame" x="0.0" y="0.0" width="60" height="59"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daH-Fd-WE3">
-                        <rect key="frame" x="0.0" y="-10" width="60" height="55"/>
+                        <rect key="frame" x="0.0" y="2" width="60" height="55"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL5-9b-MRO">
+                        <rect key="frame" x="9" y="30" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <size key="customSize" width="60" height="45"/>
+            <size key="customSize" width="60" height="59"/>
             <connections>
                 <outlet property="imageView" destination="daH-Fd-WE3" id="3LM-Ng-K13"/>
             </connections>

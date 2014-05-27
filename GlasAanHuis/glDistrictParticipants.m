@@ -21,8 +21,11 @@
     _users  = [@[@"obama.jpg"] mutableCopy];
     _usersView.delegate = self;
     _usersView.dataSource = self;
-    //[_usersView registerClass:[glDistrictParticipantsCell class] forCellWithReuseIdentifier:@"myCell"];
-
+    [_usersView registerClass:[glDistrictParticipantsCell class] forCellWithReuseIdentifier:@"myCell"];
+    
+    
+    [_usersView reloadData];
+    [_usersView reloadInputViews];
 }
 
 
