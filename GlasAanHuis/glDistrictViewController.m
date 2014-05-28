@@ -496,6 +496,13 @@ glDistrictParticipants *participantsView;
     
     [ContMovie addSubview:movie.view];
     
+    
+    //goede doelen
+    NSArray *goededoel = [district valueForKey:@"goededoel"];
+    lblDoel.text = [NSString stringWithFormat:@"%@", [goededoel valueForKey:@"doel"]];
+    lblProcentDoel. text = [NSString stringWithFormat:@"%g%@",[[goededoel valueForKey:@"percentage"]doubleValue]*100,@"%"];
+    progGoedeDoel.progress = [[goededoel valueForKey:@"percentage"]doubleValue];
+    
     //stappen
     //NSJSONSerialization *districtstap =[district valueForKey:@"stappen"];
     NSArray *stappen = [district valueForKey:@"stappen"];
