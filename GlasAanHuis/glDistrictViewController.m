@@ -351,8 +351,8 @@ glDistrictParticipants *participantsView;
     [scroller addSubview:ContStappen];
     
     //percentage
-    lblPerDeelname = [[UILabel alloc]initWithFrame:CGRectMake(220, 1680, 150, 50)];
-    [lblPerDeelname setFont:[UIFont systemFontOfSize:45]];
+    lblPerDeelname = [[UILabel alloc]initWithFrame:CGRectMake(215, 1684, 150, 50)];
+    [lblPerDeelname setFont:[UIFont systemFontOfSize:40]];
     lblPerDeelname.textColor = [UIColor whiteColor];
     lblPerDeelname.text = @"55%";
     [scroller addSubview:lblPerDeelname];
@@ -363,8 +363,8 @@ glDistrictParticipants *participantsView;
     lblDeelname.text = @"deelnemers";
     [scroller addSubview:lblDeelname];
     
-    lblAantalDeelname = [[UILabel alloc]initWithFrame:CGRectMake(5, 1680, 150, 50)];
-    [lblAantalDeelname setFont:[UIFont systemFontOfSize:45]];
+    lblAantalDeelname = [[UILabel alloc]initWithFrame:CGRectMake(5, 1684, 150, 50)];
+    [lblAantalDeelname setFont:[UIFont systemFontOfSize:40]];
     lblAantalDeelname.textColor = [UIColor whiteColor];
     lblAantalDeelname.text = @"106";
     [scroller addSubview:lblAantalDeelname];
@@ -496,7 +496,26 @@ glDistrictParticipants *participantsView;
     
     [ContMovie addSubview:movie.view];
     
+    //stappen
+    //NSJSONSerialization *districtstap =[district valueForKey:@"stappen"];
+    NSArray *stappen = [district valueForKey:@"stappen"];
+    lblStap1.text = [NSString stringWithFormat:@"1. %@ %g%@", [stappen[0] valueForKey:@"naam"], [[stappen[0] valueForKey:@"percentage"]doubleValue]*100,@"%"];
+    progStap1.progress = [[stappen[0] valueForKey:@"percentage"]doubleValue];
+    lblStap2.text = [NSString stringWithFormat:@"2. %@ %g%@", [stappen[1] valueForKey:@"naam"], [[stappen[1] valueForKey:@"percentage"]doubleValue]*100,@"%"];
+    progStap2.progress = [[stappen[1] valueForKey:@"percentage"]doubleValue];
+    lblStap3.text = [NSString stringWithFormat:@"3. %@ %g%@", [stappen[2] valueForKey:@"naam"], [[stappen[2] valueForKey:@"percentage"]doubleValue]*100,@"%"];
+    progStap3.progress = [[stappen[2] valueForKey:@"percentage"]doubleValue];
+    lblStap4.text = [NSString stringWithFormat:@"4. %@ %g%@", [stappen[3] valueForKey:@"naam"], [[stappen[3] valueForKey:@"percentage"]doubleValue]*100,@"%"];
+    progStap4.progress = [[stappen[3] valueForKey:@"percentage"]doubleValue];
+    lblStap5.text = [NSString stringWithFormat:@"5. %@ %g%@", [stappen[4] valueForKey:@"naam"], [[stappen[4] valueForKey:@"percentage"]doubleValue]*100,@"%"];
+    progStap5.progress = [[stappen[4] valueForKey:@"percentage"]doubleValue];
     
+    lblPerDeelname.text = [NSString stringWithFormat:@"%g%@",[[district valueForKey:@"percentage"] doubleValue]*100,@"%"];
+    lblAantalDeelname.text = [[district valueForKey:@"participants"]stringValue];
+    
+    
+    
+  
     
     
     
