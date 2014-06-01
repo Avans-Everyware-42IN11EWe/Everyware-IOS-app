@@ -25,7 +25,6 @@
 }
 
 -(void) setBuddy:(NSInteger *)isBuddy {
-    
     NSInteger one = 1;
     if (isBuddy==one) {
         [_imageView.layer setBorderColor: [[UIColor greenColor] CGColor]];

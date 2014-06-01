@@ -225,7 +225,6 @@ glDistrictParticipants *participantsView;
     
     [scroller addSubview:ContVraag];
     
-    
     //Stappen
     ContStappen = [[UIView alloc]initWithFrame:self.view.frame];
     lblStappen = [[UILabel alloc]initWithFrame:CGRectMake(5, 1390, 150, 30)];
@@ -380,7 +379,6 @@ glDistrictParticipants *participantsView;
         [segue.destinationViewController setDistrictID:userID];
     }
     if ([segue.identifier isEqualToString:@"userVideo"]) {
-        //NSString * userID = [[self.districts[currentDistrict] valueForKey:@"id"] stringValue];
         [segue.destinationViewController setUserVideoUrl:currentVideoUrl];
     }
 }

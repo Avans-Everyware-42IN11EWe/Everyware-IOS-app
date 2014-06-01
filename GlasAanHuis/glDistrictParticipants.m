@@ -48,7 +48,6 @@
     NSURL *urlplaatje = [NSURL URLWithString:[_users[indexPath.row] valueForKey:@"plaatje"]];
     NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
     [myCell setPhoto:[UIImage imageWithData:dataplaatje]];
-    NSLog(@"trololol %i",[[_users[indexPath.row]valueForKey:@"is_buddy"]integerValue]);
     [myCell setBuddy:[[_users[indexPath.row]valueForKey:@"is_buddy"]integerValue]];
     myCell.backgroundColor = [UIColor whiteColor];
     
