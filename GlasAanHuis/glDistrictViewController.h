@@ -11,7 +11,7 @@
 #import <MapKit/MapKit.h>
 #import "MTPopupWindow.h"
 #import "glBlurView.h"
-
+#import "glMapViewDelegate.h"
 
 @interface glDistrictViewController : UIViewController <UIScrollViewDelegate>{
     IBOutlet glBlurView *backgroundView ;
@@ -62,6 +62,7 @@
     NSInteger currentDistrict;
 }
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
+@property glMapViewDelegate *mapDelegate;
 @property (strong, nonatomic) NSJSONSerialization *selectedDistrictNOTCURREND;
 - (void)setSelectedDistrictNOTCURREND:(NSJSONSerialization *)selectedDistrict;
 @property (strong, nonatomic)NSMutableArray *districts;

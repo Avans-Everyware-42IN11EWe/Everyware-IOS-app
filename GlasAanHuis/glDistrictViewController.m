@@ -12,6 +12,7 @@
 #import "SWRevealViewController.h"
 #import "glWijkInfoView.h"
 #import "glDistrictParticipants.h"
+#import "glMapViewDelegate.h"
 #define kDKTableViewDefaultContentInset 0.0f
 
 @interface glDistrictViewController ()
@@ -140,8 +141,12 @@ glDistrictParticipants *participantsView;
     lblBuurt = [[UILabel alloc]initWithFrame:CGRectMake(5, 780, 100, 50)];
     lblBuurt.text = @"Buurt kaart";
     lblBuurt.textColor= [UIColor whiteColor];
+    
     map = [[MKMapView alloc]initWithFrame:self.view.frame];
+    self.mapDelegate = [[glMapViewDelegate alloc] init];
+    map.delegate = self.mapDelegate;
     [map setFrame:CGRectMake(5, 820, 310, 180)];
+    
     [scroller addSubview:map];
     [scroller addSubview:lblBuurt];
     
@@ -399,15 +404,15 @@ glDistrictParticipants *participantsView;
 -(void)setDistrictView:(NSInteger)index
 {
     
-    NSJSONSerialization *district =[self getDistrict:index];
-    NSLog(@"%@",district);
-    
+    NSJSONSerialization *district = [self getDistrict:index];
     plainView.wijkName.text = [district valueForKey:@"name"];
     plainView.wijkPercent.text = [NSString stringWithFormat:@"%g%@",[[district valueForKey:@"percentage"] doubleValue]*100,@"%"];
     plainView.wijkDeelnemers.text = [[district valueForKey:@"participants"]stringValue];
     
     plainView.fbName = [district valueForKey:@"facebookpageurl"];
     plainView.fbId = [district valueForKey:@"facebookpageid"];
+    
+    self.mapDelegate.percentage = [[district valueForKey:@"percentage"] floatValue];
     
     //ACHTERGROND
     NSURL *urlplaatje = [NSURL URLWithString:[district valueForKey:@"plaatje"]];
@@ -432,11 +437,63 @@ glDistrictParticipants *participantsView;
     
     [ContMovie addSubview:movie.view];
     
+//    NSLog([NSString stringWithFormat:"%d", index]);
+    
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/geo?id=%@", [district valueForKey:@"id"]];
+    NSLog(path);
+    NSURL *url = [NSURL URLWithString:path];
+    NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
+    req.HTTPMethod = @"GET";
+    
+    NSOperationQueue* queue = [[NSOperationQueue alloc] init];
+    queue.name = @"eennaam";
+    
+    [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if(connectionError != nil) {
+            // doe iets met url
+        }
+        NSDictionary* result = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+
+            NSArray *center = [result objectForKey:@"center"];
+            
+            CLLocationCoordinate2D ground = CLLocationCoordinate2DMake([[center objectAtIndex:1] doubleValue], [[center objectAtIndex:0] doubleValue]);
+            
+            MKMapCamera *myCamera = [MKMapCamera cameraLookingAtCenterCoordinate:ground fromEyeCoordinate:ground eyeAltitude:4000];
+            map.camera = myCamera;
+            
+            NSArray *bound = [result objectForKey:@"bound"];
+            
+            CLLocationCoordinate2D *cords = (CLLocationCoordinate2D*)malloc(sizeof(CLLocationCoordinate2D) * [bound count]);
+            NSUInteger index = 0;
+            
+            // for each loop to access all points of specific state
+            
+            for (NSArray *dPoint in bound) {
+                CGFloat lat = [[dPoint objectAtIndex:1] doubleValue];
+                CGFloat lng = [[dPoint objectAtIndex:0] doubleValue];
+                // set the location details to appropriate index of array of Co-ordinates
+                cords[index++] = CLLocationCoordinate2DMake(lat,lng);
+            }
+            
+            // create a polygon based on the array of co-ordinates
+            MKPolygon *polygon =[MKPolygon polygonWithCoordinates:cords count:[bound count]];
+            
+            // assigning the index of array to polygon object - which can be helpful for next methods
+            [polygon setTitle:@"blaat"];
+            [map removeOverlays:map.overlays];
+            [map addOverlay:polygon];
+        }];
+        
+    }];
+
+    
     
     //goede doelen
     NSArray *goededoel = [district valueForKey:@"goededoel"];
     lblDoel.text = [NSString stringWithFormat:@"%@", [goededoel valueForKey:@"doel"]];
-    lblProcentDoel. text = [NSString stringWithFormat:@"%g%@",[[goededoel valueForKey:@"percentage"]doubleValue]*100,@"%"];
+    lblProcentDoel.text = [NSString stringWithFormat:@"%g%@",[[goededoel valueForKey:@"percentage"]doubleValue]*100,@"%"];
     progGoedeDoel.progress = [[goededoel valueForKey:@"percentage"]doubleValue];
     
     //stappen
