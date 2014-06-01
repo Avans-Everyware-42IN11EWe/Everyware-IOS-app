@@ -390,8 +390,9 @@ glDistrictParticipants *participantsView;
     // Dispose of any resources that can be recreated.
 }
 
--(void)goToBuddyDetail
+-(void)goToBuddyDetail:(NSString *)detail
 {
+    currentdetailViewID = detail;
     [self performSegueWithIdentifier:@"buddyDetail" sender:self];
 }
 
@@ -416,6 +417,10 @@ glDistrictParticipants *participantsView;
     }
     if ([segue.identifier isEqualToString:@"userVideo"]) {
         [segue.destinationViewController setUserVideoUrl:currentVideoUrl];
+    }
+    if ([segue.identifier isEqualToString:@"buddyDetail"]) {
+        glBuddyDetailViewController *controller = [segue destinationViewController];
+        [controller setBuddy:currentdetailViewID];
     }
 }
 
@@ -575,6 +580,7 @@ glDistrictParticipants *participantsView;
         
     }
 }
+
 -(NSJSONSerialization*)getDistrict:(NSInteger)wijkId
 {
     NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/district?id=%@",wijkId];

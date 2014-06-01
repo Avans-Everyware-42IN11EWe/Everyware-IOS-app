@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     
-    NSJSONSerialization *user =[self getUser:1];
+    NSJSONSerialization *user =[self getUser:_buddy];
     self.nameUser.text = [user valueForKey:@"naam"];
     self.ageUser.text = [NSString stringWithFormat:@"Leeftijd: %@",[user valueForKey:@"leeftijd"]];
     self.cityUser.text = [NSString stringWithFormat:@"Woonplaats: %@",[user valueForKey:@"woonplaats"]];
@@ -62,6 +62,9 @@
     
 }
 
+-(void)setBuddyID:(NSString *)buddyID{
+    buddyID = buddyID;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -80,9 +83,9 @@
 }
 */
 
--(NSJSONSerialization*)getUser:(NSInteger)userId
+-(NSJSONSerialization*)getUser:(NSString*)userId
 {
-    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/buddy?id=%d",userId];
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/buddy?id=%@",userId];
     NSString *urlstring = [NSString stringWithFormat:path];
     NSURL *url = [NSURL URLWithString:urlstring];
     NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];

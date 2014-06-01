@@ -10,6 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 @interface glBuddyDetailViewController : UIViewController
 @property (nonatomic, strong) MPMoviePlayerController *mc;
+@property (strong, nonatomic)NSString *buddy;
 @property (strong, nonatomic) IBOutlet UIView *movie;
 @property (strong, nonatomic) IBOutlet UIImageView *imageUser;
 @property (strong, nonatomic) IBOutlet UILabel *ageUser;
@@ -17,5 +18,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *phoneUser;
 @property (strong, nonatomic) IBOutlet UILabel *emailUser;
 @property (strong, nonatomic) IBOutlet UILabel *nameUser;
-
+-(void)setBuddyID:(NSString *)buddyID;
 @end

@@ -25,6 +25,8 @@ NSArray *menuItems;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    senderID = [defaults valueForKey:@"userID"];
     [self getNewLines];
 }
 
@@ -124,7 +126,7 @@ NSArray *menuItems;
 //TODO:berichten niet naar jezelf sturen..
 -(NSArray*)sendMessage
 {
-    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:@"2",@"sender_id",@"2",@"receiver_id",_txtMessageToSend.text,@"message",nil];
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:senderID,@"sender_id",@"2",@"receiver_id",_txtMessageToSend.text,@"message",nil];
     NSError *postError;
     NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
     

@@ -16,3 +16,4 @@
 @end
 NSArray *roomLines;
 NSTimer *timer;
+NSString *senderID;
