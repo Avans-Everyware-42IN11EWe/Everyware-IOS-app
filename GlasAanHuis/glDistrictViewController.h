@@ -68,5 +68,8 @@
 - (IBAction)showWelcome:(id)sender;
 - (IBAction)goToRegister:(id)sender;
 - (IBAction)goToAndereWijk:(id)sender;
+- (IBAction)goToCommitment:(id)sender;
+- (IBAction)goToProvider:(id)sender;
+-(void)goToBuddyDetail;
 @end
 

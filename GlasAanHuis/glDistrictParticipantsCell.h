@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <QuartzCore/QuartzCore.h>
 @interface glDistrictParticipantsCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+-(void) setPhoto:(UIImage *)image;
+-(void) setBuddy:(int *)isBuddy;
 
 @end

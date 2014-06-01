@@ -14,18 +14,20 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        _imageView = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
+        [self.contentView addSubview:_imageView];
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+-(void) setPhoto:(UIImage *)image {
+    self.imageView.image = image;
 }
-*/
 
+-(void) setBuddy:(int *)isBuddy {
+    if (isBuddy == 1) {
+        [_imageView.layer setBorderColor: [[UIColor greenColor] CGColor]];
+        [_imageView.layer setBorderWidth: 2.0];
+    }
+}
 @end

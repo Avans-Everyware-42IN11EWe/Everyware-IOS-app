@@ -48,7 +48,8 @@
     [_mc prepareToPlay];
     //[movie pause];
     _mc.shouldAutoplay = false;
-    [_movie addSubview:_mc.view];}
+    [_movie addSubview:_mc.view];
+}
 
 
 - (void)didReceiveMemoryWarning

@@ -165,6 +165,8 @@
                         <segue destination="CNz-rh-sHu" kind="push" identifier="forum" id="piH-z2-TYm"/>
                         <segue destination="Z5V-e6-qAg" kind="push" identifier="faq" id="7aI-F7-mqL"/>
                         <segue destination="7cv-qs-Tzf" kind="custom" identifier="buddyDetail" id="rbR-kd-nLp"/>
+                        <segue destination="jEU-BX-EgU" kind="custom" identifier="commitment" id="Pet-d6-fTd"/>
+                        <segue destination="ZkM-2k-F02" kind="custom" identifier="provider" id="0TW-lo-qvF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajv-Tj-JyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -318,7 +320,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nby-K7-ZML" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4126" y="505"/>
+            <point key="canvasLocation" x="3810" y="45"/>
+        </scene>
+        <!--Gl Provider View Controller-->
+        <scene sceneID="rbt-yq-7Lz">
+            <objects>
+                <viewController id="ZkM-2k-F02" customClass="glProviderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b1s-nR-TpX"/>
+                        <viewControllerLayoutGuide type="bottom" id="oiw-cn-iGN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hyZ-ZM-QDm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOk-Ot-li8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4169" y="580"/>
+        </scene>
+        <!--Gl Commitment View Controller-->
+        <scene sceneID="9ek-fB-Mg1">
+            <objects>
+                <viewController id="jEU-BX-EgU" customClass="glCommitmentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UnI-Cc-7pQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="924-w5-uIR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DT3-Ao-0hm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7uj-rb-GQj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4565" y="1085"/>
         </scene>
         <!--Gl Buddy Detail View Controller-->
         <scene sceneID="Apg-LC-Dy6">

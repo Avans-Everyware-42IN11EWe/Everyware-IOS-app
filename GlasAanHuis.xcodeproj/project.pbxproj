@@ -15,6 +15,8 @@
 		359B2F4D1930BCA300A65D66 /* obama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 359B2F4B1930BCA300A65D66 /* obama.jpg */; };
 		35C0697D1932596A009538A9 /* glDistrictParticipants.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C0697C1932596A009538A9 /* glDistrictParticipants.m */; };
 		35C0697F19325996009538A9 /* DistrictParticipants.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C0697E19325996009538A9 /* DistrictParticipants.xib */; };
+		35CC47001932C0FF00F16AAC /* glProviderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC46FF1932C0FF00F16AAC /* glProviderViewController.m */; };
+		35CC47031932C12500F16AAC /* glCommitmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC47021932C12500F16AAC /* glCommitmentViewController.m */; };
 		35D042BB191A1F64008D3679 /* glMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042BA191A1F64008D3679 /* glMyProfileViewController.m */; };
 		35D042BE191A1F73008D3679 /* glVideoUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042BD191A1F73008D3679 /* glVideoUploadViewController.m */; };
 		35D042C1191A21E9008D3679 /* glFaqViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D042C0191A21E9008D3679 /* glFaqViewController.m */; };
@@ -79,6 +81,10 @@
 		35C0697B1932596A009538A9 /* glDistrictParticipants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glDistrictParticipants.h; sourceTree = "<group>"; };
 		35C0697C1932596A009538A9 /* glDistrictParticipants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glDistrictParticipants.m; sourceTree = "<group>"; };
 		35C0697E19325996009538A9 /* DistrictParticipants.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DistrictParticipants.xib; sourceTree = "<group>"; };
+		35CC46FE1932C0FF00F16AAC /* glProviderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glProviderViewController.h; sourceTree = "<group>"; };
+		35CC46FF1932C0FF00F16AAC /* glProviderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glProviderViewController.m; sourceTree = "<group>"; };
+		35CC47011932C12500F16AAC /* glCommitmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glCommitmentViewController.h; sourceTree = "<group>"; };
+		35CC47021932C12500F16AAC /* glCommitmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glCommitmentViewController.m; sourceTree = "<group>"; };
 		35D042B9191A1F64008D3679 /* glMyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glMyProfileViewController.h; sourceTree = "<group>"; };
 		35D042BA191A1F64008D3679 /* glMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glMyProfileViewController.m; sourceTree = "<group>"; };
 		35D042BC191A1F73008D3679 /* glVideoUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glVideoUploadViewController.h; sourceTree = "<group>"; };
@@ -222,15 +228,12 @@
 				43D07FED192CDE6F00F22139 /* glBuddyDetailViewController.m */,
 				359B2F471930A7D000A65D66 /* glBuddyChatViewController.h */,
 				359B2F481930A7D000A65D66 /* glBuddyChatViewController.m */,
+				35CC46FE1932C0FF00F16AAC /* glProviderViewController.h */,
+				35CC46FF1932C0FF00F16AAC /* glProviderViewController.m */,
+				35CC47011932C12500F16AAC /* glCommitmentViewController.h */,
+				35CC47021932C12500F16AAC /* glCommitmentViewController.m */,
 			);
 			name = ViewController;
-			sourceTree = "<group>";
-		};
-		43DACDEA192A1DE30039525D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		FFCD67711906EED900D05AA3 /* Library */ = {
@@ -295,7 +298,6 @@
 		FFEBE5CD18F299A700C8DD0B /* GlasAanHuis */ = {
 			isa = PBXGroup;
 			children = (
-				43DACDEA192A1DE30039525D /* Models */,
 				35D042C6191A2209008D3679 /* ViewController */,
 				35D042B2191A14FE008D3679 /* MTPopupWindow */,
 				35D0427E191A0BBE008D3679 /* SideBar */,
@@ -454,10 +456,12 @@
 				FFD9C46E1928BCF800007267 /* glWijkInfoView.m in Sources */,
 				49B7AE3B193537CC000E8904 /* glDistrictParticipantsCell.m in Sources */,
 				49C31EA219198BDA005A8F28 /* glIntroViewController.m in Sources */,
+				35CC47031932C12500F16AAC /* glCommitmentViewController.m in Sources */,
 				43D07FEE192CDE6F00F22139 /* glBuddyDetailViewController.m in Sources */,
 				359B2F491930A7D000A65D66 /* glBuddyChatViewController.m in Sources */,
 				35D042C4191A21F3008D3679 /* glForumViewController.m in Sources */,
 				35C0697D1932596A009538A9 /* glDistrictParticipants.m in Sources */,
+				35CC47001932C0FF00F16AAC /* glProviderViewController.m in Sources */,
 				49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */,
 				35D042C9191A4288008D3679 /* SidebarViewController.m in Sources */,
 				49C31E93191915D5005A8F28 /* glStartViewController.m in Sources */,

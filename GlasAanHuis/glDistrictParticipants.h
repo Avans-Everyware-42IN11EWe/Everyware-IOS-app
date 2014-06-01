@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "glDistrictViewController.h"
-@interface glDistrictParticipants : UIView<UICollectionViewDataSource, UICollectionViewDelegate>
+#import "glDistrictParticipantsCell.h"
+@interface glDistrictParticipants : UIView<UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) IBOutlet UICollectionView *usersView;
 @property glDistrictViewController *eindbaas;
+@property (strong, nonatomic) NSArray *users;
 @end
 
 

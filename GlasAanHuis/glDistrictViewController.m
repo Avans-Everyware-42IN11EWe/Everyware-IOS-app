@@ -39,17 +39,6 @@ glDistrictParticipants *participantsView;
     return self;
 }
 
-
-//- (void)viewDidLoad
-//{
-//    [super viewDidLoad];
-//    // Do any additional setup after loading the view.
-//    
-////    NSDictionary *jsonDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"2.123",@"distance",@"2",@"id",@"Den Bosch Centrum",@"name",@"0.4",@"percentage",@"unknown",@"status", nil];
-////    _selectedDistrict = [NSJSONSerialization dataWithJSONObject:jsonDictionary options:NSJSONWritingPrettyPrinted error:nil];
-////    NSLog( @"selectedDistrict: %@", _selectedDistrict);
-//    
-//}
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
@@ -117,25 +106,17 @@ glDistrictParticipants *participantsView;
     [scroller setScrollEnabled:YES];
     //1800
     [scroller setContentSize:CGSizeMake(320,3000)];
-    //UIView *masterView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
     backgroundView = [[glBlurView alloc] initWithFrame: self.view.bounds];
     //backgroundView.originalImage = [UIImage imageNamed:@"1979672_1451730748396471_1888089831_n.jpg"];
     backgroundView.scrollView = scroller;
     backgroundView.isGlassEffectOn = YES;
     
-    
     [self.view addSubview:backgroundView];
     
-    
     scroller.contentInset = UIEdgeInsetsMake(kDKTableViewDefaultContentInset, 0, 0, 0);
-    //self.tableView.contentInset = UIEdgeInsetsMake(kDKTableViewDefaultContentInset, 0, 0, 0);
-    
     
     [self.view addSubview:scroller];
-    
-    //[scroller setScrollEnabled:YES];
-    //[scroller setContentSize:CGSizeMake(320,1800)];
     
     // Instantiate the nib content without any reference to it.
     NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"WijkInfo" owner:nil options:nil];
@@ -143,38 +124,7 @@ glDistrictParticipants *participantsView;
     plainView = [nibContents firstObject];
     plainView.eindbaas = self;
     [scroller addSubview:plainView];
-    
-    //NSArray *partContents = [[NSBundle mainBundle] loadNibNamed:@"DistrictParticipants" owner:nil options:nil];
-    //participantsView = [partContents firstObject];
-    //participantsView.
-    //participantsView.eindbaas = self;
-    
-    
-    // Some hardcoded layout.
-    //CGSize padding = (CGSize){ 22.0, 22.0 };
-   // plainView.frame = (CGRect){padding.width, padding.height, plainView.frame.size};
-    
-    // Add to the view hierarchy (thus retain).
 
-    
-//    wijk = [[UIView alloc]initWithFrame:self.view.frame];
-    
-//    [wijk setFrame:CGRectMake(0, 0, 320, 575)];
-//    [scroller addSubview:wijk];
-    
-    
-    //Hoofdplaatje
-//    imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"imgres.jpg"]];
-    
-    
-//    [imageView setFrame:CGRectMake(0,90,320,570)];
-//    backGround = imageView.image;
-//    
-//    scroller.backgroundColor = [UIColor clearColor];
-//    self.view.backgroundColor = [UIColor colorWithPatternImage:backGround];
-//    
-//    //[scroller addSubview:imageView];
-    
     //video
     lblMovie = [[UILabel alloc]initWithFrame:CGRectMake(5, 580, 100, 50)];
     lblMovie.text = @"Buurt video";
@@ -182,17 +132,6 @@ glDistrictParticipants *participantsView;
     ContMovie = [[UIView alloc]initWithFrame:self.view.frame];
     [ContMovie setFrame:CGRectMake(5, 620, 310, 160)];
     [ContMovie setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
-  
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"Comp2" ofType:@"mp4"];
-//    NSURL *url = [NSURL fileURLWithPath:path];
-//    movie = [[MPMoviePlayerController alloc] initWithContentURL:url];
-//    [movie.view setFrame:CGRectMake(0, 0, 310, 160)];
-//    
-//    //[movie play];
-//    [movie prepareToPlay];
-//    //[movie pause];
-//    movie.shouldAutoplay = false;
-//    [ContMovie addSubview:movie.view];
     [scroller addSubview:ContMovie];
     [scroller addSubview:lblMovie];
     
@@ -373,23 +312,11 @@ glDistrictParticipants *participantsView;
     UIView *line = [[UIView alloc]initWithFrame:CGRectMake(5, 1725, 310, 2)];
     [line setBackgroundColor:[UIColor grayColor]];
     [scroller addSubview:line];
-    UIImageView *img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"billgates.jpg"]];
-    CGRect rect = img.frame;
-    rect.origin.x = 5;
-    rect.origin.y = 1750;
-    rect.size.height=50;
-    rect.size.width=50;
-    img.frame = rect;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToBuddyDetail)];
-    img.userInteractionEnabled = YES;
-    [img addGestureRecognizer:tap];
-    
-    [scroller addSubview:img];
-    
+
     NSArray *nibContentsUsers = [[NSBundle mainBundle] loadNibNamed:@"DistrictParticipants" owner:nil options:nil];
     participantsView = [nibContentsUsers firstObject];
     participantsView.eindbaas = self;
-    participantsView.frame = CGRectMake(0, 1800, self.view.frame.size.width,self.view.frame.size.height);
+    participantsView.frame = CGRectMake(0, 1730, self.view.frame.size.width,self.view.frame.size.height);
     participantsView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
     participantsView.opaque = NO;
     [scroller addSubview:participantsView];
@@ -460,6 +387,15 @@ glDistrictParticipants *participantsView;
     [self performSegueWithIdentifier:@"anders" sender:self];
     //}
 }
+
+- (IBAction)goToCommitment:(id)sender {
+    [self performSegueWithIdentifier:@"commitment" sender:self];
+}
+
+- (IBAction)goToProvider:(id)sender {
+    [self performSegueWithIdentifier:@"provider" sender:self];
+}
+
 -(void)setDistrictView:(NSInteger)index
 {
     
@@ -481,12 +417,12 @@ glDistrictParticipants *participantsView;
     
     //VIDEO
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"sample_mpeg4" ofType:@"mp4"];
-    NSURL *urlmovie = [NSURL fileURLWithPath:path];
+    //NSString *path = [[NSBundle mainBundle] pathForResource:@"sample_mpeg4" ofType:@"mp4"];
+    //NSURL *urlmovie = [NSURL fileURLWithPath:path];
     
     //NSURL *urlmovie = [NSURL URLWithString:@"http://glas.mycel.nl/uploads/videos/VID_20140422_131531.mp4"];
     
-    //NSURL *urlmovie = [NSURL URLWithString:[district valueForKey:@"video"]];
+    NSURL *urlmovie = [NSURL URLWithString:[district valueForKey:@"video"]];
     
     movie = [[MPMoviePlayerController alloc] initWithContentURL:urlmovie];
     //[movie setMovieSourceType:MPMovieSourceTypeFile];
@@ -520,13 +456,11 @@ glDistrictParticipants *participantsView;
     lblPerDeelname.text = [NSString stringWithFormat:@"%g%@",[[district valueForKey:@"percentage"] doubleValue]*100,@"%"];
     lblAantalDeelname.text = [[district valueForKey:@"participants"]stringValue];
     
-    
-    
-  
-    
-    
-    
+    NSArray *users = [district valueForKey:@"plaatjes"];
+    participantsView.users = users;
+    participantsView.usersView.reloadData;
 }
+
 -(void)getDistricts
 {
     //NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",_nameTV.text,@"name",@"lat",@"latlong",@"1",@"district_id", nil];

@@ -30,23 +30,31 @@
     [self.eindbaas goToRegister:sender];
 }
 
+- (IBAction)kiesprovider:(id)sender {
+    [self.eindbaas goToProvider:sender];
+}
+
 - (IBAction)ANDEREWIJK:(id)sender {
     [self.eindbaas goToAndereWijk:sender];
+}
+
+- (IBAction)ikdoemee:(id)sender {
+    [self.eindbaas goToCommitment:sender];
+}
+
+- (IBAction)aanbetaling:(id)sender {
+    
 }
 
 - (IBAction)goToDistrictPage:(id)sender {
     NSString *str = [NSString stringWithFormat:@"fb://profile/%@", _fbId];
     NSURL *fburl = [NSURL URLWithString:str];
     
-    //NSURL *fburl = [NSURL URLWithString:@"fb://profile/1450066045229608"];
-    
-    
     if (![[UIApplication sharedApplication] openURL:fburl])
     {
         fburl =   [ NSURL URLWithString:_fbName];
     }
     [[UIApplication sharedApplication] openURL:fburl];
-    NSLog(@"BLAASDKSJDSJKDakjDJKDKJ%@%@",_fbName,_fbId);
 }
 
 @end
