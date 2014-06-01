@@ -11,6 +11,6 @@
 @interface glDistrictParticipantsCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 -(void) setPhoto:(UIImage *)image;
--(void) setBuddy:(int *)isBuddy;
+-(void) setBuddy:(NSInteger *)isBuddy;
 
 @end

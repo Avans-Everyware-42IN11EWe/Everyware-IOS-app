@@ -12,7 +12,8 @@
 @interface glDistrictParticipants : UIView<UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) IBOutlet UICollectionView *usersView;
 @property glDistrictViewController *eindbaas;
-@property (strong, nonatomic) NSArray *users;
+@property (strong, nonatomic) NSMutableArray *users;
+-(void)setUsers:(NSMutableArray *)array;
 @end
 
 

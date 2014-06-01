@@ -24,10 +24,17 @@
     self.imageView.image = image;
 }
 
--(void) setBuddy:(int *)isBuddy {
-    if (isBuddy == 1) {
+-(void) setBuddy:(NSInteger *)isBuddy {
+    
+    NSInteger one = 1;
+    if (isBuddy==one) {
         [_imageView.layer setBorderColor: [[UIColor greenColor] CGColor]];
         [_imageView.layer setBorderWidth: 2.0];
+    }else
+    {
+        [_imageView.layer setBorderColor: [[UIColor clearColor] CGColor]];
+        [_imageView.layer setBorderWidth: 2.0];
+        
     }
 }
 @end

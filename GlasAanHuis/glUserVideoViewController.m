@@ -1,18 +1,18 @@
 //
-//  glCommitmentViewController.m
+//  glUserVideoViewController.m
 //  GlasAanHuis
 //
-//  Created by leon on 25/05/14.
+//  Created by leon on 01/06/14.
 //  Copyright (c) 2014 GlasAanHuis. All rights reserved.
 //
 
-#import "glCommitmentViewController.h"
+#import "glUserVideoViewController.h"
 
-@interface glCommitmentViewController ()
+@interface glUserVideoViewController ()
 
 @end
 
-@implementation glCommitmentViewController
+@implementation glUserVideoViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,6 +21,10 @@
         // Custom initialization
     }
     return self;
+}
+-(void)setUrl:(NSString*)url
+{
+    _userVideoUrl = url;
 }
 
 - (void)viewDidLoad
@@ -35,6 +39,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    NSURL *url = [NSURL fileURLWithPath:_userVideoUrl];
+    _mc = [[MPMoviePlayerController alloc] initWithContentURL:url];
+    [_mc.view setFrame:CGRectMake(0, 0, 260, 160)];
+    
+    //[_movie play];
+    [_mc prepareToPlay];
+    //[movie pause];
+    _mc.shouldAutoplay = false;
+    [_movie addSubview:_mc.view];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -46,9 +65,4 @@
 }
 */
 
-- (IBAction)committed:(id)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setValue:@"2" forKey:@"userStatus"];
-    [defaults synchronize];
-}
 @end

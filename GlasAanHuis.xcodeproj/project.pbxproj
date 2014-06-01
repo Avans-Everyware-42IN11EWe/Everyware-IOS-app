@@ -13,6 +13,8 @@
 		359B2F491930A7D000A65D66 /* glBuddyChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B2F481930A7D000A65D66 /* glBuddyChatViewController.m */; };
 		359B2F4C1930BCA300A65D66 /* billgates.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 359B2F4A1930BCA300A65D66 /* billgates.jpg */; };
 		359B2F4D1930BCA300A65D66 /* obama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 359B2F4B1930BCA300A65D66 /* obama.jpg */; };
+		359BC845193B9F40005F2718 /* glUserVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359BC844193B9F40005F2718 /* glUserVideoViewController.m */; };
+		359BC847193BB07E005F2718 /* 06-commit_feet.png in Resources */ = {isa = PBXBuildFile; fileRef = 359BC846193BB07E005F2718 /* 06-commit_feet.png */; };
 		35C0697D1932596A009538A9 /* glDistrictParticipants.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C0697C1932596A009538A9 /* glDistrictParticipants.m */; };
 		35C0697F19325996009538A9 /* DistrictParticipants.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C0697E19325996009538A9 /* DistrictParticipants.xib */; };
 		35CC47001932C0FF00F16AAC /* glProviderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC46FF1932C0FF00F16AAC /* glProviderViewController.m */; };
@@ -79,6 +81,9 @@
 		359B2F481930A7D000A65D66 /* glBuddyChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glBuddyChatViewController.m; sourceTree = "<group>"; };
 		359B2F4A1930BCA300A65D66 /* billgates.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = billgates.jpg; sourceTree = "<group>"; };
 		359B2F4B1930BCA300A65D66 /* obama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = obama.jpg; sourceTree = "<group>"; };
+		359BC843193B9F40005F2718 /* glUserVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glUserVideoViewController.h; sourceTree = "<group>"; };
+		359BC844193B9F40005F2718 /* glUserVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glUserVideoViewController.m; sourceTree = "<group>"; };
+		359BC846193BB07E005F2718 /* 06-commit_feet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-commit_feet.png"; sourceTree = "<group>"; };
 		35C0697B1932596A009538A9 /* glDistrictParticipants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glDistrictParticipants.h; sourceTree = "<group>"; };
 		35C0697C1932596A009538A9 /* glDistrictParticipants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glDistrictParticipants.m; sourceTree = "<group>"; };
 		35C0697E19325996009538A9 /* DistrictParticipants.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DistrictParticipants.xib; sourceTree = "<group>"; };
@@ -235,6 +240,8 @@
 				35CC46FF1932C0FF00F16AAC /* glProviderViewController.m */,
 				35CC47011932C12500F16AAC /* glCommitmentViewController.h */,
 				35CC47021932C12500F16AAC /* glCommitmentViewController.m */,
+				359BC843193B9F40005F2718 /* glUserVideoViewController.h */,
+				359BC844193B9F40005F2718 /* glUserVideoViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -321,6 +328,7 @@
 		FFEBE5CE18F299A700C8DD0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				359BC846193BB07E005F2718 /* 06-commit_feet.png */,
 				49B7AE37193522A0000E8904 /* sample_mpeg4.mp4 */,
 				FFEBE5D618F299A700C8DD0B /* glAppDelegate.h */,
 				FFEBE5D718F299A700C8DD0B /* glAppDelegate.m */,
@@ -437,6 +445,7 @@
 				35D042CE191A42E8008D3679 /* info.html in Resources */,
 				FFD9C46B1928BA6A00007267 /* WijkInfo.xib in Resources */,
 				FFEBE5D218F299A700C8DD0B /* InfoPlist.strings in Resources */,
+				359BC847193BB07E005F2718 /* 06-commit_feet.png in Resources */,
 				FFEBE5DB18F299A700C8DD0B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +472,7 @@
 				49C31EA219198BDA005A8F28 /* glIntroViewController.m in Sources */,
 				35CC47031932C12500F16AAC /* glCommitmentViewController.m in Sources */,
 				43D07FEE192CDE6F00F22139 /* glBuddyDetailViewController.m in Sources */,
+				359BC845193B9F40005F2718 /* glUserVideoViewController.m in Sources */,
 				359B2F491930A7D000A65D66 /* glBuddyChatViewController.m in Sources */,
 				35D042C4191A21F3008D3679 /* glForumViewController.m in Sources */,
 				35C0697D1932596A009538A9 /* glDistrictParticipants.m in Sources */,

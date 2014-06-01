@@ -64,6 +64,8 @@
             <connections>
                 <outlet property="meedoen" destination="YaC-k7-eu8" id="9Te-L9-7u3"/>
                 <outlet property="placeholder" destination="YTI-PB-IxV" id="wd9-Xm-U40"/>
+                <outlet property="providerKiezen" destination="bc1-YQ-KY1" id="Jhp-o7-dkb"/>
+                <outlet property="wachten" destination="AiX-b7-J9D" id="V4W-lC-xLu"/>
                 <outlet property="wijkDeelnemers" destination="hSh-9A-iTy" id="shP-2m-jNw"/>
                 <outlet property="wijkKiezen" destination="hL7-p1-BQH" id="OBp-rK-eqE"/>
                 <outlet property="wijkName" destination="1dQ-Ch-BiM" id="Rvs-GN-rnd"/>
@@ -128,7 +130,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.9215686917" green="0.9215686917" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                    <state key="normal" title="Aanbetaling">
+                    <state key="normal" title="Wachten op Glasvezel">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>

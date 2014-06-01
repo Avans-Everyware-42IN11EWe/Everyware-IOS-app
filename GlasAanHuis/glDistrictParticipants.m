@@ -15,6 +15,7 @@
 @implementation glDistrictParticipants
 
 - (void)didMoveToSuperview {
+    _users = [[NSMutableArray alloc]init];
     //_users  = [@[@"obama.jpg",@"obama.jpg",@"obama.jpg",@"obama.jpg",@"obama.jpg",@"obama.jpg"] mutableCopy];
     _usersView.delegate = self;
     _usersView.dataSource = self;
@@ -22,9 +23,14 @@
     
     
     [_usersView reloadData];
-    [_usersView reloadInputViews];
+    //[_usersView reloadInputViews];
 }
 
+- (void)setUsers:(NSMutableArray *)array
+{
+    _users = array;
+    [_usersView reloadData];
+}
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -42,7 +48,8 @@
     NSURL *urlplaatje = [NSURL URLWithString:[_users[indexPath.row] valueForKey:@"plaatje"]];
     NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
     [myCell setPhoto:[UIImage imageWithData:dataplaatje]];
-    [myCell setBuddy:[[_users[indexPath.row]valueForKey:@"is_buddy"]intValue]];
+    NSLog(@"trololol %i",[[_users[indexPath.row]valueForKey:@"is_buddy"]integerValue]);
+    [myCell setBuddy:[[_users[indexPath.row]valueForKey:@"is_buddy"]integerValue]];
     myCell.backgroundColor = [UIColor whiteColor];
     
     return myCell;
@@ -50,7 +57,13 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_eindbaas goToBuddyDetail];
+    if ([[_users[indexPath.row]valueForKey:@"is_buddy"]integerValue]==1) {
+        [_eindbaas goToBuddyDetail];
+    }else if([[_users[indexPath.row]valueForKey:@"has_video"]integerValue]==1)
+    {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"Comp2" ofType:@"mp4"];
+        [_eindbaas goTouserVideo:path];
+    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath

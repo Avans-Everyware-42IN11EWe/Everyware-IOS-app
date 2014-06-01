@@ -374,18 +374,18 @@ glDistrictParticipants *participantsView;
         NSString * userID = [[self.districts[currentDistrict] valueForKey:@"id"] stringValue];
         [segue.destinationViewController setDistrictID:userID];
     }
+    if ([segue.identifier isEqualToString:@"userVideo"]) {
+        //NSString * userID = [[self.districts[currentDistrict] valueForKey:@"id"] stringValue];
+        [segue.destinationViewController setUserVideoUrl:currentVideoUrl];
+    }
 }
+
 - (IBAction)goToRegister:(id)sender {
-    //if(_selectedDistrict != nil){
-        [self performSegueWithIdentifier:@"register" sender:self];
-    //[self performSegueWithIdentifier:@"buddyDetail" sender:self];
-    //}
+    [self performSegueWithIdentifier:@"register" sender:self];
 }
 
 - (IBAction)goToAndereWijk:(id)sender {
-    //if(_selectedDistrict != nil){
     [self performSegueWithIdentifier:@"anders" sender:self];
-    //}
 }
 
 - (IBAction)goToCommitment:(id)sender {
@@ -396,9 +396,14 @@ glDistrictParticipants *participantsView;
     [self performSegueWithIdentifier:@"provider" sender:self];
 }
 
+
+-(void)goTouserVideo:(NSString *)url{
+    currentVideoUrl = url;
+    [self performSegueWithIdentifier:@"userVideo" sender:self];
+}
+
 -(void)setDistrictView:(NSInteger)index
 {
-    
     NSJSONSerialization *district =[self getDistrict:index];
     NSLog(@"%@",district);
     
@@ -420,7 +425,7 @@ glDistrictParticipants *participantsView;
     //NSString *path = [[NSBundle mainBundle] pathForResource:@"sample_mpeg4" ofType:@"mp4"];
     //NSURL *urlmovie = [NSURL fileURLWithPath:path];
     
-    //NSURL *urlmovie = [NSURL URLWithString:@"http://glas.mycel.nl/uploads/videos/VID_20140422_131531.mp4"];
+    //NSURL *urlmovie = [NSURL URLWithString:@"http://glas.mycel.nl/uploads/videos/sample_mpeg4.mp4"];
     
     NSURL *urlmovie = [NSURL URLWithString:[district valueForKey:@"video"]];
     
@@ -454,38 +459,21 @@ glDistrictParticipants *participantsView;
     progStap5.progress = [[stappen[4] valueForKey:@"percentage"]doubleValue];
     
     lblPerDeelname.text = [NSString stringWithFormat:@"%g%@",[[district valueForKey:@"percentage"] doubleValue]*100,@"%"];
-    lblAantalDeelname.text = [[district valueForKey:@"participants"]stringValue];
     
-    NSArray *users = [district valueForKey:@"plaatjes"];
-    participantsView.users = users;
-    participantsView.usersView.reloadData;
+    lblAantalDeelname.text = [[district valueForKey:@"participants"]stringValue];
+    CGPoint offset = scroller.contentOffset;
+    offset.x -= 1.0;
+    offset.y -= 1.0;
+    [scroller setContentOffset:offset animated:YES];
+    NSMutableArray *users = [[NSMutableArray alloc]initWithArray:[district valueForKey:@"plaatjes"]];
+    [participantsView setUsers:users];
 }
 
 -(void)getDistricts
 {
-    //NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",_nameTV.text,@"name",@"lat",@"latlong",@"1",@"district_id", nil];
-    //NSError *postError;
-    //NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
-    
     NSURL *url = [NSURL URLWithString:@"http://glas.mycel.nl/districts?lat=51.983333&long=5.916667"];
     NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
     req.HTTPMethod = @"GET";
-    //[req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    //[req setHTTPBody:postdata];
-    
-//    NSOperationQueue* queue = [[NSOperationQueue alloc] init];
-//    queue.name = @"eennaam";
-//    
-//    [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//        if(connectionError != nil) {
-//            // doe iets met url
-//        }
-//        
-//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//            self.districts = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
-//        }];
-//        
-//    }];
     NSURLResponse * response = nil;
     NSError * error = nil;
     NSData * data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
@@ -497,31 +485,11 @@ glDistrictParticipants *participantsView;
 }
 -(NSJSONSerialization*)getDistrict:(NSInteger)wijkId
 {
-    //NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",_nameTV.text,@"name",@"lat",@"latlong",@"1",@"district_id", nil];
-    //NSError *postError;
-    //NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
     NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/district?id=%@",wijkId];
     NSString *urlstring = [NSString stringWithFormat:path];
-    
     NSURL *url = [NSURL URLWithString:urlstring];
     NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
     req.HTTPMethod = @"GET";
-    //[req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    //[req setHTTPBody:postdata];
-    
-    //    NSOperationQueue* queue = [[NSOperationQueue alloc] init];
-    //    queue.name = @"eennaam";
-    //
-    //    [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-    //        if(connectionError != nil) {
-    //            // doe iets met url
-    //        }
-    //
-    //        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-    //            self.districts = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
-    //        }];
-    //
-    //    }];
     NSURLResponse * response = nil;
     NSError * error = nil;
     NSData * data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
