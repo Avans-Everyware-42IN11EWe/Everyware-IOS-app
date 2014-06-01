@@ -46,4 +46,10 @@
 }
 */
 
+- (IBAction)providerChosen:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:@"3" forKey:@"userStatus"];
+    [defaults synchronize];
+
+}
 @end

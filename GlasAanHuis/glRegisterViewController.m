@@ -104,6 +104,8 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setValue:userID forKey:@"userID"];
         [defaults setValue:_districtID forKeyPath:@"districtID"];
+        //WEGHALEN
+        [defaults setValue:@"1" forKey:@"userStatus"];
         [defaults synchronize];
         [self performSegueWithIdentifier:@"start" sender:self];
     }
@@ -120,7 +122,6 @@
     NSLog(@"facebook result: %@", fbAccessToken);
     //
     NSArray * result = [self registerUserFacbook:fbAccessToken];
-  
     
     NSString * userID = [ result valueForKey:@"user_id"];
     NSLog(@"USERID!!!!%@", userID );
@@ -130,6 +131,8 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setValue:fbAccessToken forKey:@"userID"];
         [defaults setValue:_districtID forKeyPath:@"districtID"];
+        //WEGHALEN
+        [defaults setValue:@"1" forKey:@"userStatus"];
         [defaults synchronize];
         [self performSegueWithIdentifier:@"start" sender:self];
     }

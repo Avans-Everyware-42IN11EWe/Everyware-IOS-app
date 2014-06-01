@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface glProviderViewController : UIViewController
+- (IBAction)providerChosen:(id)sender;
 
 @end

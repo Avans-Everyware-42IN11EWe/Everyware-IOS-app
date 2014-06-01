@@ -13,16 +13,37 @@
 @property (weak, nonatomic) IBOutlet UIView *placeholder;
 @property (weak, nonatomic) IBOutlet UIView *wijkKiezen;
 @property (weak, nonatomic) IBOutlet UIView *meedoen;
+@property (weak, nonatomic) IBOutlet UIView *providerKiezen;
+@property (weak, nonatomic) IBOutlet UIView *wachten;
 @end
 
 @implementation glWijkInfoView
 
 - (void)didMoveToSuperview {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults objectForKey:@"userID"]!=nil) {
+    /*if ([defaults objectForKey:@"userID"]!=nil) {
         [self.placeholder addSubview:self.meedoen];
     } else {
         [self.placeholder addSubview:self.wijkKiezen];
+    }
+     */
+    int status = [[defaults objectForKey:@"userStatus"]intValue];
+    switch (status) {
+        case 0:
+            [self.placeholder addSubview:self.wijkKiezen];
+            break;
+        case 1:
+            [self.placeholder addSubview:self.meedoen];
+            break;
+        case 2:
+            [self.placeholder addSubview:self.providerKiezen];
+            break;
+        case 3:
+            [self.placeholder addSubview:self.wachten];
+            break;
+        default:
+            [self.placeholder addSubview:self.wijkKiezen];
+            break;
     }
 }
 

@@ -12,6 +12,7 @@
 #import "MTPopupWindow.h"
 #import "glBlurView.h"
 #import "glMapViewDelegate.h"
+#import "glUserVideoViewController.h"
 
 @interface glDistrictViewController : UIViewController <UIScrollViewDelegate>{
     IBOutlet glBlurView *backgroundView ;
@@ -58,7 +59,7 @@
     IBOutlet UIProgressView *progStap5;
     
    
-    
+    NSString * currentVideoUrl;
     NSInteger currentDistrict;
 }
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
@@ -71,6 +72,7 @@
 - (IBAction)goToAndereWijk:(id)sender;
 - (IBAction)goToCommitment:(id)sender;
 - (IBAction)goToProvider:(id)sender;
+-(void)goTouserVideo:(NSString*)url;
 -(void)goToBuddyDetail;
 @end
 
