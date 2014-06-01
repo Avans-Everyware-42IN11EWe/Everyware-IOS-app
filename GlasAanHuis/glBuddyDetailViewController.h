@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "glBuddyChatViewController.h"
 @interface glBuddyDetailViewController : UIViewController
 @property (nonatomic, strong) MPMoviePlayerController *mc;
 @property (strong, nonatomic)NSString *buddy;

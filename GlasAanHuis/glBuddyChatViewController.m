@@ -26,7 +26,7 @@ NSArray *menuItems;
 {
     [super viewDidLoad];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    senderID = [defaults valueForKey:@"userID"];
+    _senderID = [defaults valueForKey:@"userID"];
     [self getNewLines];
 }
 
@@ -80,7 +80,7 @@ NSArray *menuItems;
 {
     dispatch_queue_t newLinesQ = dispatch_queue_create("newLinesQ", NULL);
     dispatch_async(newLinesQ, ^{
-        roomLines = [self executeGetLines:@"nope"];
+        roomLines = [self executeGetLines:_recieverID];
         dispatch_async(dispatch_get_main_queue(), ^{
             [_messageTable reloadData];
             NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:
@@ -101,19 +101,14 @@ NSArray *menuItems;
 {
     [_messageTable reloadData];
 }
-//TODO:id meegeven
+
 -(NSArray*)executeGetLines:(NSString*)receiverid
 {
-    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:@"2",@"resident_id", nil];
-    NSError *postError;
-    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
-    
-    NSURL *url = [NSURL URLWithString:@"http://glas.mycel.nl/chat?resident_id=2"];
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:receiverid,@"resident_id", nil];
+    NSString *urlstring = [NSString stringWithFormat:@"http://glas.mycel.nl/chat?resident_id=%@&sender_id=%@",_recieverID,_senderID];
+    NSURL *url = [NSURL URLWithString:urlstring];
     NSMutableURLRequest *req =[NSMutableURLRequest requestWithURL:url];
-    /*
-    [req setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [req setHTTPBody:postdata];
-    */
+
     NSData *data;
     NSError *error;
     NSURLResponse *response = nil;
@@ -123,10 +118,12 @@ NSArray *menuItems;
     }
     return [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
 }
-//TODO:berichten niet naar jezelf sturen..
+
 -(NSArray*)sendMessage
 {
-    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:senderID,@"sender_id",@"2",@"receiver_id",_txtMessageToSend.text,@"message",nil];
+    NSLog(@"%@",_senderID);
+    NSLog(@"%@",_recieverID);
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_senderID,@"sender_id",_recieverID,@"receiver_id",_txtMessageToSend.text,@"message",nil];
     NSError *postError;
     NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
     
