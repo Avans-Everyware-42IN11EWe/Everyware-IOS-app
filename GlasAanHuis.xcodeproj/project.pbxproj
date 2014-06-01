@@ -40,6 +40,7 @@
 		49C31EA319198BDA005A8F28 /* glIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31EA119198BDA005A8F28 /* glIntroViewController.m */; };
 		49CBE6D4191A2C3200545777 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CBE6D3191A2C3200545777 /* MediaPlayer.framework */; };
 		49CBE6D519280B6500545777 /* glAppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = FFEBE5D618F299A700C8DD0B /* glAppDelegate.h */; };
+		FFA9B9AF193BAE3800EA5A50 /* glMapViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA9B9AE193BAE3800EA5A50 /* glMapViewDelegate.m */; };
 		FFCCE4561915605A000FB961 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCCE4551915605A000FB961 /* SWRevealViewController.m */; };
 		FFD9C46B1928BA6A00007267 /* WijkInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD9C46A1928BA6A00007267 /* WijkInfo.xib */; };
 		FFD9C46E1928BCF800007267 /* glWijkInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD9C46D1928BCF800007267 /* glWijkInfoView.m */; };
@@ -120,6 +121,8 @@
 		49C31EA019198BDA005A8F28 /* glIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glIntroViewController.h; sourceTree = "<group>"; };
 		49C31EA119198BDA005A8F28 /* glIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glIntroViewController.m; sourceTree = "<group>"; };
 		49CBE6D3191A2C3200545777 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		FFA9B9AD193BAE3800EA5A50 /* glMapViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glMapViewDelegate.h; sourceTree = "<group>"; };
+		FFA9B9AE193BAE3800EA5A50 /* glMapViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glMapViewDelegate.m; sourceTree = "<group>"; };
 		FFCCE4541915605A000FB961 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		FFCCE4551915605A000FB961 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		FFD9C46A1928BA6A00007267 /* WijkInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WijkInfo.xib; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 				35C0697E19325996009538A9 /* DistrictParticipants.xib */,
 				49B7AE39193537CC000E8904 /* glDistrictParticipantsCell.h */,
 				49B7AE3A193537CC000E8904 /* glDistrictParticipantsCell.m */,
+				FFA9B9AD193BAE3800EA5A50 /* glMapViewDelegate.h */,
+				FFA9B9AE193BAE3800EA5A50 /* glMapViewDelegate.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				35D042C1191A21E9008D3679 /* glFaqViewController.m in Sources */,
 				35D042BB191A1F64008D3679 /* glMyProfileViewController.m in Sources */,
 				49C31E9019190052005A8F28 /* glDistrictSelectViewController.m in Sources */,
+				FFA9B9AF193BAE3800EA5A50 /* glMapViewDelegate.m in Sources */,
 				3508ED6B1919C86C009E1512 /* glBlurView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
