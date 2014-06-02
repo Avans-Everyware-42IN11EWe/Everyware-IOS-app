@@ -27,6 +27,12 @@ NSArray *menuItems;
     [super viewDidLoad];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     _senderID = [defaults valueForKey:@"userID"];
+    
+    _cReceiverImage = [self getPhoto:_recieverID];
+    _cSenderImage = [self getPhoto:_senderID];
+    
+    
+    
     [self getNewLines];
 }
 
@@ -40,19 +46,24 @@ NSArray *menuItems;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return [roomLines count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return 1;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 7;
+    return 10;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *v = [UIView new];
+    [v setBackgroundColor:[UIColor clearColor]];
+    return v;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,10 +75,21 @@ NSArray *menuItems;
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    cell.imageView.frame = CGRectOffset(cell.frame, 10, 10);
+    
     NSDictionary *itemAtIndex = (NSDictionary *)[roomLines objectAtIndex:indexPath.section];
+    
+    if ([itemAtIndex objectForKey:@"receiver_id"]==_recieverID) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:_cReceiverImage];
+        cell.accessoryView = imageView;
+        cell.accessoryView.frame = CGRectMake(cell.frame.size.width-5, 0,44, 44);
+        cell.textLabel.textAlignment = NSTextAlignmentRight;
+    }else{
+        cell.imageView.image = _cSenderImage;
+    }
+    cell.imageView.frame = CGRectOffset(cell.frame, 10, 10);
+
     cell.textLabel.text = [itemAtIndex objectForKey:@"message"];
-    cell.imageView.image = [UIImage imageNamed:@"billgates.jpg"];
+    
     return cell;
 }
 
@@ -104,7 +126,6 @@ NSArray *menuItems;
 
 -(NSArray*)executeGetLines:(NSString*)receiverid
 {
-    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:receiverid,@"resident_id", nil];
     NSString *urlstring = [NSString stringWithFormat:@"http://glas.mycel.nl/chat?resident_id=%@&sender_id=%@",_recieverID,_senderID];
     NSURL *url = [NSURL URLWithString:urlstring];
     NSMutableURLRequest *req =[NSMutableURLRequest requestWithURL:url];
@@ -140,10 +161,35 @@ NSArray *menuItems;
     if (data == nil) {
         return [[NSArray alloc]init];
     }
+    _txtMessageToSend.text = nil;
     return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 }
 
 - (IBAction)sendMessage:(id)sender {
     [self sendMessage];
 }
+
+-(UIImage*)getPhoto:(NSString *)userId
+{
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/buddy?id=%@",userId];
+    NSString *urlstring = [NSString stringWithFormat:path];
+    NSURL *url = [NSURL URLWithString:urlstring];
+    NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
+    req.HTTPMethod = @"GET";
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+    NSJSONSerialization *user = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
+    
+    if (error == nil)
+    {
+        
+    }
+    NSURL *urlplaatje = [NSURL URLWithString:[user valueForKey:@"plaatje"]];
+    NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
+    UIImage *plaatje = [UIImage imageWithData:dataplaatje];
+    
+    return plaatje;
+}
+
 @end

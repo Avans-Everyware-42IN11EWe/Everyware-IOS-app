@@ -43,7 +43,6 @@
     NSURL *urlplaatje = [NSURL URLWithString:[user valueForKey:@"plaatje"]];
     NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
     self.MyProfilePicture.image = [UIImage imageWithData:dataplaatje];
-    
 }
 
 - (void)didReceiveMemoryWarning

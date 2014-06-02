@@ -137,7 +137,6 @@
         [self performSegueWithIdentifier:@"start" sender:self];
     }
 }
-    
 
 -(NSArray*)registerUser
 {

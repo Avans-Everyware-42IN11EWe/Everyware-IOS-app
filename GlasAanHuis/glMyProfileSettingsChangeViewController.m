@@ -26,8 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *senderID = [defaults valueForKey:@"userID"];
     // Do any additional setup after loading the view.
-    NSJSONSerialization *user =[self getUser:1];
+    NSJSONSerialization *user =[self getUser:senderID];
     self.MyProfileName.text = [user valueForKey:@"naam"];
     self.MyProfileAge.text = [NSString stringWithFormat:@"Leeftijd: %@",[user valueForKey:@"leeftijd"]];
     self.MyProfileLocation.text = [NSString stringWithFormat:@"Woonplaats: %@",[user valueForKey:@"woonplaats"]];
@@ -45,9 +47,9 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSJSONSerialization*)getUser:(NSInteger)userId
+-(NSJSONSerialization*)getUser:(NSString *)userId
 {
-    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/buddy?id=%d",userId];
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/buddy?id=%@",userId];
     NSString *urlstring = [NSString stringWithFormat:path];
     NSURL *url = [NSURL URLWithString:urlstring];
     NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
