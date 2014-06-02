@@ -45,6 +45,7 @@
     self.MyProfilePicture.image = [UIImage imageWithData:dataplaatje];
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
