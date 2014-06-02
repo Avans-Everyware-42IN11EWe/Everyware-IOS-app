@@ -26,6 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/faq?district=%@",_districtID];
+    NSURL *url = [NSURL URLWithString:path];
+    NSURLRequest* req = [NSURLRequest requestWithURL:url];
+    [_faqView loadRequest:req];
     // Do any additional setup after loading the view.
 }
 

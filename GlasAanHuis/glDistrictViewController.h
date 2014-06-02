@@ -14,6 +14,7 @@
 #import "glMapViewDelegate.h"
 #import "glUserVideoViewController.h"
 #import "glBuddyDetailViewController.h"
+#import "glFaqViewController.h"
 @interface glDistrictViewController : UIViewController <UIScrollViewDelegate>{
     IBOutlet glBlurView *backgroundView ;
     IBOutlet UIScrollView *scroller;

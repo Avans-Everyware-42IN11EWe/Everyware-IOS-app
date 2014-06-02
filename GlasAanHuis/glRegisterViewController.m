@@ -210,8 +210,6 @@
 //    return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 }
 
->>>>>>> FETCH_HEAD
-
 -(NSArray*)registerUser
 {
     NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",@"HOEFT NIET",@"name",@"lat",@"latlong",_districtID,@"district_id", nil];
