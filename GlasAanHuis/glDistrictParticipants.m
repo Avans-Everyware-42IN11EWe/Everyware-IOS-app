@@ -49,6 +49,7 @@
     NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
     [myCell setPhoto:[UIImage imageWithData:dataplaatje]];
     [myCell setBuddy:[[_users[indexPath.row]valueForKey:@"is_buddy"]integerValue]];
+    [myCell setVideo:[[_users[indexPath.row]valueForKey:@"has_video"]integerValue]];
     myCell.backgroundColor = [UIColor whiteColor];
     
     return myCell;

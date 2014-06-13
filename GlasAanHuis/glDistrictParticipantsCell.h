@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 -(void) setPhoto:(UIImage *)image;
 -(void) setBuddy:(NSInteger *)isBuddy;
+-(void) setVideo:(NSInteger *)hasVideo;
 
 @end

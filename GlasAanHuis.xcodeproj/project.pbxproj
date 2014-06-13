@@ -42,6 +42,7 @@
 		49C31EA319198BDA005A8F28 /* glIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31EA119198BDA005A8F28 /* glIntroViewController.m */; };
 		49CBE6D4191A2C3200545777 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CBE6D3191A2C3200545777 /* MediaPlayer.framework */; };
 		49CBE6D519280B6500545777 /* glAppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = FFEBE5D618F299A700C8DD0B /* glAppDelegate.h */; };
+		F29CBCD1194B248500C21542 /* cameraicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F29CBCD0194B248500C21542 /* cameraicon.png */; };
 		FFA9B9AF193BAE3800EA5A50 /* glMapViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA9B9AE193BAE3800EA5A50 /* glMapViewDelegate.m */; };
 		FFCCE4561915605A000FB961 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCCE4551915605A000FB961 /* SWRevealViewController.m */; };
 		FFD9C46B1928BA6A00007267 /* WijkInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD9C46A1928BA6A00007267 /* WijkInfo.xib */; };
@@ -126,6 +127,7 @@
 		49C31EA019198BDA005A8F28 /* glIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glIntroViewController.h; sourceTree = "<group>"; };
 		49C31EA119198BDA005A8F28 /* glIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glIntroViewController.m; sourceTree = "<group>"; };
 		49CBE6D3191A2C3200545777 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		F29CBCD0194B248500C21542 /* cameraicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraicon.png; sourceTree = "<group>"; };
 		FFA9B9AD193BAE3800EA5A50 /* glMapViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glMapViewDelegate.h; sourceTree = "<group>"; };
 		FFA9B9AE193BAE3800EA5A50 /* glMapViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glMapViewDelegate.m; sourceTree = "<group>"; };
 		FFCCE4541915605A000FB961 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				FFCD67711906EED900D05AA3 /* Library */,
 				FFEBE5D918F299A700C8DD0B /* Main.storyboard */,
 				FFEBE5DF18F299A700C8DD0B /* Images.xcassets */,
+				F29CBCD0194B248500C21542 /* cameraicon.png */,
 				359B2F4A1930BCA300A65D66 /* billgates.jpg */,
 				359B2F4B1930BCA300A65D66 /* obama.jpg */,
 				FFEBE5CE18F299A700C8DD0B /* Supporting Files */,
@@ -407,6 +410,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = GlasAanHuis;
 				TargetAttributes = {
+					FFEBE5C318F299A700C8DD0B = {
+						DevelopmentTeam = 24W78PLNZ6;
+					};
 					FFEBE5E418F299A700C8DD0B = {
 						TestTargetID = FFEBE5C318F299A700C8DD0B;
 					};
@@ -443,6 +449,7 @@
 				359B2F4C1930BCA300A65D66 /* billgates.jpg in Resources */,
 				49C31E9E19198B87005A8F28 /* Comp2.mp4 in Resources */,
 				35D042CE191A42E8008D3679 /* info.html in Resources */,
+				F29CBCD1194B248500C21542 /* cameraicon.png in Resources */,
 				FFD9C46B1928BA6A00007267 /* WijkInfo.xib in Resources */,
 				FFEBE5D218F299A700C8DD0B /* InfoPlist.strings in Resources */,
 				359BC847193BB07E005F2718 /* 06-commit_feet.png in Resources */,
@@ -619,6 +626,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -627,6 +636,7 @@
 				GCC_PREFIX_HEADER = "GlasAanHuis/GlasAanHuis-Prefix.pch";
 				INFOPLIST_FILE = "GlasAanHuis/GlasAanHuis-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -636,6 +646,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -644,6 +656,7 @@
 				GCC_PREFIX_HEADER = "GlasAanHuis/GlasAanHuis-Prefix.pch";
 				INFOPLIST_FILE = "GlasAanHuis/GlasAanHuis-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

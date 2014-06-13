@@ -36,4 +36,20 @@
         
     }
 }
+
+-(void) setVideo:(NSInteger *)hasVideo {
+    NSInteger one = 1;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(28, 28, 20, 20)];
+    if(hasVideo == one){
+       
+        imageView.image = [UIImage imageNamed:@"cameraicon.png"];
+        [_imageView addSubview:imageView];
+    }else{
+        // With some valid UIView *view:
+        for(UIView *subview in [_imageView subviews]) {
+            [subview removeFromSuperview];
+        }
+    }
+}
+
 @end
