@@ -656,7 +656,13 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="ageUser" destination="bvq-7l-esU" id="Bfa-p6-g9r"/>
+                        <outlet property="cityUser" destination="Z9O-hr-0FN" id="rAB-Ys-1UC"/>
+                        <outlet property="emailUser" destination="SlU-o1-dll" id="f5N-e0-IJf"/>
+                        <outlet property="imageUser" destination="QRI-cf-257" id="y9f-g7-xOp"/>
                         <outlet property="movie" destination="t2D-Jk-ICP" id="l79-Qq-LHz"/>
+                        <outlet property="nameUser" destination="cTU-RK-Tl3" id="Dcq-fi-6XF"/>
+                        <outlet property="phoneUser" destination="Zhs-LJ-Tdz" id="m2g-5L-KYk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYJ-fU-zwv" userLabel="First Responder" sceneMemberID="firstResponder"/>

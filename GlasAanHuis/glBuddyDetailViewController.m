@@ -49,6 +49,16 @@
     //[movie pause];
     _mc.shouldAutoplay = false;
     [_movie addSubview:_mc.view];
+    NSJSONSerialization *user =[self getUser:1];
+    self.nameUser.text = [user valueForKey:@"naam"];
+    self.ageUser.text = [@"Leeftijd: @%",user valueForKey:@"leeftijd"];
+    self.cityUser.text = [@"Woonplaats: @%",user valueForKey:@"woonplaats"];
+    self.emailUser.text = [@"Email: @%",user valueForKey:@"email"];
+    self.phoneUser.text = [@"Telefoon: @%",user valueForKey:@"telefoon"];
+    
+    NSURL *urlplaatje = [NSURL URLWithString:[user valueForKey:@"plaatje"]];
+    NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
+    self.imageUser.image = [UIImage imageWithData:dataplaatje];
 }
 
 
@@ -68,5 +78,25 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(NSJSONSerialization*)getUser:(NSInteger)userId
+{
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/buddy?id=%d",userId];
+    NSString *urlstring = [NSString stringWithFormat:path];
+    NSURL *url = [NSURL URLWithString:urlstring];
+    NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
+    req.HTTPMethod = @"GET";
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+    NSJSONSerialization *user = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
+    
+    if (error == nil)
+    {
+        
+    }
+    NSLog(@"%@",user);
+    return user;
+}
 
 @end
