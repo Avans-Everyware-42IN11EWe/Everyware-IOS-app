@@ -26,7 +26,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSJSONSerialization *user =[self getUser:1];
+    self.nameUser.text = [user valueForKey:@"naam"];
+    self.ageUser.text = [NSString stringWithFormat:@"Leeftijd: %@",[user valueForKey:@"leeftijd"]];
+    self.cityUser.text = [NSString stringWithFormat:@"Woonplaats: %@",[user valueForKey:@"woonplaats"]];
+    self.emailUser.text = [NSString stringWithFormat:@"Email: %@",[user valueForKey:@"email"]];
+    self.phoneUser.text = [NSString stringWithFormat:@"Telefoon: %@",[user valueForKey:@"telefoon"]];
+    
+    NSURL *urlplaatje = [NSURL URLWithString:[user valueForKey:@"plaatje"]];
+    NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
+    self.imageUser.image = [UIImage imageWithData:dataplaatje];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -49,16 +59,7 @@
     //[movie pause];
     _mc.shouldAutoplay = false;
     [_movie addSubview:_mc.view];
-    NSJSONSerialization *user =[self getUser:1];
-    self.nameUser.text = [user valueForKey:@"naam"];
-    self.ageUser.text = [@"Leeftijd: @%",user valueForKey:@"leeftijd"];
-    self.cityUser.text = [@"Woonplaats: @%",user valueForKey:@"woonplaats"];
-    self.emailUser.text = [@"Email: @%",user valueForKey:@"email"];
-    self.phoneUser.text = [@"Telefoon: @%",user valueForKey:@"telefoon"];
     
-    NSURL *urlplaatje = [NSURL URLWithString:[user valueForKey:@"plaatje"]];
-    NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
-    self.imageUser.image = [UIImage imageWithData:dataplaatje];
 }
 
 
