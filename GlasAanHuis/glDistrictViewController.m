@@ -13,6 +13,7 @@
 #import "glWijkInfoView.h"
 #import "glDistrictParticipants.h"
 #import "glMapViewDelegate.h"
+#import "objc/message.h"
 #define kDKTableViewDefaultContentInset 0.0f
 
 @interface glDistrictViewController ()
@@ -43,42 +44,6 @@ glDistrictParticipants *participantsView;
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
-
-//- (BOOL)shouldAutorotate {
-//    return NO;
-//}
-//
-//-(NSUInteger)supportedInterfaceOrientations
-//{
-//    // iPhone only
-//    if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
-//        return UIInterfaceOrientationMaskPortrait;
-//    
-//    // iPad only
-//    return UIInterfaceOrientationMaskPortrait;
-//}
-//
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-//{
-//    // iPhone only
-//    if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
-//        return UIInterfaceOrientationIsPortrait(interfaceOrientation);
-//    
-//    // iPad only
-//    // iPhone only
-//    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
-//}
-//- (BOOL) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-//    //[scroller setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-//    // iPhone only
-//    scroller.autoresizingMask = UIInterfaceOrientationMaskPortrait;
-//    if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
-//        return UIInterfaceOrientationIsPortrait(interfaceOrientation);
-//    
-//    // iPad only
-//    // iPhone only
-//    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
-//}
 
 - (void)oneFingerSwipeLeft:(UITapGestureRecognizer *)recognizer {
     NSLog(@"LEFT");
@@ -124,7 +89,7 @@ glDistrictParticipants *participantsView;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    objc_msgSend([UIDevice currentDevice], @selector(setOrientation:), UIInterfaceOrientationPortrait);
     // Add swipeGestures
     UISwipeGestureRecognizer *oneFingerSwipeLeft = [[UISwipeGestureRecognizer alloc]
                                                      initWithTarget:self
