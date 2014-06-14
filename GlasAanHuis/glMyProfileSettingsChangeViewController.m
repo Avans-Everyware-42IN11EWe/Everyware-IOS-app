@@ -7,6 +7,7 @@
 //
 
 #import "glMyProfileSettingsChangeViewController.h"
+#import "glPictureViewSettingsController.h"
 
 @interface glMyProfileSettingsChangeViewController ()
 
@@ -22,19 +23,59 @@
     }
     return self;
 }
+-(void)setProfileFoto:(UIImage *)profileFoto
+{
+    _profileFoto = profileFoto;
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"settingsfotokiezen"]) {
+        [segue.destinationViewController setRegController:self];
+    }
+}
+- (IBAction)save:(id)sender {
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *userID = [defaults valueForKey:@"userID"];
+    NSString *authToken = [defaults valueForKey:@"authToken"];
+    [self postUserData: userID: authToken];
+    
+    if(_profileFoto != nil){
+        CGSize newSize = CGSizeMake(400.0f, 400.0f);
+        UIGraphicsBeginImageContext(newSize);
+        [_profileFoto drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+        UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        [self pictureUpload: newImage: userID: authToken];
+    }
+    [self performSegueWithIdentifier:@"terugMyprofile" sender:self];
+}
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *senderID = [defaults valueForKey:@"userID"];
-    // Do any additional setup after loading the view.
     NSJSONSerialization *user =[self getUser:senderID];
+    //NSJSONSerialization *user =[self getUser:@"238"];
     self.MyProfileName.text = [user valueForKey:@"naam"];
-    self.MyProfileAge.text = [NSString stringWithFormat:@"Leeftijd: %@",[user valueForKey:@"leeftijd"]];
-    self.MyProfileLocation.text = [NSString stringWithFormat:@"Woonplaats: %@",[user valueForKey:@"woonplaats"]];
-    self.MyProfileEmail.text = [NSString stringWithFormat:@"Email: %@",[user valueForKey:@"email"]];
-    self.MyProfilePhone.text = [NSString stringWithFormat:@"Telefoon: %@",[user valueForKey:@"telefoon"]];
+    self.MyProfileAge.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"leeftijd"]];
+    self.MyProfileLocation.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"adres"]];
+    self.MyProfileEmail.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"email"]];
+    self.MyProfilePhone.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"telefoon"]];
+    
+    self.MyProfileName.delegate = self;
+    self.MyProfileAge.delegate = self;
+    self.MyProfileLocation.delegate = self;
+    self.MyProfileEmail.delegate = self;
+    self.MyProfilePhone.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,6 +104,71 @@
     return user;
 }
 
+-(NSArray*)postUserData:(NSString *) userID:(NSString *) authToken
+{
+    NSString *naam = self.MyProfileName.text;
+    NSString *leeftijd = self.MyProfileAge.text;
+    NSString *adres = self.MyProfileLocation.text;
+    NSString *telefoon = self.MyProfilePhone.text ;
+    NSString *email = self.MyProfileEmail.text;
+    NSString *is_buddy = @"true";
+    
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:
+                         naam,@"naam",
+                         leeftijd,@"leeftijd",
+                         adres,@"adres",
+                         telefoon,@"telefoon",
+                         email,@"email",
+                         is_buddy,@"is_buddy", nil];
+    NSError *postError;
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
+    
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/profile?user_id=%@&auth_token=%@",userID,authToken];
+    
+    NSURL *url = [NSURL URLWithString:path];
+    NSMutableURLRequest *req =[NSMutableURLRequest requestWithURL:url];
+    
+    req.HTTPMethod=@"POST";
+    [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [req setHTTPBody:postdata];
+    
+    NSData *data;
+    NSURLResponse *response = nil;
+    data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:nil];
+    if (data == nil) {
+        return [[NSArray alloc]init];
+    }
+    return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+}
+
+-(void)pictureUpload:(UIImage*)image:(NSString *) userID:(NSString *) authToken
+{
+    //userID,@"id",authToken,@"auth_token",
+    
+    NSData *imageData = UIImagePNGRepresentation(image);//delegate.dataBean.image
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/image?id=%@&auth_token=%@",userID,authToken];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:path]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+    
+    NSMutableData *body = [NSMutableData data];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"test.png\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[NSData dataWithData:imageData]];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:body];
+    
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    
+    NSLog([NSString stringWithFormat:@"Image Return String: %@", returnString]);
+}
 /*
 #pragma mark - Navigation
 

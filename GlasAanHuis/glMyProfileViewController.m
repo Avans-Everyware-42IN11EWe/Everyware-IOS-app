@@ -32,13 +32,14 @@
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sideBarButton.target = self.revealViewController;
     _sideBarButton.action = @selector(revealToggle:);
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *senderID = [defaults valueForKey:@"userID"];
-    // Do any additional setup after loading the view.
     NSJSONSerialization *user =[self getUser:senderID];
+
     self.MyProfileName.text = [user valueForKey:@"naam"];
     self.MyProfileAge.text = [NSString stringWithFormat:@"Leeftijd: %@",[user valueForKey:@"leeftijd"]];
-    self.MyProfileLocation.text = [NSString stringWithFormat:@"Woonplaats: %@",[user valueForKey:@"woonplaats"]];
+    self.MyProfileLocation.text = [NSString stringWithFormat:@"Adres: %@",[user valueForKey:@"adres"]];
     self.MyProfileEmail.text = [NSString stringWithFormat:@"Email: %@",[user valueForKey:@"email"]];
     self.MyProfilePhone.text = [NSString stringWithFormat:@"Telefoon: %@",[user valueForKey:@"telefoon"]];
     
@@ -53,7 +54,7 @@
     [super didReceiveMemoryWarning];
 }
 
--(NSJSONSerialization*)getUser:(NSString*)userId
+-(NSJSONSerialization*)getUser:(NSString *)userId
 {
     NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/buddy?id=%@",userId];
     NSString *urlstring = [NSString stringWithFormat:path];
@@ -72,6 +73,7 @@
     NSLog(@"%@",user);
     return user;
 }
+
 
 /*
 #pragma mark - Navigation

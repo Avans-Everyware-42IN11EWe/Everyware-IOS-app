@@ -1,22 +1,24 @@
 //
-//  glPictureViewController.m
+//  glPictureViewSettingsController.m
 //  GlasAanHuis
 //
-//  Created by leon on 06/05/14.
+//  Created by leroy on 14/06/14.
 //  Copyright (c) 2014 GlasAanHuis. All rights reserved.
 //
 
-#import "glPictureViewController.h"
+#import "glPictureViewSettingsController.h"
 
-@interface glPictureViewController ()
+@interface glPictureViewSettingsController ()
 @property (strong, nonatomic) IBOutlet UIImageView *plaatje;
-- (IBAction)voegToe:(id)sender;
 - (IBAction)gaVerder:(id)sender;
+- (IBAction)voegToe:(id)sender;
+
+
 
 @end
-
-@implementation glPictureViewController
-- (void)setRegController:(glRegisterViewController *)controller
+//glMyProfileSettingsChangeViewController
+@implementation glPictureViewSettingsController
+- (void)setRegController:(glMyProfileSettingsChangeViewController *)controller
 {
     _regController = controller;
 }
@@ -24,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,7 +43,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[picker dismissModalViewControllerAnimated:YES];
-
+    
 	_plaatje.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 }
 
@@ -48,6 +51,4 @@
     [_regController setProfileFoto:_plaatje.image];
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-
 @end

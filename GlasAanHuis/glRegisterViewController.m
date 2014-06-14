@@ -116,9 +116,14 @@
     //[[_districts objectAtIndex:indexPath.row] valueForKey:@"name"];
     
     if (userID !=nil && ![_emailTV.text isEqualToString:@""]) {
-        
-        [self pictureUpload: _profileFoto: userID: authToken];
-        
+        if(_profileFoto != nil){
+            CGSize newSize = CGSizeMake(400.0f, 400.0f);
+            UIGraphicsBeginImageContext(newSize);
+            [_profileFoto drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+            UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            [self pictureUpload: newImage: userID: authToken];
+        }
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setValue:userID forKey:@"userID"];
         [defaults setValue:authToken forKey:@"authToken"];
