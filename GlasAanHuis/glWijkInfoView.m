@@ -20,25 +20,18 @@
 @implementation glWijkInfoView
 
 - (void)didMoveToSuperview {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    /*if ([defaults objectForKey:@"userID"]!=nil) {
-        [self.placeholder addSubview:self.meedoen];
-    } else {
-        [self.placeholder addSubview:self.wijkKiezen];
-    }
-     */
-    int status = [[defaults objectForKey:@"userStatus"]intValue];
+    int status = [self getUserStatus];
     switch (status) {
         case 0:
             [self.placeholder addSubview:self.wijkKiezen];
             break;
-        case 1:
+        case 2:
             [self.placeholder addSubview:self.meedoen];
             break;
-        case 2:
+        case 3:
             [self.placeholder addSubview:self.providerKiezen];
             break;
-        case 3:
+        case 4:
             [self.placeholder addSubview:self.wachten];
             break;
         default:
@@ -63,10 +56,6 @@
     [self.eindbaas goToCommitment:sender];
 }
 
-- (IBAction)aanbetaling:(id)sender {
-    
-}
-
 - (IBAction)goToDistrictPage:(id)sender {
     NSString *str = [NSString stringWithFormat:@"fb://profile/%@", _fbId];
     NSURL *fburl = [NSURL URLWithString:str];
@@ -77,5 +66,28 @@
     }
     [[UIApplication sharedApplication] openURL:fburl];
 }
+-(int)getUserStatus
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *_userID = [defaults valueForKey:@"userID"];
+    NSString *_authtoken = [defaults valueForKey:@"authToken"];
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/progress?id=%@&auth_token=%@",_userID,_authtoken];
+    NSString *urlstring = [NSString stringWithFormat:path];
+    NSURL *url = [NSURL URLWithString:urlstring];
+    NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
+    req.HTTPMethod = @"GET";
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+    NSJSONSerialization *statuses = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
+    
+    if (error == nil)
+    {
+        
+    }
+    int status = [[statuses valueForKey:@"status"] intValue];
+    
+    return status;
 
+}
 @end

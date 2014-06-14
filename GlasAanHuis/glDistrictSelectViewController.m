@@ -35,18 +35,19 @@
     [_searchTF addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [_searchTF setDelegate:self];
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return NO;
 }
+
 -(void)textFieldDidChange :(UITextField *)theTextField{
-    //NSLog( @"text changed: %@", _searchTF.text);
-    
     NSString* zipcode = _searchTF.text;
     
     NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/districts?search=%@",zipcode];

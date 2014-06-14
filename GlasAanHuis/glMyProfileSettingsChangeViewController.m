@@ -35,10 +35,6 @@
     self.MyProfileLocation.text = [NSString stringWithFormat:@"Woonplaats: %@",[user valueForKey:@"woonplaats"]];
     self.MyProfileEmail.text = [NSString stringWithFormat:@"Email: %@",[user valueForKey:@"email"]];
     self.MyProfilePhone.text = [NSString stringWithFormat:@"Telefoon: %@",[user valueForKey:@"telefoon"]];
-    
-//    NSURL *urlplaatje = [NSURL URLWithString:[user valueForKey:@"plaatje"]];
-//    NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
-//    self.MyProfilePicture.image = [UIImage imageWithData:dataplaatje];
 }
 
 - (void)didReceiveMemoryWarning

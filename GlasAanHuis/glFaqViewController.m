@@ -30,7 +30,6 @@
     NSURL *url = [NSURL URLWithString:path];
     NSURLRequest* req = [NSURLRequest requestWithURL:url];
     [_faqView loadRequest:req];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

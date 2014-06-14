@@ -29,27 +29,46 @@
     // Do any additional setup after loading the view.
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
 - (IBAction)committed:(id)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setValue:@"2" forKey:@"userStatus"];
-    [defaults synchronize];
+    if (![_txtAdres.text isEqual:@""] && ![_txtNaam.text isEqual:@""]) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        //[defaults setValue:@"2" forKey:@"userStatus"];
+        //[defaults synchronize];
+        _userID = [defaults valueForKey:@"userID"];
+        _authtoken = [defaults valueForKey:@"authToken"];
+        [self postCommitment];
+    }
+}
+
+-(void)postCommitment
+{
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_txtAdres.text,@"adres",_txtNaam.text,@"naam",nil];
+    NSError *postError;
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
+    
+    NSString *urlstring = [NSString stringWithFormat:@"http://glas.mycel.nl/commitment?id=%@&auth_token=%@",_userID,_authtoken];
+    NSURL *url = [NSURL URLWithString:urlstring];
+    NSMutableURLRequest *req =[NSMutableURLRequest requestWithURL:url];
+    
+    req.HTTPMethod=@"POST";
+    [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [req setHTTPBody:postdata];
+    
+    NSData *data;
+    NSURLResponse *response = nil;
+    data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:nil];
+    _txtNaam.text = nil;
+    _txtAdres.text = nil;
 }
 @end

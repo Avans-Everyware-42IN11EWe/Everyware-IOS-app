@@ -10,5 +10,8 @@
 
 @interface glCommitmentViewController : UIViewController
 - (IBAction)committed:(id)sender;
-
+@property (strong, nonatomic) IBOutlet UITextField *txtNaam;
+@property (strong, nonatomic) IBOutlet UITextField *txtAdres;
+@property (strong,nonatomic)NSString *authtoken;
+@property (strong,nonatomic)NSString *userID;
 @end

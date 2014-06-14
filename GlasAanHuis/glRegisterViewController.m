@@ -186,28 +186,6 @@
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     
     NSLog([NSString stringWithFormat:@"Image Return String: %@", returnString]);
-    
-//    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:image, @"file", nil];
-//    NSError *postError;
-//    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
-//    
-//    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/image?id=%@&auth_token=%@",userID,authToken];
-//    NSString *urlstring = [NSString stringWithFormat:path];
-//    NSURL *url = [NSURL URLWithString:urlstring];
-//    
-//    NSMutableURLRequest *req =[NSMutableURLRequest requestWithURL:url];
-//    
-//    req.HTTPMethod=@"POST";
-//    [req setValue:@"image/jpg" forHTTPHeaderField:@"Content-Type"];
-//    [req setHTTPBody:postdata];
-//    
-//    NSData *data;
-//    NSURLResponse *response = nil;
-//    data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:nil];
-//    if (data == nil) {
-//        return [[NSArray alloc]init];
-//    }
-//    return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 }
 
 -(NSArray*)registerUser
