@@ -270,6 +270,7 @@
                         <outlet property="MyProfileLocation" destination="3sW-Qj-epB" id="nJ9-ok-LnN"/>
                         <outlet property="MyProfileName" destination="aZQ-Cp-Gju" id="Qgo-sv-pbZ"/>
                         <outlet property="MyProfilePhone" destination="5X9-oU-Zvn" id="xwC-TX-eS2"/>
+                        <segue destination="Flc-o1-GmH" kind="push" identifier="terugMyprofile" id="W3N-rt-3k4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jca-Xo-CKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1181,6 +1182,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="QDj-gH-lvD"/>
+        <segue reference="W3N-rt-3k4"/>
         <segue reference="Dyv-Gp-8g7"/>
     </inferredMetricsTieBreakers>
 </document>

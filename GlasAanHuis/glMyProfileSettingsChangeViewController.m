@@ -53,6 +53,7 @@
         UIGraphicsEndImageContext();
         [self pictureUpload: newImage: userID: authToken];
     }
+    [self performSegueWithIdentifier:@"terugMyprofile" sender:self];
 }
 
 
@@ -113,7 +114,7 @@
     NSString *adres = self.MyProfileLocation.text;
     NSString *telefoon = self.MyProfilePhone.text ;
     NSString *email = self.MyProfileEmail.text;
-    NSString *is_buddy = @"false";
+    NSString *is_buddy = @"true";
     
     NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:
                          naam,@"naam",
