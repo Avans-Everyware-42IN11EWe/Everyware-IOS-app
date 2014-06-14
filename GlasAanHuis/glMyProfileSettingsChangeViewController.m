@@ -56,8 +56,6 @@
     [self performSegueWithIdentifier:@"terugMyprofile" sender:self];
 }
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

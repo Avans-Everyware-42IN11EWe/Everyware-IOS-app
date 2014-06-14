@@ -43,8 +43,6 @@
 - (IBAction)committed:(id)sender {
     if (![_txtAdres.text isEqual:@""] && ![_txtNaam.text isEqual:@""]) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        //[defaults setValue:@"2" forKey:@"userStatus"];
-        //[defaults synchronize];
         _userID = [defaults valueForKey:@"userID"];
         _authtoken = [defaults valueForKey:@"authToken"];
         [self postCommitment];
