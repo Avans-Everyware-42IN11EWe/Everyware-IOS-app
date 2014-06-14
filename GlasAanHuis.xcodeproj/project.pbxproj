@@ -29,6 +29,7 @@
 		43D07FE2192CA45800F22139 /* glVideoRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FE1192CA45800F22139 /* glVideoRecordViewController.m */; };
 		43D07FE5192CB05C00F22139 /* glVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FE4192CB05C00F22139 /* glVideoPlayViewController.m */; };
 		43D07FEE192CDE6F00F22139 /* glBuddyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FED192CDE6F00F22139 /* glBuddyDetailViewController.m */; };
+		49A6D79C194C55CE002374D8 /* glMyProfileSettingsChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D79B194C55CE002374D8 /* glMyProfileSettingsChangeViewController.m */; };
 		49B7AE38193522A0000E8904 /* sample_mpeg4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 49B7AE37193522A0000E8904 /* sample_mpeg4.mp4 */; };
 		49B7AE3B193537CC000E8904 /* glDistrictParticipantsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B7AE3A193537CC000E8904 /* glDistrictParticipantsCell.m */; };
 		49C31E8A1919000C005A8F28 /* glDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E891919000C005A8F28 /* glDistrictViewController.m */; };
@@ -111,6 +112,8 @@
 		43D07FE4192CB05C00F22139 /* glVideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glVideoPlayViewController.m; sourceTree = "<group>"; };
 		43D07FEC192CDE6F00F22139 /* glBuddyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glBuddyDetailViewController.h; sourceTree = "<group>"; };
 		43D07FED192CDE6F00F22139 /* glBuddyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glBuddyDetailViewController.m; sourceTree = "<group>"; };
+		49A6D79A194C55CE002374D8 /* glMyProfileSettingsChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glMyProfileSettingsChangeViewController.h; sourceTree = "<group>"; };
+		49A6D79B194C55CE002374D8 /* glMyProfileSettingsChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glMyProfileSettingsChangeViewController.m; sourceTree = "<group>"; };
 		49B7AE37193522A0000E8904 /* sample_mpeg4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample_mpeg4.mp4; sourceTree = "<group>"; };
 		49B7AE39193537CC000E8904 /* glDistrictParticipantsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glDistrictParticipantsCell.h; sourceTree = "<group>"; };
 		49B7AE3A193537CC000E8904 /* glDistrictParticipantsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glDistrictParticipantsCell.m; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 				35CC47021932C12500F16AAC /* glCommitmentViewController.m */,
 				359BC843193B9F40005F2718 /* glUserVideoViewController.h */,
 				359BC844193B9F40005F2718 /* glUserVideoViewController.m */,
+				49A6D79A194C55CE002374D8 /* glMyProfileSettingsChangeViewController.h */,
+				49A6D79B194C55CE002374D8 /* glMyProfileSettingsChangeViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 				35D042C4191A21F3008D3679 /* glForumViewController.m in Sources */,
 				35C0697D1932596A009538A9 /* glDistrictParticipants.m in Sources */,
 				35CC47001932C0FF00F16AAC /* glProviderViewController.m in Sources */,
+				49A6D79C194C55CE002374D8 /* glMyProfileSettingsChangeViewController.m in Sources */,
 				49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */,
 				35D042C9191A4288008D3679 /* SidebarViewController.m in Sources */,
 				49C31E93191915D5005A8F28 /* glStartViewController.m in Sources */,

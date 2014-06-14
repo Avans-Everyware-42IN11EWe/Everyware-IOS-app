@@ -44,6 +44,41 @@ glDistrictParticipants *participantsView;
     [super viewDidAppear:animated];
 }
 
+//- (BOOL)shouldAutorotate {
+//    return NO;
+//}
+//
+//-(NSUInteger)supportedInterfaceOrientations
+//{
+//    // iPhone only
+//    if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
+//        return UIInterfaceOrientationMaskPortrait;
+//    
+//    // iPad only
+//    return UIInterfaceOrientationMaskPortrait;
+//}
+//
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+//{
+//    // iPhone only
+//    if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
+//        return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+//    
+//    // iPad only
+//    // iPhone only
+//    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+//}
+//- (BOOL) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+//    //[scroller setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+//    // iPhone only
+//    scroller.autoresizingMask = UIInterfaceOrientationMaskPortrait;
+//    if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
+//        return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+//    
+//    // iPad only
+//    // iPhone only
+//    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+//}
 
 - (void)oneFingerSwipeLeft:(UITapGestureRecognizer *)recognizer {
     NSLog(@"LEFT");
@@ -107,6 +142,7 @@ glDistrictParticipants *participantsView;
     [scroller setScrollEnabled:YES];
     //1800
     [scroller setContentSize:CGSizeMake(320,3000)];
+    
     
     backgroundView = [[glBlurView alloc] initWithFrame: self.view.bounds];
     //backgroundView.originalImage = [UIImage imageNamed:@"1979672_1451730748396471_1888089831_n.jpg"];
@@ -404,7 +440,6 @@ glDistrictParticipants *participantsView;
     currentVideoUrl = url;
     [self performSegueWithIdentifier:@"userVideo" sender:self];
 }
-
 -(void)setDistrictView:(NSInteger)index
 {
     NSJSONSerialization *district =[self getDistrict:index];

@@ -28,23 +28,38 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically ]from a nib.
+    
 }
-- (BOOL)shouldAutorotate{
-    if([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft)// ||[[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight
-    {
-        return YES;
-    }
-    else{
-        return NO;
-    }
+//- (BOOL)shouldAutorotate{
+//    if([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft)// ||[[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight
+//    {
+//        return YES;
+//    }
+//    else{
+//        return NO;
+//    }
+//}
+- (BOOL)shouldAutorotate
+{
+    return YES;
 }
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskLandscape;
+}
+
+
 - (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
-    
-    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
-        objc_msgSend([UIDevice currentDevice], @selector(setOrientation:),    UIInterfaceOrientationLandscapeLeft );
-    }
+//    if (self.interfaceOrientation != UIInterfaceOrientationPortrait) {
+//
+//        [[UIDevice currentDevice] performSelector:NSSelectorFromString(@"setOrientation:") withObject:(id)UIInterfaceOrientationPortrait];
+//    }
+
+//    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+//        objc_msgSend([UIDevice currentDevice], @selector(setOrientation:),    UIInterfaceOrientationLandscapeLeft );
+//   }
     
     NSString *filepath = [[NSBundle mainBundle] pathForResource:@"Comp2" ofType:@"mp4"];
     NSURL *fileURL = [NSURL fileURLWithPath:filepath];

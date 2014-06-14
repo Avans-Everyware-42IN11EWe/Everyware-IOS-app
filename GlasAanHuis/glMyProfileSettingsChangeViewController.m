@@ -1,18 +1,18 @@
 //
-//  glMyProfileViewController.m
+//  glMyProfileSettingsChangeViewController.m
 //  GlasAanHuis
 //
-//  Created by leon on 07/05/14.
+//  Created by leroy on 14/06/14.
 //  Copyright (c) 2014 GlasAanHuis. All rights reserved.
 //
 
-#import "glMyProfileViewController.h"
-#import "SWRevealViewController.h"
-@interface glMyProfileViewController ()
+#import "glMyProfileSettingsChangeViewController.h"
+
+@interface glMyProfileSettingsChangeViewController ()
 
 @end
 
-@implementation glMyProfileViewController
+@implementation glMyProfileSettingsChangeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,12 +27,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _sideBarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
-    
-    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    _sideBarButton.target = self.revealViewController;
-    _sideBarButton.action = @selector(revealToggle:);
-    
     NSJSONSerialization *user =[self getUser:1];
     self.MyProfileName.text = [user valueForKey:@"naam"];
     self.MyProfileAge.text = [NSString stringWithFormat:@"Leeftijd: %@",[user valueForKey:@"leeftijd"]];
@@ -40,10 +34,9 @@
     self.MyProfileEmail.text = [NSString stringWithFormat:@"Email: %@",[user valueForKey:@"email"]];
     self.MyProfilePhone.text = [NSString stringWithFormat:@"Telefoon: %@",[user valueForKey:@"telefoon"]];
     
-    NSURL *urlplaatje = [NSURL URLWithString:[user valueForKey:@"plaatje"]];
-    NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
-    self.MyProfilePicture.image = [UIImage imageWithData:dataplaatje];
-    
+//    NSURL *urlplaatje = [NSURL URLWithString:[user valueForKey:@"plaatje"]];
+//    NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
+//    self.MyProfilePicture.image = [UIImage imageWithData:dataplaatje];
 }
 
 - (void)didReceiveMemoryWarning
