@@ -27,12 +27,27 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    providers = [self getProviders];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSJSONSerialization*)getProviders
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *userId = [defaults valueForKey:@"userID"];
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/b/providers?user_id=%@",userId];
+    NSURL *url = [NSURL URLWithString:path];
+    NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
+    req.HTTPMethod = @"GET";
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+    return [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
 }
 
 /*

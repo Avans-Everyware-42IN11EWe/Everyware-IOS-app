@@ -10,5 +10,7 @@
 
 @interface glProviderViewController : UIViewController
 - (IBAction)providerChosen:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *ProviderListView;
 
 @end
+NSJSONSerialization *providers;

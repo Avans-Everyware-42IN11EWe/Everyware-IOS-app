@@ -46,6 +46,7 @@
 }
 */
 
+
 - (IBAction)committed:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:@"2" forKey:@"userStatus"];

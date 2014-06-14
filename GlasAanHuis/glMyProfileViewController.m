@@ -37,7 +37,6 @@
     NSString *senderID = [defaults valueForKey:@"userID"];
     NSJSONSerialization *user =[self getUser:senderID];
 
-    
     self.MyProfileName.text = [user valueForKey:@"naam"];
     self.MyProfileAge.text = [NSString stringWithFormat:@"Leeftijd: %@",[user valueForKey:@"leeftijd"]];
     self.MyProfileLocation.text = [NSString stringWithFormat:@"Adres: %@",[user valueForKey:@"adres"]];
@@ -53,7 +52,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(NSJSONSerialization*)getUser:(NSString *)userId

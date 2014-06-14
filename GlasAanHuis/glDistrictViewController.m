@@ -422,6 +422,9 @@ glDistrictParticipants *participantsView;
         glBuddyDetailViewController *controller = [segue destinationViewController];
         [controller setBuddy:currentdetailViewID];
     }
+    if ([segue.identifier isEqualToString:@"faq"]) {
+        [segue.destinationViewController setDistrictID:[self.districts[currentDistrict] valueForKey:@"id"]];
+    }
 }
 
 - (IBAction)goToRegister:(id)sender {
@@ -440,11 +443,11 @@ glDistrictParticipants *participantsView;
     [self performSegueWithIdentifier:@"provider" sender:self];
 }
 
-
 -(void)goTouserVideo:(NSString *)url{
     currentVideoUrl = url;
     [self performSegueWithIdentifier:@"userVideo" sender:self];
 }
+
 -(void)setDistrictView:(NSInteger)index
 {
     NSJSONSerialization *district =[self getDistrict:index];

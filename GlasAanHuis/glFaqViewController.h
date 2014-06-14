@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface glFaqViewController : UIViewController
-
+@property(nonatomic,strong)NSString*districtID;
+@property (strong, nonatomic) IBOutlet UIWebView *faqView;
 @end
