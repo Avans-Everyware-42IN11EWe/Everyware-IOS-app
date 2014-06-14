@@ -14,6 +14,9 @@
 @property (strong, nonatomic) NSString *districtID;
 - (void)setDistrictID:(NSString *)districtID;
 
+@property (strong, nonatomic) UIImage *profileFoto;
+- (void)setProfileFoto:(UIImage *)profileFoto;
+
 //@property (strong, nonatomic) IBOutlet UITextField *nameTV;
 @property (strong, nonatomic) IBOutlet UITextField *emailTV;
 @property (strong, nonatomic) IBOutlet UISwitch *buddySW;

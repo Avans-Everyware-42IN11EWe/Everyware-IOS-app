@@ -383,16 +383,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dej-xR-QUg">
-                                <rect key="frame" x="20" y="92" width="280" height="229"/>
+                                <rect key="frame" x="20" y="92" width="250" height="198"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzB-UT-v9S">
-                                <rect key="frame" x="119" y="350" width="82" height="30"/>
+                                <rect key="frame" x="20" y="440" width="250" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Verander">
+                                <state key="normal" title="Kies een foto">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -400,7 +400,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kE5-rv-e3O">
-                                <rect key="frame" x="119" y="489" width="82" height="30"/>
+                                <rect key="frame" x="20" y="490" width="250" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -422,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nby-K7-ZML" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3898" y="485"/>
+            <point key="canvasLocation" x="3902" y="97"/>
         </scene>
         <!--Gl Provider View Controller-->
         <scene sceneID="rbt-yq-7Lz">
@@ -1016,7 +1016,7 @@
                                 </state>
                                 <connections>
                                     <action selector="goToRegister:" destination="UVM-LS-YKg" eventType="touchUpInside" id="eIW-bm-c89"/>
-                                    <segue destination="g1g-SK-g03" kind="push" id="5Yf-Rs-8Hp"/>
+                                    <segue destination="g1g-SK-g03" kind="push" identifier="photouploadenview" id="5Yf-Rs-8Hp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yw-h5-Guh">
@@ -1202,6 +1202,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="PaI-7T-v7u"/>
-        <segue reference="ACY-CQ-49C"/>
+        <segue reference="Dyv-Gp-8g7"/>
     </inferredMetricsTieBreakers>
 </document>
