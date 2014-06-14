@@ -34,7 +34,6 @@
     //_districts = [myArray mutableCopy];
     [_searchTF addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [_searchTF setDelegate:self];
-    
 }
 - (void)didReceiveMemoryWarning
 {

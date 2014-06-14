@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     
-    NSJSONSerialization *user =[self getUser:1];
+    NSJSONSerialization *user =[self getUser:_buddy];
     self.nameUser.text = [user valueForKey:@"naam"];
     self.ageUser.text = [NSString stringWithFormat:@"Leeftijd: %@",[user valueForKey:@"leeftijd"]];
     self.cityUser.text = [NSString stringWithFormat:@"Woonplaats: %@",[user valueForKey:@"woonplaats"]];
@@ -62,6 +62,9 @@
     
 }
 
+-(void)setBuddyID:(NSString *)buddyID{
+    buddyID = buddyID;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -69,20 +72,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"goToChat"]) {
+        glBuddyChatViewController *controller = [segue destinationViewController];
+        [controller setRecieverID:_buddy];
+    }
 }
-*/
 
--(NSJSONSerialization*)getUser:(NSInteger)userId
+-(NSJSONSerialization*)getUser:(NSString*)userId
 {
-    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/buddy?id=%d",userId];
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/buddy?id=%@",userId];
     NSString *urlstring = [NSString stringWithFormat:path];
     NSURL *url = [NSURL URLWithString:urlstring];
     NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];

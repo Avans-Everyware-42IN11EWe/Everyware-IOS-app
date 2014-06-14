@@ -13,7 +13,7 @@
 #import "glBlurView.h"
 #import "glMapViewDelegate.h"
 #import "glUserVideoViewController.h"
-
+#import "glBuddyDetailViewController.h"
 @interface glDistrictViewController : UIViewController <UIScrollViewDelegate>{
     IBOutlet glBlurView *backgroundView ;
     IBOutlet UIScrollView *scroller;
@@ -61,6 +61,7 @@
    
     NSString * currentVideoUrl;
     NSInteger currentDistrict;
+    NSString * currentdetailViewID;
 }
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 @property glMapViewDelegate *mapDelegate;
@@ -73,6 +74,6 @@
 - (IBAction)goToCommitment:(id)sender;
 - (IBAction)goToProvider:(id)sender;
 -(void)goTouserVideo:(NSString*)url;
--(void)goToBuddyDetail;
+-(void)goToBuddyDetail:(NSString *)detail;
 @end
 

@@ -58,7 +58,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[_users[indexPath.row]valueForKey:@"is_buddy"]integerValue]==1) {
-        [_eindbaas goToBuddyDetail];
+        [_eindbaas goToBuddyDetail:[_users[indexPath.row]valueForKey:@"id"]];
     }else if([[_users[indexPath.row]valueForKey:@"has_video"]integerValue]==1)
     {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"Comp2" ofType:@"mp4"];
