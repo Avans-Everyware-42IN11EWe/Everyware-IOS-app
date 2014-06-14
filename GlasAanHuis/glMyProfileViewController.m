@@ -33,10 +33,14 @@
     _sideBarButton.target = self.revealViewController;
     _sideBarButton.action = @selector(revealToggle:);
     
-    NSJSONSerialization *user =[self getUser:1];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *senderID = [defaults valueForKey:@"userID"];
+    NSJSONSerialization *user =[self getUser:senderID];
+
+    
     self.MyProfileName.text = [user valueForKey:@"naam"];
     self.MyProfileAge.text = [NSString stringWithFormat:@"Leeftijd: %@",[user valueForKey:@"leeftijd"]];
-    self.MyProfileLocation.text = [NSString stringWithFormat:@"Woonplaats: %@",[user valueForKey:@"woonplaats"]];
+    self.MyProfileLocation.text = [NSString stringWithFormat:@"Adres: %@",[user valueForKey:@"adres"]];
     self.MyProfileEmail.text = [NSString stringWithFormat:@"Email: %@",[user valueForKey:@"email"]];
     self.MyProfilePhone.text = [NSString stringWithFormat:@"Telefoon: %@",[user valueForKey:@"telefoon"]];
     
@@ -52,9 +56,9 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSJSONSerialization*)getUser:(NSInteger)userId
+-(NSJSONSerialization*)getUser:(NSString *)userId
 {
-    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/buddy?id=%d",userId];
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/buddy?id=%@",userId];
     NSString *urlstring = [NSString stringWithFormat:path];
     NSURL *url = [NSURL URLWithString:urlstring];
     NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
@@ -71,6 +75,7 @@
     NSLog(@"%@",user);
     return user;
 }
+
 
 /*
 #pragma mark - Navigation

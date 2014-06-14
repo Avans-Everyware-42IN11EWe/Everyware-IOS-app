@@ -30,7 +30,7 @@
     NSJSONSerialization *user =[self getUser:_buddy];
     self.nameUser.text = [user valueForKey:@"naam"];
     self.ageUser.text = [NSString stringWithFormat:@"Leeftijd: %@",[user valueForKey:@"leeftijd"]];
-    self.cityUser.text = [NSString stringWithFormat:@"Woonplaats: %@",[user valueForKey:@"woonplaats"]];
+    self.cityUser.text = [NSString stringWithFormat:@"Adres: %@",[user valueForKey:@"adres"]];
     self.emailUser.text = [NSString stringWithFormat:@"Email: %@",[user valueForKey:@"email"]];
     self.phoneUser.text = [NSString stringWithFormat:@"Telefoon: %@",[user valueForKey:@"telefoon"]];
     

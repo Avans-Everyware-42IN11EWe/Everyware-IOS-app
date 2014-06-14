@@ -116,9 +116,14 @@
     //[[_districts objectAtIndex:indexPath.row] valueForKey:@"name"];
     
     if (userID !=nil && ![_emailTV.text isEqualToString:@""]) {
-        
-        [self pictureUpload: _profileFoto: userID: authToken];
-        
+        if(_profileFoto != nil){
+            CGSize newSize = CGSizeMake(400.0f, 400.0f);
+            UIGraphicsBeginImageContext(newSize);
+            [_profileFoto drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+            UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            [self pictureUpload: newImage: userID: authToken];
+        }
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setValue:userID forKey:@"userID"];
         [defaults setValue:authToken forKey:@"authToken"];
@@ -186,31 +191,7 @@
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     
     NSLog([NSString stringWithFormat:@"Image Return String: %@", returnString]);
-    
-//    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:image, @"file", nil];
-//    NSError *postError;
-//    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
-//    
-//    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/image?id=%@&auth_token=%@",userID,authToken];
-//    NSString *urlstring = [NSString stringWithFormat:path];
-//    NSURL *url = [NSURL URLWithString:urlstring];
-//    
-//    NSMutableURLRequest *req =[NSMutableURLRequest requestWithURL:url];
-//    
-//    req.HTTPMethod=@"POST";
-//    [req setValue:@"image/jpg" forHTTPHeaderField:@"Content-Type"];
-//    [req setHTTPBody:postdata];
-//    
-//    NSData *data;
-//    NSURLResponse *response = nil;
-//    data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:nil];
-//    if (data == nil) {
-//        return [[NSArray alloc]init];
-//    }
-//    return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 }
-
->>>>>>> FETCH_HEAD
 
 -(NSArray*)registerUser
 {

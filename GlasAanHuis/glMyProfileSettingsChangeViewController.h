@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *MyProfilePhone;
 @property (weak, nonatomic) IBOutlet UITextField *MyProfileEmail;
 @property (weak, nonatomic) IBOutlet UISwitch *IWantToBeABuddy;
+@property (strong, nonatomic) UIImage *profileFoto;
+- (void)setProfileFoto:(UIImage *)profileFoto;
+- (IBAction)save:(id)sender;
 
 
 
