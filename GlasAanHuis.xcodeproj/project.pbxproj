@@ -39,8 +39,8 @@
 		49C31E9019190052005A8F28 /* glDistrictSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E8F19190052005A8F28 /* glDistrictSelectViewController.m */; };
 		49C31E93191915D5005A8F28 /* glStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E92191915D5005A8F28 /* glStartViewController.m */; };
 		49C31E9A19194AED005A8F28 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C31E9919194AED005A8F28 /* FacebookSDK.framework */; };
-		49C31E9E19198B87005A8F28 /* Comp2_old.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 49C31E9D19198B87005A8F28 /* Comp2_old.mp4 */; };
-		49C31E9F19198B87005A8F28 /* Comp2_old.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 49C31E9D19198B87005A8F28 /* Comp2_old.mp4 */; };
+		49C31E9E19198B87005A8F28 /* Comp2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 49C31E9D19198B87005A8F28 /* Comp2.mp4 */; };
+		49C31E9F19198B87005A8F28 /* Comp2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 49C31E9D19198B87005A8F28 /* Comp2.mp4 */; };
 		49C31EA219198BDA005A8F28 /* glIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31EA119198BDA005A8F28 /* glIntroViewController.m */; };
 		49C31EA319198BDA005A8F28 /* glIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31EA119198BDA005A8F28 /* glIntroViewController.m */; };
 		49CBE6D4191A2C3200545777 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CBE6D3191A2C3200545777 /* MediaPlayer.framework */; };
@@ -132,14 +132,13 @@
 		49C31E91191915D5005A8F28 /* glStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glStartViewController.h; sourceTree = "<group>"; };
 		49C31E92191915D5005A8F28 /* glStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glStartViewController.m; sourceTree = "<group>"; };
 		49C31E9919194AED005A8F28 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		49C31E9D19198B87005A8F28 /* Comp2_old.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comp2_old.mp4; sourceTree = "<group>"; };
+		49C31E9D19198B87005A8F28 /* Comp2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comp2.mp4; sourceTree = "<group>"; };
 		49C31EA019198BDA005A8F28 /* glIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glIntroViewController.h; sourceTree = "<group>"; };
 		49C31EA119198BDA005A8F28 /* glIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glIntroViewController.m; sourceTree = "<group>"; };
 		49CBE6D3191A2C3200545777 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F29CBCD0194B248500C21542 /* cameraicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraicon.png; sourceTree = "<group>"; };
 		FFA9B9AD193BAE3800EA5A50 /* glMapViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glMapViewDelegate.h; sourceTree = "<group>"; };
 		FFA9B9AE193BAE3800EA5A50 /* glMapViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glMapViewDelegate.m; sourceTree = "<group>"; };
-		FFC5C467194E5F6B00B25CA0 /* Comp2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comp2.mp4; sourceTree = "<group>"; };
 		FFCCE4541915605A000FB961 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		FFCCE4551915605A000FB961 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		FFD9C46A1928BA6A00007267 /* WijkInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WijkInfo.xib; sourceTree = "<group>"; };
@@ -347,12 +346,11 @@
 		FFEBE5CE18F299A700C8DD0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FFC5C467194E5F6B00B25CA0 /* Comp2.mp4 */,
 				359BC846193BB07E005F2718 /* 06-commit_feet.png */,
 				49B7AE37193522A0000E8904 /* sample_mpeg4.mp4 */,
 				FFEBE5D618F299A700C8DD0B /* glAppDelegate.h */,
 				FFEBE5D718F299A700C8DD0B /* glAppDelegate.m */,
-				49C31E9D19198B87005A8F28 /* Comp2_old.mp4 */,
+				49C31E9D19198B87005A8F28 /* Comp2.mp4 */,
 				FFEBE5CF18F299A700C8DD0B /* GlasAanHuis-Info.plist */,
 				FFEBE5D018F299A700C8DD0B /* InfoPlist.strings */,
 				FFEBE5D318F299A700C8DD0B /* main.m */,
@@ -464,7 +462,7 @@
 				35C0697F19325996009538A9 /* DistrictParticipants.xib in Resources */,
 				49B7AE38193522A0000E8904 /* sample_mpeg4.mp4 in Resources */,
 				359B2F4C1930BCA300A65D66 /* billgates.jpg in Resources */,
-				49C31E9E19198B87005A8F28 /* Comp2_old.mp4 in Resources */,
+				49C31E9E19198B87005A8F28 /* Comp2.mp4 in Resources */,
 				35D042CE191A42E8008D3679 /* info.html in Resources */,
 				F29CBCD1194B248500C21542 /* cameraicon.png in Resources */,
 				FFD9C46B1928BA6A00007267 /* WijkInfo.xib in Resources */,
@@ -479,7 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFEBE5F118F299A700C8DD0B /* InfoPlist.strings in Resources */,
-				49C31E9F19198B87005A8F28 /* Comp2_old.mp4 in Resources */,
+				49C31E9F19198B87005A8F28 /* Comp2.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
