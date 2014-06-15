@@ -63,6 +63,7 @@
     NSString * currentVideoUrl;
     NSInteger currentDistrict;
     NSString * currentdetailViewID;
+    CGFloat previousScrollViewYOffset;
 }
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 @property glMapViewDelegate *mapDelegate;
