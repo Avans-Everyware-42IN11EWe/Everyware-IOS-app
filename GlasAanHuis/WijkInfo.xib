@@ -133,9 +133,6 @@
                     <state key="normal" title="Wachten op Glasvezel">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <connections>
-                        <action selector="aanbetaling:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZKL-JF-skd"/>
-                    </connections>
                 </button>
             </subviews>
         </view>

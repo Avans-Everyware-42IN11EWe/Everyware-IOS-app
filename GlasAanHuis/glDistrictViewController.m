@@ -32,6 +32,7 @@ glDistrictParticipants *participantsView;
 - (IBAction)showWelcome:(id)sender {
     [MTPopupWindow showWindowWithHTMLFile:@"info.html" insideView:self.view];
 }
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -181,6 +182,7 @@ glDistrictParticipants *participantsView;
     //Faq
     lblFaq = [[UILabel alloc]initWithFrame:CGRectMake(5, 1150, 300, 30)];
     lblFaq.text = @"Veel gestelde vragen";
+    
     lblFaq.textColor = [UIColor whiteColor];
     
     txtFaq = [[UITextView alloc]initWithFrame:CGRectMake(5, 10, 310, 80)];
@@ -189,6 +191,7 @@ glDistrictParticipants *participantsView;
     txtFaq.font = [UIFont systemFontOfSize:17];
     txtFaq.editable = NO;
     [txtFaq setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0]];
+    
     ContFaq = [[UIView alloc]initWithFrame:self.view.frame];
     [ContFaq setFrame:CGRectMake(5, 1180, 310, 80)];
     [ContFaq.layer setBorderWidth:1.0];
@@ -206,14 +209,16 @@ glDistrictParticipants *participantsView;
     lblVraag.text = @"Stel uw vraag";
     lblVraag.textColor = [UIColor whiteColor];
     
-    txtVraag = [[UITextView alloc]initWithFrame:CGRectMake(5, 10, 310, 80)];
-    txtVraag.text = @"Hier kunt u vragen stellen over de app en glasvezel.";
+    txtVraag = [[UITextView alloc]initWithFrame:CGRectMake(5, 10, 310, 100)];
+    //txtVraag.text = @"Hier kunt u vragen stellen over de app en glasvezel.";
+    txtVraag.text = @"Wat is het voordeel van glasvezel?\r\nWaneer wordt glasvezel aangelegd?\r\nIs glasvezel echt zo veel sneller?";
+
     txtVraag.textColor = [UIColor whiteColor];
     txtVraag.font = [UIFont systemFontOfSize:17];
     txtVraag.editable = NO;
     [txtVraag setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0]];
     ContVraag = [[UIView alloc]initWithFrame:self.view.frame];
-    [ContVraag setFrame:CGRectMake(5, 1300, 310, 80)];
+    [ContVraag setFrame:CGRectMake(5, 1300, 310, 100)];
     [ContVraag.layer setBorderWidth:1.0];
     ContVraag.layer.BorderColor = [UIColor grayColor].CGColor;
     [ContVraag setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
@@ -228,7 +233,7 @@ glDistrictParticipants *participantsView;
     
     //Stappen
     ContStappen = [[UIView alloc]initWithFrame:self.view.frame];
-    lblStappen = [[UILabel alloc]initWithFrame:CGRectMake(5, 1390, 150, 30)];
+    lblStappen = [[UILabel alloc]initWithFrame:CGRectMake(5, 1410, 150, 30)];
     lblStappen.text = @"Stappen";
     lblStappen.textColor = [UIColor whiteColor];
     lblStap1 = [[UILabel alloc]initWithFrame:CGRectMake(5, 10, 300, 30)];
@@ -277,7 +282,7 @@ glDistrictParticipants *participantsView;
     progStap5.progress = 0.0;
     progStap5.progressTintColor = [UIColor greenColor];
     progStap5.backgroundColor = [UIColor whiteColor];
-    [ContStappen setFrame:CGRectMake(5, 1420, 310, 240)];
+    [ContStappen setFrame:CGRectMake(5, 1440, 310, 240)];
     [ContStappen setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
     [ContStappen.layer setBorderWidth:1.0];
     ContStappen.layer.BorderColor = [UIColor grayColor].CGColor;
