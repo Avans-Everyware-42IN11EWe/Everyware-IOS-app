@@ -56,7 +56,7 @@
                         <viewControllerLayoutGuide type="bottom" id="k7F-p5-J15"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="R1y-e8-EEf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="test 5211" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQl-xj-aCo">
@@ -73,7 +73,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2Yy-tJ-8Ej">
-                                <rect key="frame" x="20" y="156" width="280" height="1266"/>
+                                <rect key="frame" x="20" y="156" width="280" height="334"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="2222" y="1642"/>
         </scene>
-        <!--Gl District View Controller - Fiberfunding-->
+        <!--Gl District View Controller - GlasAanHuis-->
         <scene sceneID="XB8-OS-SK8">
             <objects>
                 <viewController id="UVM-LS-YKg" customClass="glDistrictViewController" sceneMemberID="viewController">
@@ -133,7 +133,7 @@
                             </view>
                         </subviews>
                     </view>
-                    <navigationItem key="navigationItem" title="Fiberfunding" id="HUa-4A-Gmf">
+                    <navigationItem key="navigationItem" title="GlasAanHuis" id="HUa-4A-Gmf">
                         <barButtonItem key="leftBarButtonItem" image="reveal-icon" style="plain" id="BNT-mr-AkH">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -168,11 +168,12 @@
                         <segue destination="jEU-BX-EgU" kind="custom" identifier="commitment" id="Pet-d6-fTd"/>
                         <segue destination="ZkM-2k-F02" kind="custom" identifier="provider" id="0TW-lo-qvF"/>
                         <segue destination="0TM-LA-t3C" kind="custom" identifier="userVideo" id="wEw-Cr-5GF"/>
+                        <segue destination="KdD-tW-teV" kind="push" identifier="goToInfo" id="q0U-Dl-msA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajv-Tj-JyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2761" y="696"/>
+            <point key="canvasLocation" x="2781" y="740"/>
         </scene>
         <!--Gl My Profile Settings Change View Controller-->
         <scene sceneID="WoG-cd-S3h">
@@ -386,7 +387,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VtF-ix-U26"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fzv-rF-o2V">
-                        <rect key="frame" x="0.0" y="0.0" width="290" height="540"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Uw foto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pT3-Ve-8Bn">
@@ -580,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1G2-P1-I1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4302" y="920"/>
+            <point key="canvasLocation" x="4206" y="772"/>
         </scene>
         <!--Gl Commitment View Controller-->
         <scene sceneID="9ek-fB-Mg1">
@@ -754,6 +755,25 @@
             </objects>
             <point key="canvasLocation" x="3303" y="1628"/>
         </scene>
+        <!--Gl Info View Controller-->
+        <scene sceneID="Ejg-D8-oSX">
+            <objects>
+                <viewController id="KdD-tW-teV" customClass="glInfoViewController" sceneMemberID="viewController">
+                    <textView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="9uo-Ag-RV7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <string key="text">Het doel is om heel Nederland aan glasvezel te krijgen. Het idee is om wijkbewoners samen glasvezelaanleg te laten realiseren. Dit wordt gedaan met behulp van vraagbundeling en crowdfunding. Het “Glas aan Huis”-project is een platform die dit allemaal faciliteert.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <navigationItem key="navigationItem" id="HjX-Bg-VJG"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y53-iz-oL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4657" y="550"/>
+        </scene>
         <!--Gl Buddy Chat View Controller-->
         <scene sceneID="n2X-XP-T8u">
             <objects>
@@ -837,11 +857,11 @@
                         <viewControllerLayoutGuide type="bottom" id="evw-ta-WPA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pwH-WH-Wbc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7dE-Ik-UIB">
-                                <rect key="frame" x="20" y="69" width="280" height="1411"/>
+                                <rect key="frame" x="20" y="69" width="280" height="479"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -863,7 +883,7 @@
             <objects>
                 <tableViewController id="CNz-rh-sHu" customClass="glForumViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" id="yeT-lS-V93">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1197,7 +1217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COj-ju-2nd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3327" y="533"/>
+            <point key="canvasLocation" x="3267" y="313"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="0cp-xY-LVX">
@@ -1404,9 +1424,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cUt-U7-UGQ"/>
         <segue reference="eOC-M8-0yA"/>
-        <segue reference="ACY-CQ-49C"/>
         <segue reference="4ap-3M-clU"/>
+        <segue reference="WWe-TP-RYT"/>
+        <segue reference="ACY-CQ-49C"/>
     </inferredMetricsTieBreakers>
 </document>

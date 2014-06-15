@@ -31,6 +31,7 @@
 		43D07FEE192CDE6F00F22139 /* glBuddyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D07FED192CDE6F00F22139 /* glBuddyDetailViewController.m */; };
 		49A6D79C194C55CE002374D8 /* glMyProfileSettingsChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D79B194C55CE002374D8 /* glMyProfileSettingsChangeViewController.m */; };
 		49A6D79F194CD610002374D8 /* glPictureViewSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D79E194CD610002374D8 /* glPictureViewSettingsController.m */; };
+		49A6D7A2194E4E14002374D8 /* glInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D7A1194E4E14002374D8 /* glInfoViewController.m */; };
 		49B7AE38193522A0000E8904 /* sample_mpeg4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 49B7AE37193522A0000E8904 /* sample_mpeg4.mp4 */; };
 		49B7AE3B193537CC000E8904 /* glDistrictParticipantsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B7AE3A193537CC000E8904 /* glDistrictParticipantsCell.m */; };
 		49C31E8A1919000C005A8F28 /* glDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C31E891919000C005A8F28 /* glDistrictViewController.m */; };
@@ -117,6 +118,8 @@
 		49A6D79B194C55CE002374D8 /* glMyProfileSettingsChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glMyProfileSettingsChangeViewController.m; sourceTree = "<group>"; };
 		49A6D79D194CD610002374D8 /* glPictureViewSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glPictureViewSettingsController.h; path = ../glPictureViewSettingsController.h; sourceTree = "<group>"; };
 		49A6D79E194CD610002374D8 /* glPictureViewSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = glPictureViewSettingsController.m; path = ../glPictureViewSettingsController.m; sourceTree = "<group>"; };
+		49A6D7A0194E4E14002374D8 /* glInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glInfoViewController.h; sourceTree = "<group>"; };
+		49A6D7A1194E4E14002374D8 /* glInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glInfoViewController.m; sourceTree = "<group>"; };
 		49B7AE37193522A0000E8904 /* sample_mpeg4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample_mpeg4.mp4; sourceTree = "<group>"; };
 		49B7AE39193537CC000E8904 /* glDistrictParticipantsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glDistrictParticipantsCell.h; sourceTree = "<group>"; };
 		49B7AE3A193537CC000E8904 /* glDistrictParticipantsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glDistrictParticipantsCell.m; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 				49A6D79B194C55CE002374D8 /* glMyProfileSettingsChangeViewController.m */,
 				3597A2B1194DCE0B009FBE48 /* glChatManagerViewController.h */,
 				3597A2B2194DCE0B009FBE48 /* glChatManagerViewController.m */,
+				49A6D7A0194E4E14002374D8 /* glInfoViewController.h */,
+				49A6D7A1194E4E14002374D8 /* glInfoViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 				49C31E8D19190037005A8F28 /* glRegisterViewController.m in Sources */,
 				35D042C9191A4288008D3679 /* SidebarViewController.m in Sources */,
 				49C31E93191915D5005A8F28 /* glStartViewController.m in Sources */,
+				49A6D7A2194E4E14002374D8 /* glInfoViewController.m in Sources */,
 				3597A2B0194DA16A009FBE48 /* glGlasNavigationController.m in Sources */,
 				35D042CC191A42D3008D3679 /* MTPopupWindow.m in Sources */,
 				35D042BE191A1F73008D3679 /* glVideoUploadViewController.m in Sources */,

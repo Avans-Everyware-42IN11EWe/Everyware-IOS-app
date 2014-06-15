@@ -30,7 +30,7 @@ glDistrictParticipants *participantsView;
 }
 
 - (IBAction)showWelcome:(id)sender {
-    [MTPopupWindow showWindowWithHTMLFile:@"info.html" insideView:self.view];
+    [self performSegueWithIdentifier:@"goToInfo"sender:self];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
