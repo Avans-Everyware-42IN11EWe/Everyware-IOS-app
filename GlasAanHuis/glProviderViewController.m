@@ -114,12 +114,14 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *userID = [defaults valueForKey:@"userID"];
+    NSString *authtoken = [defaults valueForKey:@"authToken"];
     NSLog(@"%@",userID);
     NSError *postError;
     NSString *str = [providerArray componentsJoinedByString:@","];
     NSLog(@"%@",str);
-    NSData *postdata = [str dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *urlstring = [NSString stringWithFormat:@"http://glas.mycel.nl/providers?user_id=%@",userID];
+    NSString *postArray = [NSString stringWithFormat:@"[%@]",str];
+    NSData *postdata = [postArray dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *urlstring = [NSString stringWithFormat:@"http://glas.mycel.nl/providers?user_id=%@&auth_token=%@",userID,authtoken];
     NSURL *url = [NSURL URLWithString:urlstring];
     NSMutableURLRequest *req =[NSMutableURLRequest requestWithURL:url];
     
