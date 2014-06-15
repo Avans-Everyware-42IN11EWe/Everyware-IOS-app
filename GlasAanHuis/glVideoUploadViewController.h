@@ -11,6 +11,8 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 @interface glVideoUploadViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet NSURL *videoUrl;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 @property (strong, nonatomic) IBOutlet UIView *videoView;
 - (IBAction)save:(id)sender;

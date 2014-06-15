@@ -41,6 +41,10 @@
 }
 
 - (IBAction)save:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *userID = [defaults valueForKey:@"userID"];
+    NSString *authToken = [defaults valueForKey:@"authToken"];
+    [self videoUpload:_videoUrl: userID: authToken];
 }
 
 - (IBAction)leukeVideoToevoegen:(id)sender {
@@ -99,16 +103,19 @@
 //                                                     name:MPMoviePlayerPlaybackDidFinishNotification object:theMovie];
 //    }
     
-    NSURL *videoURL = info[UIImagePickerControllerMediaURL];
+    _videoUrl = info[UIImagePickerControllerMediaURL];
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     _mc = [[MPMoviePlayerController alloc] init];
-    [_mc setContentURL:videoURL];
+    [_mc setContentURL:_videoUrl];
     [_mc.view setFrame:CGRectMake (0, 0, 260, 160)];
     [_videoView addSubview:_mc.view];
     //[_mc play];
     [_mc prepareToPlay];
     _mc.shouldAutoplay = false;
+    
+    
+
 }
 
 //- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -129,6 +136,34 @@
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
+}
+-(void)videoUpload:(NSURL*)videoUrl:(NSString *) userID:(NSString *) authToken
+{
+    //userID,@"id",authToken,@"auth_token",
+    NSData *imageData = [NSData dataWithContentsOfURL:videoUrl];
+    //NSData *imageData = UIImagePNGRepresentation(image);//delegate.dataBean.image
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/video?id=%@&auth_token=%@",userID,authToken];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:path]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+    
+    NSMutableData *body = [NSMutableData data];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"test.png\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[NSData dataWithData:imageData]];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:body];
+    
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    
+    NSLog([NSString stringWithFormat:@"Image Return String: %@", returnString]);
 }
 
 

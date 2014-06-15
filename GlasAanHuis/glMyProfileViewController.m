@@ -46,6 +46,16 @@
     NSURL *urlplaatje = [NSURL URLWithString:[user valueForKey:@"plaatje"]];
     NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
     self.MyProfilePicture.image = [UIImage imageWithData:dataplaatje];
+    
+    if(![[user valueForKey:@"video"] isEqual:@""]){
+        NSURL *url = [NSURL URLWithString:[user valueForKey:@"video"]];
+        
+        _mc = [[MPMoviePlayerController alloc] initWithContentURL:url];
+        [_mc.view setFrame:CGRectMake(0, 0, 260, 160)];
+        [_mc prepareToPlay];
+        _mc.shouldAutoplay = false;
+        [_videoView addSubview:_mc.view];
+    }
 }
 
 
