@@ -14,3 +14,5 @@
 
 @end
 NSJSONSerialization *providers;
+NSArray *lijst;
+NSMutableArray *switchArray;

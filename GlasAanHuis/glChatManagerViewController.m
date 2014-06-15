@@ -38,17 +38,8 @@
     [super viewDidLoad];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     userID = [defaults valueForKey:@"userID"];
-    _myMessages.dataSource = nil;
     [self getNewLines];
     
-    for (NSDictionary *value in myMessageArray) {
-        NSInteger *messageID = [[value valueForKey:@"id"]integerValue];
-        if (messageID > lastMessage) {
-            lastMessage = messageID;
-        }
-    }
-    _myMessages.dataSource = self;
-    [_myMessages reloadData];
     _sideBarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
     _sideBarButton.target = self.revealViewController;
     _sideBarButton.action = @selector(revealToggle:);
@@ -83,13 +74,6 @@
     return 10;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *v = [UIView new];
-    [v setBackgroundColor:[UIColor clearColor]];
-    return v;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -99,11 +83,12 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-
     
     NSDictionary *itemAtIndex = (NSDictionary *)[myMessageArray objectAtIndex:indexPath.section];
     NSInteger *messageID = [[itemAtIndex valueForKey:@"id"]integerValue];
-    [self checkNewMessage:messageID];
+    if (loaded==TRUE) {
+        [self checkNewMessage:messageID];
+    }
     NSString *senderName = [self getName:[itemAtIndex valueForKey:@"sender_id"]];
     NSString *textlabelContent = [NSString stringWithFormat:@"Bericht van: %@ %@",senderName,[itemAtIndex valueForKey:@"message"]];
     cell.textLabel.text = textlabelContent;
@@ -149,14 +134,12 @@
 
 -(Boolean)checkNewMessage:(NSInteger*)currentMessageID
 {
-    NSLog(@"checkNewMessage");
     if (currentMessageID>lastMessage) {
         NSLog(@"true");
         lastMessage = currentMessageID;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"You have a new message" object:self];
         return true;
     }
-    NSLog(@"false");
     return false;
 }
 
@@ -186,6 +169,10 @@
     dispatch_queue_t newLinesQ = dispatch_queue_create("newLinesQ", NULL);
     dispatch_async(newLinesQ, ^{
         myMessageArray = [self executeGetLines:userID];
+        if (loaded==FALSE) {
+            [self setLast];
+        }
+        loaded=TRUE;
         dispatch_async(dispatch_get_main_queue(), ^{
             [_myMessages reloadData];
             NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:
@@ -195,6 +182,16 @@
             timer = [NSTimer scheduledTimerWithTimeInterval:2.0
                                                  invocation:invocation repeats:NO];        });
     });
+}
+
+-(void)setLast
+{
+    for (NSDictionary *value in myMessageArray) {
+        int messageID = [[value valueForKey:@"id"]intValue];
+        if (messageID > lastMessage) {
+            lastMessage = messageID;
+        }
+    }
 }
 
 -(void)onTick

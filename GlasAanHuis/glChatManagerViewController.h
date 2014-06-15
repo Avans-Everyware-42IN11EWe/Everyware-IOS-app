@@ -15,5 +15,6 @@
 @end
 NSArray *myMessageArray;
 NSTimer *timer;
-NSInteger *lastMessage;
+int lastMessage;
 NSString *userID;
+BOOL loaded = FALSE;
