@@ -55,7 +55,7 @@
                         <viewControllerLayoutGuide type="bottom" id="k7F-p5-J15"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="R1y-e8-EEf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1500"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="test 5211" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQl-xj-aCo">
@@ -72,7 +72,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2Yy-tJ-8Ej">
-                                <rect key="frame" x="20" y="156" width="280" height="334"/>
+                                <rect key="frame" x="20" y="156" width="280" height="1266"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -830,11 +830,11 @@
                         <viewControllerLayoutGuide type="bottom" id="evw-ta-WPA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pwH-WH-Wbc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1500"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7dE-Ik-UIB">
-                                <rect key="frame" x="20" y="69" width="280" height="479"/>
+                                <rect key="frame" x="20" y="69" width="280" height="1411"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -856,12 +856,12 @@
             <objects>
                 <tableViewController id="CNz-rh-sHu" customClass="glForumViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yeT-lS-V93">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForumItem1" id="UnG-1L-5Zd">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UnG-1L-5Zd" id="dM6-87-pP5">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -954,51 +954,11 @@
                     <connections>
                         <outlet property="sideBarButton" destination="OTc-Pw-ZbL" id="R2R-o8-Y9t"/>
                         <outlet property="videoView" destination="e7x-aX-NMc" id="gnv-1o-yj2"/>
-                        <segue destination="CMb-yw-C3A" kind="push" identifier="recView" id="KlX-vA-blp"/>
-                        <segue destination="6fJ-d8-a8F" kind="push" identifier="playView" id="uM3-Yb-XuM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jcm-cD-Jdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3129" y="-1895"/>
-        </scene>
-        <!--Gl Video Record View Controller-->
-        <scene sceneID="voM-7W-JFP">
-            <objects>
-                <viewController id="CMb-yw-C3A" customClass="glVideoRecordViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0tt-LW-taJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="SQa-lU-1sl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vlu-Di-OaJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="7fu-Ge-kK1"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vy3-nL-piS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3751" y="-2335"/>
-        </scene>
-        <!--Gl Video Play View Controller-->
-        <scene sceneID="Cer-8s-zHM">
-            <objects>
-                <viewController id="6fJ-d8-a8F" customClass="glVideoPlayViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UAc-ZG-HPX"/>
-                        <viewControllerLayoutGuide type="bottom" id="Gs9-Pm-YQ8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FVw-UM-UoX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="qGB-Tw-GFL"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="goK-za-rMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3757" y="-1557"/>
         </scene>
         <!--Gl Register View Controller-->
         <scene sceneID="910-nJ-XbL">
@@ -1210,10 +1170,10 @@
             </objects>
             <point key="canvasLocation" x="2202" y="-284"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Gl Glas Navigation Controller-->
         <scene sceneID="8JQ-5j-BtC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mJP-aw-J6w" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mJP-aw-J6w" customClass="glGlasNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lj9-FR-dxd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1239,7 +1199,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="PaI-7T-v7u"/>
+        <segue reference="xas-Y0-dXz"/>
         <segue reference="Dyv-Gp-8g7"/>
         <segue reference="W3N-rt-3k4"/>
     </inferredMetricsTieBreakers>

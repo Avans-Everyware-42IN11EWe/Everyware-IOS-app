@@ -110,16 +110,6 @@
 //                                                     name:MPMoviePlayerPlaybackDidFinishNotification object:theMovie];
 //    }
     
-//    NSURL *url = [NSURL fileURLWithPath:mediaType];
-//    _mc = [[MPMoviePlayerController alloc] initWithContentURL:url];
-//    [_mc.view setFrame:CGRectMake(0, 0, 260, 160)];
-//    
-//    //[_movie play];
-//    [_mc prepareToPlay];
-//    //[movie pause];
-//    _mc.shouldAutoplay = false;
-//    [_videoView addSubview:_mc.view];
-    
     NSURL *videoURL = info[UIImagePickerControllerMediaURL];
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
@@ -127,7 +117,9 @@
     [_mc setContentURL:videoURL];
     [_mc.view setFrame:CGRectMake (0, 0, 260, 160)];
     [_videoView addSubview:_mc.view];
-    [_mc play];
+    //[_mc play];
+    [_mc prepareToPlay];
+    _mc.shouldAutoplay = false;
 }
 
 //- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {

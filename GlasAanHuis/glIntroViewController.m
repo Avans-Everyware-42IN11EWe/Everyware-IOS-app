@@ -8,6 +8,7 @@
 
 #import "glIntroViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "objc/message.h"
 
 @interface glIntroViewController ()
 
@@ -24,31 +25,20 @@
     return self;
 }
 
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscape;
+}
+
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically ]from a nib.
-    
+    //objc_msgSend([UIDevice currentDevice], @selector(setOrientation:), UIInterfaceOrientationMaskLandscape);
 }
-//- (BOOL)shouldAutorotate{
-//    if([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft)// ||[[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight
-//    {
-//        return YES;
-//    }
-//    else{
-//        return NO;
-//    }
-//}
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskLandscape;
-}
-
 
 - (void)viewDidAppear:(BOOL)animated
 {
