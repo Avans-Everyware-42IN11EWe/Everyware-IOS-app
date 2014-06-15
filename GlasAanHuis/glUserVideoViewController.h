@@ -10,7 +10,8 @@
 #import <MediaPlayer/MediaPlayer.h>
 @interface glUserVideoViewController : UIViewController
 @property (nonatomic, strong) MPMoviePlayerController *mc;
-@property (strong, nonatomic) IBOutlet UIView *movie;
 @property (strong, nonatomic)NSString *userVideoUrl;
+
+@property (strong, nonatomic) IBOutlet UIView *movie;
 -(void)setUrl:(NSString*)url;
 @end

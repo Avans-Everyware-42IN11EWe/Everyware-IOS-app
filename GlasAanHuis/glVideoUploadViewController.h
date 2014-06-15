@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MobileCoreServices/UTCoreTypes.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface glVideoUploadViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
@@ -14,5 +16,8 @@
 - (IBAction)save:(id)sender;
 - (IBAction)leukeVideoToevoegen:(id)sender;
 - (IBAction)leukeVideoOpnemen:(id)sender;
+
+@property (nonatomic, strong) MPMoviePlayerController *mc;
+//@property (strong, nonatomic)NSString *userVideoUrl;
 
 @end

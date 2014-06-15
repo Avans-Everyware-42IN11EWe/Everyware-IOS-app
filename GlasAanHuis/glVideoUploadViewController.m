@@ -55,10 +55,100 @@
 }
 
 - (IBAction)leukeVideoToevoegen:(id)sender {
-    [self performSegueWithIdentifier:@"playView" sender:self];
+    //[self performSegueWithIdentifier:@"playView" sender:self];
+    [self startMediaBrowserFromViewController:self usingDelegate:self];
 }
 
 - (IBAction)leukeVideoOpnemen:(id)sender {
-    [self performSegueWithIdentifier:@"recView" sender:self];
+    //[self performSegueWithIdentifier:@"recView" sender:self];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
+        
+        [self presentViewController:picker animated:YES completion:NULL];
+    }
 }
+
+
+
+-(BOOL)startMediaBrowserFromViewController:(UIViewController*)controller usingDelegate:(id )delegate {
+    // 1 - Validations
+    if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum] == NO)
+        || (delegate == nil)
+        || (controller == nil)) {
+        return NO;
+    }
+    // 2 - Get image picker
+    UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
+    mediaUI.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    mediaUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
+    // Hides the controls for moving & scaling pictures, or for
+    // trimming movies. To instead show the controls, use YES.
+    mediaUI.allowsEditing = YES;
+    mediaUI.delegate = delegate;
+    // 3 - Display image picker
+    [controller presentModalViewController:mediaUI animated:YES];
+    return YES;
+}
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    // 1 - Get media type
+    NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+    // 2 - Dismiss image picker
+    [self dismissModalViewControllerAnimated:NO];
+//    // Handle a movie capture
+//    if (CFStringCompare ((__bridge_retained CFStringRef)mediaType, kUTTypeMovie, 0) == kCFCompareEqualTo) {
+//        // 3 - Play the video
+//        MPMoviePlayerViewController *theMovie = [[MPMoviePlayerViewController alloc]
+//                                                 initWithContentURL:[info objectForKey:UIImagePickerControllerMediaURL]];
+//        [self presentMoviePlayerViewControllerAnimated:theMovie];
+//        // 4 - Register for the playback finished notification
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myMovieFinishedCallback:)
+//                                                     name:MPMoviePlayerPlaybackDidFinishNotification object:theMovie];
+//    }
+    
+//    NSURL *url = [NSURL fileURLWithPath:mediaType];
+//    _mc = [[MPMoviePlayerController alloc] initWithContentURL:url];
+//    [_mc.view setFrame:CGRectMake(0, 0, 260, 160)];
+//    
+//    //[_movie play];
+//    [_mc prepareToPlay];
+//    //[movie pause];
+//    _mc.shouldAutoplay = false;
+//    [_videoView addSubview:_mc.view];
+    
+    NSURL *videoURL = info[UIImagePickerControllerMediaURL];
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    _mc = [[MPMoviePlayerController alloc] init];
+    [_mc setContentURL:videoURL];
+    [_mc.view setFrame:CGRectMake (0, 0, 260, 160)];
+    [_videoView addSubview:_mc.view];
+    [_mc play];
+}
+
+//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+//    
+//    self.videoURL = info[UIImagePickerControllerMediaURL];
+//    [picker dismissViewControllerAnimated:YES completion:NULL];
+//    
+//    self.videoController = [[MPMoviePlayerController alloc] init];
+//    
+//    [self.videoController setContentURL:self.videoURL];
+//    [self.videoController.view setFrame:CGRectMake (0, 0, 320, 460)];
+//    [self.view addSubview:self.videoController.view];
+//    
+//    [self.videoController play];
+//    
+//}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+
 @end
