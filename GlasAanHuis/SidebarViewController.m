@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
 
-    menuItems = @[@"Profile", @"Video", @"District"];
+    menuItems = @[@"Profile", @"Video", @"District",@"messages"];
 }
 
 - (void)didReceiveMemoryWarning

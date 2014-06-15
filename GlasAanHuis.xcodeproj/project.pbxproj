@@ -11,6 +11,7 @@
 		3508ED6E1919DE07009E1512 /* glPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3508ED6D1919DE07009E1512 /* glPictureViewController.m */; };
 		3508ED701919E1FF009E1512 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3508ED6F1919E1FF009E1512 /* QuartzCore.framework */; };
 		3597A2B0194DA16A009FBE48 /* glGlasNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3597A2AF194DA16A009FBE48 /* glGlasNavigationController.m */; };
+		3597A2B3194DCE0B009FBE48 /* glChatManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3597A2B2194DCE0B009FBE48 /* glChatManagerViewController.m */; };
 		359B2F491930A7D000A65D66 /* glBuddyChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B2F481930A7D000A65D66 /* glBuddyChatViewController.m */; };
 		359B2F4C1930BCA300A65D66 /* billgates.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 359B2F4A1930BCA300A65D66 /* billgates.jpg */; };
 		359B2F4D1930BCA300A65D66 /* obama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 359B2F4B1930BCA300A65D66 /* obama.jpg */; };
@@ -83,6 +84,8 @@
 		3508ED6F1919E1FF009E1512 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3597A2AE194DA16A009FBE48 /* glGlasNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glGlasNavigationController.h; sourceTree = "<group>"; };
 		3597A2AF194DA16A009FBE48 /* glGlasNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glGlasNavigationController.m; sourceTree = "<group>"; };
+		3597A2B1194DCE0B009FBE48 /* glChatManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glChatManagerViewController.h; sourceTree = "<group>"; };
+		3597A2B2194DCE0B009FBE48 /* glChatManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glChatManagerViewController.m; sourceTree = "<group>"; };
 		359B2F471930A7D000A65D66 /* glBuddyChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glBuddyChatViewController.h; sourceTree = "<group>"; };
 		359B2F481930A7D000A65D66 /* glBuddyChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glBuddyChatViewController.m; sourceTree = "<group>"; };
 		359B2F4A1930BCA300A65D66 /* billgates.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = billgates.jpg; sourceTree = "<group>"; };
@@ -257,6 +260,8 @@
 				359BC844193B9F40005F2718 /* glUserVideoViewController.m */,
 				49A6D79A194C55CE002374D8 /* glMyProfileSettingsChangeViewController.h */,
 				49A6D79B194C55CE002374D8 /* glMyProfileSettingsChangeViewController.m */,
+				3597A2B1194DCE0B009FBE48 /* glChatManagerViewController.h */,
+				3597A2B2194DCE0B009FBE48 /* glChatManagerViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 				49B7AE3B193537CC000E8904 /* glDistrictParticipantsCell.m in Sources */,
 				49C31EA219198BDA005A8F28 /* glIntroViewController.m in Sources */,
 				35CC47031932C12500F16AAC /* glCommitmentViewController.m in Sources */,
+				3597A2B3194DCE0B009FBE48 /* glChatManagerViewController.m in Sources */,
 				43D07FEE192CDE6F00F22139 /* glBuddyDetailViewController.m in Sources */,
 				359BC845193B9F40005F2718 /* glUserVideoViewController.m in Sources */,
 				359B2F491930A7D000A65D66 /* glBuddyChatViewController.m in Sources */,

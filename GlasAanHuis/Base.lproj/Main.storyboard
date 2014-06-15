@@ -429,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nby-K7-ZML" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3338" y="-219"/>
+            <point key="canvasLocation" x="2776" y="5"/>
         </scene>
         <!--Gl Picture View Settings Controller-->
         <scene sceneID="61j-jl-MBY">
@@ -819,7 +819,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jau-Nq-zJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3766" y="1628"/>
+            <point key="canvasLocation" x="4073" y="52"/>
         </scene>
         <!--Gl Faq View Controller-->
         <scene sceneID="s81-Qt-cis">
@@ -861,7 +861,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForumItem1" id="UnG-1L-5Zd">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UnG-1L-5Zd" id="dM6-87-pP5">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -960,7 +960,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jcm-cD-Jdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3129" y="-1895"/>
+            <point key="canvasLocation" x="3078" y="-1885"/>
         </scene>
         <!--Gl Video Record View Controller-->
         <scene sceneID="voM-7W-JFP">
@@ -1123,6 +1123,53 @@
             </objects>
             <point key="canvasLocation" x="1658" y="682"/>
         </scene>
+        <!--Gl Chat Manager View Controller-->
+        <scene sceneID="2pC-gn-1Xy">
+            <objects>
+                <viewController id="ZdT-WJ-4UD" customClass="glChatManagerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fgi-ig-tDn"/>
+                        <viewControllerLayoutGuide type="bottom" id="EtZ-hO-dj8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h9D-Mz-9dN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V3L-E7-Tev">
+                                <rect key="frame" x="0.0" y="95" width="320" height="473"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZdT-WJ-4UD" id="gvx-Lu-fxB"/>
+                                    <outlet property="delegate" destination="ZdT-WJ-4UD" id="Fd4-EU-j80"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mijn berichten:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aY-65-VSQ">
+                                <rect key="frame" x="20" y="66" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tnx-WL-NWs">
+                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" style="plain" id="Ja6-zI-r7o">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="myMessages" destination="V3L-E7-Tev" id="2tG-LH-WA9"/>
+                        <outlet property="sideBarButton" destination="Ja6-zI-r7o" id="hD8-06-bEZ"/>
+                        <segue destination="KAP-b3-CdM" kind="push" identifier="goToMessages" id="hdj-Gh-0MN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d2L-CC-7MU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3327" y="-302"/>
+        </scene>
         <!--Sidebar View Controller-->
         <scene sceneID="P5N-oM-r6k">
             <objects>
@@ -1199,6 +1246,27 @@
                                     <segue destination="UVM-LS-YKg" kind="custom" identifier="District" customClass="SWRevealViewControllerSegue" id="cUt-U7-UGQ"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="messages" id="2kn-Cj-r04">
+                                <rect key="frame" x="0.0" y="154" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2kn-Cj-r04" id="vAm-VB-VTH">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mijn Berichten" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7q-3L-I5B">
+                                            <rect key="frame" x="20" y="11" width="280" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.1215686351" green="0.12549020350000001" blue="0.1176470667" alpha="1" colorSpace="deviceRGB"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ZdT-WJ-4UD" kind="custom" customClass="SWRevealViewControllerSegue" id="HCT-Wj-g3R"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="UIf-Ym-LW9" id="iIc-mQ-djn"/>
@@ -1239,8 +1307,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xas-Y0-dXz"/>
+        <segue reference="cUt-U7-UGQ"/>
+        <segue reference="3Sc-9G-gtp"/>
+        <segue reference="hdj-Gh-0MN"/>
         <segue reference="Dyv-Gp-8g7"/>
-        <segue reference="W3N-rt-3k4"/>
     </inferredMetricsTieBreakers>
 </document>

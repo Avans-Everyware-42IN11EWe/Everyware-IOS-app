@@ -30,9 +30,8 @@ NSArray *menuItems;
     
     _cReceiverImage = [self getPhoto:_recieverID];
     _cSenderImage = [self getPhoto:_senderID];
-    
-    
-    
+    _ReceiverImage.image = _cReceiverImage;
+    _ReceiverName.text = [self getName:_recieverID];
     [self getNewLines];
 }
 
@@ -185,11 +184,32 @@ NSArray *menuItems;
     {
         
     }
+    
     NSURL *urlplaatje = [NSURL URLWithString:[user valueForKey:@"plaatje"]];
     NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
     UIImage *plaatje = [UIImage imageWithData:dataplaatje];
-    
     return plaatje;
+}
+
+-(NSString*)getName:(NSString *)userId
+{
+    NSString *path = [NSString stringWithFormat:@"http://glas.mycel.nl/buddy?id=%@",userId];
+    NSString *urlstring = [NSString stringWithFormat:path];
+    NSURL *url = [NSURL URLWithString:urlstring];
+    NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
+    req.HTTPMethod = @"GET";
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+    NSJSONSerialization *user = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] mutableCopy];
+    
+    if (error == nil)
+    {
+        
+    }
+    
+    NSString *name = [user valueForKey:@"naam"];
+    return name;
 }
 
 @end
