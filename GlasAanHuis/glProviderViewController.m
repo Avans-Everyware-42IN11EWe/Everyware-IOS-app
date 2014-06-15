@@ -39,9 +39,9 @@
     for (int i = 0; i < lijst.count; i++) {
         NSLog(@"%@",[lijst[i] valueForKey:@"name"]);
         NSString *str = [NSString stringWithFormat:@"%@",[lijst[i] valueForKey:@"name"]];
-        UISwitch *switc = [[UISwitch alloc]initWithFrame:CGRectMake(100 , 200+(i*40), 60, 40)];
+        UISwitch *switc = [[UISwitch alloc]initWithFrame:CGRectMake(50, 200+(i*40), 60, 40)];
         switc.tag = [[lijst[i] valueForKey:@"id"]intValue];
-        UILabel *lbl = [[UILabel alloc]initWithFrame:CGRectMake(170 , 200+(i*40), 60, 40)];
+        UILabel *lbl = [[UILabel alloc]initWithFrame:CGRectMake(120, 200+(i*40), 300, 40)];
         lbl.text = str;
         [switchArray addObject:switc];
         [self.view addSubview:lbl];
