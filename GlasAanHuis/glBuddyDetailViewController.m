@@ -37,6 +37,17 @@
     NSURL *urlplaatje = [NSURL URLWithString:[user valueForKey:@"plaatje"]];
     NSData *dataplaatje = [NSData dataWithContentsOfURL:urlplaatje];
     self.imageUser.image = [UIImage imageWithData:dataplaatje];
+    
+    
+    if(![[user valueForKey:@"video"] isEqual:@""]){
+        NSURL *url = [NSURL URLWithString:[user valueForKey:@"video"]];
+        
+        _mc = [[MPMoviePlayerController alloc] initWithContentURL:url];
+        [_mc.view setFrame:CGRectMake(0, 0, 260, 160)];
+        [_mc prepareToPlay];
+        _mc.shouldAutoplay = false;
+        [_movie addSubview:_mc.view];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -48,17 +59,17 @@
     [_movie setBackgroundColor:[UIColor colorWithRed:(173/255.0) green:(173/255.0) blue:(173/255.0) alpha:0.4]];
     
      */
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Comp2" ofType:@"mp4"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    _mc = [[MPMoviePlayerController alloc] initWithContentURL:url];
-    [_mc.view setFrame:CGRectMake(0, 0, 260, 160)];
-    
-    
-    //[_movie play];
-    [_mc prepareToPlay];
-    //[movie pause];
-    _mc.shouldAutoplay = false;
-    [_movie addSubview:_mc.view];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"Comp2" ofType:@"mp4"];
+//    NSURL *url = [NSURL fileURLWithPath:path];
+//    _mc = [[MPMoviePlayerController alloc] initWithContentURL:url];
+//    [_mc.view setFrame:CGRectMake(0, 0, 260, 160)];
+//    
+//    
+//    //[_movie play];
+//    [_mc prepareToPlay];
+//    //[movie pause];
+//    _mc.shouldAutoplay = false;
+//    [_movie addSubview:_mc.view];
     
 }
 

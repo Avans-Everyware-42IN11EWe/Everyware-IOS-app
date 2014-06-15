@@ -31,6 +31,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSURL *url = [NSURL URLWithString:_userVideoUrl];
+    
+    _mc = [[MPMoviePlayerController alloc] initWithContentURL:url];
+    [_mc.view setFrame:CGRectMake(0, 0, 260, 160)];
+    [_mc prepareToPlay];
+    _mc.shouldAutoplay = false;
+    [_movie addSubview:_mc.view];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,15 +50,6 @@
 {
     [super viewDidAppear:animated];
 
-    NSURL *url = [NSURL fileURLWithPath:_userVideoUrl];
-    _mc = [[MPMoviePlayerController alloc] initWithContentURL:url];
-    [_mc.view setFrame:CGRectMake(0, 0, 260, 160)];
-    
-    //[_movie play];
-    [_mc prepareToPlay];
-    //[movie pause];
-    _mc.shouldAutoplay = false;
-    [_movie addSubview:_mc.view];
 }
 
 /*
