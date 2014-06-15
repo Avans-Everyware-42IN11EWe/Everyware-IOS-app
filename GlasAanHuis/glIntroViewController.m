@@ -25,13 +25,13 @@
     return self;
 }
 
--(NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskLandscape;
-}
-
--(BOOL)shouldAutorotate {
-    return YES;
-}
+//-(NSUInteger)supportedInterfaceOrientations {
+//    return UIInterfaceOrientationMaskLandscape;
+//}
+//
+//-(BOOL)shouldAutorotate {
+//    return YES;
+//}
 
 - (void)viewDidLoad
 {
@@ -68,10 +68,14 @@
     self.mc.view.backgroundColor = [UIColor clearColor];
 
     [self.mc prepareToPlay];
+    //[self.mc setRepeatMode:MPMovieRepeatModeOne];
+    //[self.mc setControlStyle:MPMovieControlStyleEmbedded];
+    self.mc.view.transform = CGAffineTransformMakeRotation(M_PI/2);
+    
     [self.mc.view setFrame: self.videoView.bounds];
     [self.videoView addSubview:self.mc.view];
     
-
+    self.skipBTN.transform = CGAffineTransformMakeRotation(M_PI/2);
     
     [self.mc play];
 }

@@ -8,6 +8,7 @@
 
 #import "glVideoUploadViewController.h"
 #import "SWRevealViewController.h"
+#import "glMyProfileViewController.h"
 @interface glVideoUploadViewController ()
 
 @end
@@ -45,6 +46,8 @@
     NSString *userID = [defaults valueForKey:@"userID"];
     NSString *authToken = [defaults valueForKey:@"authToken"];
     [self videoUpload:_videoUrl: userID: authToken];
+    
+    [self performSegueWithIdentifier:@"gaweernaarmijnprofiel" sender:self];
 }
 
 - (IBAction)leukeVideoToevoegen:(id)sender {

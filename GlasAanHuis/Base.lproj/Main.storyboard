@@ -17,12 +17,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gsf-nt-xeC">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3M-cX-s4F">
-                                <rect key="frame" x="267" y="280" width="34" height="30"/>
+                                <rect key="frame" x="10" y="269" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SKIP">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,6 +39,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="skipBTN" destination="U3M-cX-s4F" id="WOz-eS-qhJ"/>
                         <outlet property="videoView" destination="gsf-nt-xeC" id="ltL-Gd-jBJ"/>
                     </connections>
                 </viewController>
@@ -960,11 +961,12 @@
                     <connections>
                         <outlet property="sideBarButton" destination="OTc-Pw-ZbL" id="R2R-o8-Y9t"/>
                         <outlet property="videoView" destination="e7x-aX-NMc" id="gnv-1o-yj2"/>
+                        <segue destination="Flc-o1-GmH" kind="push" identifier="gaweernaarmijnprofiel" id="eOC-M8-0yA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jcm-cD-Jdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3078" y="-1885"/>
+            <point key="canvasLocation" x="3766" y="-1525"/>
         </scene>
         <!--Gl Register View Controller-->
         <scene sceneID="910-nJ-XbL">
@@ -1274,7 +1276,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="cUt-U7-UGQ"/>
-        <segue reference="3Sc-9G-gtp"/>
+        <segue reference="eOC-M8-0yA"/>
         <segue reference="4ap-3M-clU"/>
         <segue reference="Dyv-Gp-8g7"/>
     </inferredMetricsTieBreakers>

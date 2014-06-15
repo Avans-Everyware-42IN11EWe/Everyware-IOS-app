@@ -11,6 +11,7 @@
 
 @interface glIntroViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIButton *skipBTN;
 @property (nonatomic, strong) MPMoviePlayerController *mc;
 @property (weak, nonatomic) IBOutlet UIView *videoView;
 - (IBAction)goToStart:(id)sender;
