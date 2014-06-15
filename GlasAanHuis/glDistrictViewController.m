@@ -89,7 +89,7 @@ glDistrictParticipants *participantsView;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    objc_msgSend([UIDevice currentDevice], @selector(setOrientation:), UIInterfaceOrientationPortrait);
+    objc_msgSend([UIDevice currentDevice], @selector(setOrientation:), UIInterfaceOrientationMaskPortrait);
     // Add swipeGestures
     UISwipeGestureRecognizer *oneFingerSwipeLeft = [[UISwipeGestureRecognizer alloc]
                                                      initWithTarget:self
