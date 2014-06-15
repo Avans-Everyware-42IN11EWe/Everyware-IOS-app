@@ -195,7 +195,12 @@
 
 -(NSArray*)registerUser
 {
-    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",@"HOEFT NIET",@"name",@"lat",@"latlong",_districtID,@"district_id", nil];
+    NSString *is_buddy = @"false";
+    if(self.buddySW.on){
+        is_buddy = @"true";
+    }
+    
+    NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:_emailTV.text,@"email",@"HOEFT NIET",@"name",@"lat",@"latlong",_districtID,@"district_id",is_buddy,@"is_buddy", nil];
     NSError *postError;
     NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:NSASCIIStringEncoding error:&postError];
     

@@ -71,6 +71,14 @@
     self.MyProfileEmail.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"email"]];
     self.MyProfilePhone.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"telefoon"]];
     
+    NSString *isbuddy = [NSString stringWithFormat:@"%@",[user valueForKey:@"is_buddy"]];
+
+    if([isbuddy isEqualToString:@"false"]){
+        [self.IWantToBeABuddy setOn:NO];
+    }else if ([isbuddy isEqualToString:@"true"]){
+        [self.IWantToBeABuddy setOn:YES];
+    }
+    
     self.MyProfileName.delegate = self;
     self.MyProfileAge.delegate = self;
     self.MyProfileLocation.delegate = self;
@@ -111,7 +119,11 @@
     NSString *adres = self.MyProfileLocation.text;
     NSString *telefoon = self.MyProfilePhone.text ;
     NSString *email = self.MyProfileEmail.text;
-    NSString *is_buddy = @"true";
+    NSString *is_buddy = @"false";
+    if(self.IWantToBeABuddy.on){
+         is_buddy = @"true";
+    }
+
     
     NSDictionary *tmp = [[NSDictionary alloc]initWithObjectsAndKeys:
                          naam,@"naam",

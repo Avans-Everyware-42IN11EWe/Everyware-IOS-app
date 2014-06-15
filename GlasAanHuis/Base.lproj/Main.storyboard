@@ -429,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nby-K7-ZML" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3986" y="-171"/>
+            <point key="canvasLocation" x="3338" y="-219"/>
         </scene>
         <!--Gl Picture View Settings Controller-->
         <scene sceneID="61j-jl-MBY">
@@ -901,26 +901,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIC-BR-ZNz">
-                                <rect key="frame" x="135" y="461" width="50" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22x-Ed-Kse">
+                                <rect key="frame" x="24" y="442" width="279" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Upload">
+                                <color key="backgroundColor" red="0.9215686917" green="0.9215686917" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Leuke video opnemen">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6fJ-d8-a8F" kind="push" id="dVs-Ou-DY4"/>
+                                    <action selector="leukeVideoOpnemen:" destination="eZu-9E-QSO" eventType="touchUpInside" id="9l0-E4-bBH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Bu-3F-wHo">
-                                <rect key="frame" x="135" y="281" width="50" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ynn-XR-VLQ">
+                                <rect key="frame" x="24" y="480" width="281" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Record">
+                                <color key="backgroundColor" red="0.9215686917" green="0.9215686917" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Leuke video toevoegen">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CMb-yw-C3A" kind="push" id="OHd-0n-5HV"/>
+                                    <action selector="leukeVideoToevoegen:" destination="eZu-9E-QSO" eventType="touchUpInside" id="1o2-Mh-VMC"/>
+                                    <action selector="save:" destination="qhL-Q5-jBI" eventType="touchUpInside" id="2Q9-JC-ms9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osc-8t-Dps">
+                                <rect key="frame" x="23" y="518" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9215686917" green="0.9215686917" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Wijzigen uploaden">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="save:" destination="qhL-Q5-jBI" eventType="touchUpInside" id="4Iv-uM-MBH"/>
+                                    <action selector="save:" destination="eZu-9E-QSO" eventType="touchUpInside" id="b5y-G2-MoI"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e7x-aX-NMc">
+                                <rect key="frame" x="30" y="91" width="260" height="160"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -933,11 +953,14 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="sideBarButton" destination="OTc-Pw-ZbL" id="R2R-o8-Y9t"/>
+                        <outlet property="videoView" destination="e7x-aX-NMc" id="gnv-1o-yj2"/>
+                        <segue destination="CMb-yw-C3A" kind="push" identifier="recView" id="KlX-vA-blp"/>
+                        <segue destination="6fJ-d8-a8F" kind="push" identifier="playView" id="uM3-Yb-XuM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jcm-cD-Jdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2761" y="-27"/>
+            <point key="canvasLocation" x="3129" y="-1895"/>
         </scene>
         <!--Gl Video Record View Controller-->
         <scene sceneID="voM-7W-JFP">
@@ -956,7 +979,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vy3-nL-piS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3303" y="-831"/>
+            <point key="canvasLocation" x="3751" y="-2335"/>
         </scene>
         <!--Gl Video Play View Controller-->
         <scene sceneID="Cer-8s-zHM">
@@ -975,7 +998,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goK-za-rMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3312" y="-181"/>
+            <point key="canvasLocation" x="3757" y="-1557"/>
         </scene>
         <!--Gl Register View Controller-->
         <scene sceneID="910-nJ-XbL">
@@ -1217,6 +1240,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="PaI-7T-v7u"/>
+        <segue reference="W3N-rt-3k4"/>
         <segue reference="Dyv-Gp-8g7"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -51,4 +51,14 @@
 }
 */
 
+- (IBAction)save:(id)sender {
+}
+
+- (IBAction)leukeVideoToevoegen:(id)sender {
+    [self performSegueWithIdentifier:@"playView" sender:self];
+}
+
+- (IBAction)leukeVideoOpnemen:(id)sender {
+    [self performSegueWithIdentifier:@"recView" sender:self];
+}
 @end
